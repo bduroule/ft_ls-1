@@ -1,2 +1,5 @@
 # ft_ls
-42 Project: A recreation of ls
+
+(Under development)
+42 Project: A recreation of `ls`.  
+Aiming to complete mid Aug '18.
