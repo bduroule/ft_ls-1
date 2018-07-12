@@ -6,7 +6,7 @@
 #    By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/27 15:32:02 by dhojt             #+#    #+#              #
-#    Updated: 2018/05/14 03:40:49 by dhojt            ###   ########.fr        #
+#    Updated: 2018/07/13 01:57:25 by dhojt            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,14 +34,15 @@ colour:
 					@echo "\x1b[36m""\x1b[1A\x1b[M"
 
 clean:				colour
-					@make -C $(LIBFT_DIR) fclean
-					@make -C $(FT_PRINTF_DIR) fclean
-					@echo Cleaned libftprintf object files
+					@make -C $(LIBFT_DIR) clean
+					@make -C $(FT_PRINTF_DIR) clean
+					@echo Cleaned libft object files
 
-fclean:				clean
+fclean:				colour
 					@/bin/rm -f $(FT_PRINTF) $(LIBFT)
 					@make -C $(LIBFT_DIR) fclean
 					@make -C $(FT_PRINTF_DIR) fclean
+					@echo libft object files fcleaned
 
 re: 				fclean all
 
