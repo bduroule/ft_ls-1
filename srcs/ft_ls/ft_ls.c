@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/13 01:28:20 by dhojt             #+#    #+#             */
-/*   Updated: 2018/07/13 01:31:23 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/07/13 01:51:35 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,13 @@
 
 void			ft_ls(int argc, char **argv)
 {
+	if (argc && argv)
+		;
 }
 
 int				main(int argc, char **argv)
 {
+	if (argc && argv)
+		;
 	return (0);
 }
