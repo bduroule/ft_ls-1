@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/27 15:39:39 by dhojt             #+#    #+#             */
-/*   Updated: 2018/07/08 00:20:08 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/07/13 19:38:32 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ int				ft_strncmp(const char *s1, const char *s2, size_t n);
 char			*ft_strupcase(char *str);
 char			*ft_strlowcase(char *str);
 char			*ft_strcapitalize(char *str);
+int				ft_str_is_alphanumeric(char *str);
 int				ft_str_is_alpha(char *str);
 int				ft_str_is_numeric(char *str);
 int				ft_str_is_lowercase(char *str);
@@ -88,7 +89,7 @@ void			ft_putnbrmax_fd(intmax_t n, int fd);
 void			ft_putnbrumax_fd(uintmax_t n, int fd);
 char			*ft_itoa_base(uintmax_t num, uintmax_t base, char c);
 intmax_t		ft_atoi_max(const char *str);
-void			ft_error(void);
+unsigned long	options(char **argv);
 
 typedef struct	s_list
 {
