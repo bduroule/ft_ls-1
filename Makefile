@@ -6,7 +6,7 @@
 #    By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/27 15:32:02 by dhojt             #+#    #+#              #
-#    Updated: 2018/07/13 22:50:49 by dhojt            ###   ########.fr        #
+#    Updated: 2018/07/13 23:03:14 by dhojt            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,8 @@ P_SRC =			#files here
 D_SRC =			#files here
 
 L_SRC =			ft_ls.c \
-				free_frame.c
+				free_frame.c \
+				error_exit.c
 
 S_OBJ =			$(S_SRC:%.c=%.o)
 P_OBJ =			$(P_SRC:%.c=%.o)

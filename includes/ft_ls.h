@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/13 01:26:16 by dhojt             #+#    #+#             */
-/*   Updated: 2018/07/13 22:50:24 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/07/13 23:02:55 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,6 @@ typedef struct		s_frame
 }					t_frame;
 
 void				free_frame(t_frame *frame);
+void				error_exit(t_frame *frame, char *error_str);
 
 #endif
