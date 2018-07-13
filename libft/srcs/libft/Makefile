@@ -6,7 +6,7 @@
 #    By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/27 15:32:02 by dhojt             #+#    #+#              #
-#    Updated: 2018/07/03 13:28:41 by dhojt            ###   ########.fr        #
+#    Updated: 2018/07/14 01:10:31 by dhojt            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,6 +55,7 @@ SRC =			ft_atoi.c \
 				ft_putstr_fd.c \
 				ft_removeselect.c \
 				ft_str_is_alpha.c \
+				ft_str_is_alphanumeric.c \
 				ft_str_is_lowercase.c \
 				ft_str_is_numeric.c \
 				ft_str_is_printable.c \
@@ -96,6 +97,7 @@ SRC =			ft_atoi.c \
 				ft_toupper.c \
 				ft_atoi_max.c \
 				get_next_line.c \
+				options.c
 
 OBJ =			$(SRC:%.c=%.o)
 
