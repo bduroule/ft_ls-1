@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/13 01:28:20 by dhojt             #+#    #+#             */
-/*   Updated: 2018/07/14 01:06:09 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/07/14 01:24:12 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,6 @@
 static void			ft_ls(t_frame *frame)
 {
 	get_options(frame);
-	if (frame->option.a)
-		write (1, "A!\n", 3);
-	if (frame->option.d)
-		write (1, "D!\n", 3);
 }
 
 int					main(int argc, char **argv)
