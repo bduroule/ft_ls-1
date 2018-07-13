@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/13 22:44:38 by dhojt             #+#    #+#             */
-/*   Updated: 2018/07/13 22:51:41 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/07/14 00:42:00 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,6 @@
 void				free_frame(t_frame *frame)
 {
 	//free everything LOL.
-	free(frame->option);
-	free(frame);
+	if (frame)
+		;
 }
