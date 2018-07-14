@@ -6,15 +6,17 @@
 #    By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/27 15:32:02 by dhojt             #+#    #+#              #
-#    Updated: 2018/07/14 01:05:34 by dhojt            ###   ########.fr        #
+#    Updated: 2018/07/14 16:42:18 by dhojt            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME =			ft_ls
+INCLUDES = 		includes
+HEADER =		$(INCLUDES)/ft_ls.h
 LIBFT_A =		libft.a
 FT_PRINTF_A =	ft_printf.a
 
-COMP =			gcc -Wall -Werror -Wextra -I includes -I $(LIBFT)/includes -c -o
+COMP =			gcc -Wall -Werror -Wextra -I $(INCLUDES) -I $(LIBFT)/includes -c -o
 
 OBJ_DIR =		obj/
 S_SRC_DIR =		srcs/solution/#amend
@@ -64,18 +66,18 @@ $(NAME):		$(OBJ_PATH)
 				@gcc $(S_OBJ_PATH) $(P_OBJ_PATH) \
 				$(D_OBJ_PATH) $(L_OBJ_PATH) \
 				$(LIBFT_A) $(FT_PRINTF_A) \
-				-o $(NAME) -I includes -I $(LIBFT)/includes
+				-o $(NAME) -I $(INCLUDES) -I $(LIBFT)/includes
 
-$(S_OBJ_PATH):	$(S_SRC_PATH)
+$(S_OBJ_PATH):	$(S_SRC_PATH) $(HEADER)
 				@$(MAKE) $(S_OBJ)
 
-$(P_OBJ_PATH):	$(P_SRC_PATH)
+$(P_OBJ_PATH):	$(P_SRC_PATH) $(HEADER)
 				@$(MAKE) $(P_OBJ)
 
-$(D_OBJ_PATH):	$(D_SRC_PATH)
+$(D_OBJ_PATH):	$(D_SRC_PATH) $(HEADER)
 				@$(MAKE) $(D_OBJ)
 
-$(L_OBJ_PATH):	$(L_SRC_PATH)
+$(L_OBJ_PATH):	$(L_SRC_PATH) $(HEADER)
 				@$(MAKE) $(L_OBJ)
 
 $(S_OBJ):		$(LIBFT_A) $(FT_PRINTF_A)
@@ -112,4 +114,4 @@ fclean:			colour
 
 re: 			fclean all
 
-.PHONY:			all clean flcean re colour
+.PHONY:			all clean flcean re colour do_libft
