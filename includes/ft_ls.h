@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/13 01:26:16 by dhojt             #+#    #+#             */
-/*   Updated: 2018/07/14 23:44:22 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/07/15 01:32:43 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,21 @@ typedef struct		s_options
 	unsigned short	fill	: 6;
 }					t_options;
 
+typedef struct		s_args
+{
+	char			*str;
+	unsigned char	file	: 1;
+	unsigned char	dir		: 1;
+	unsigned char	fill	: 1;
+}					t_args;
+
 typedef struct		s_frame
 {
 	int				argc;
 	char			**argv;
 
 	t_options		option;
+	t_args			*args;
 }					t_frame;
 
 void				free_frame(t_frame *frame);
