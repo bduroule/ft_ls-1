@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/13 22:57:51 by dhojt             #+#    #+#             */
-/*   Updated: 2018/07/13 23:01:56 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/07/14 11:58:58 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 void				error_exit(t_frame *frame, char *error_str)
 {
 	ft_putstr_fd(error_str, 2);
+	write(2, "\n", 1);
 	free_frame(frame);
 	exit(1);
 }
