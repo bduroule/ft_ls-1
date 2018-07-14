@@ -6,24 +6,31 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/13 15:31:05 by dhojt             #+#    #+#             */
-/*   Updated: 2018/07/13 19:35:07 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/07/14 23:24:16 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 //not normed
 #include "libft.h"
 
+/*
+** Sets bits for alphanumeric characters.
+** Sets left-most-bit in case of non-alphanumeric character
+*/
+
 static void			treat_options(char c, unsigned long *options)
 {
-	long			one;
+	unsigned long	one;
 
 	one = 1;
 	if (c >= 'a' && c <= 'z')
 		*options |= (one << (c - 97));
-	if (c >= 'A' && c <= 'Z')
+	else if (c >= 'A' && c <= 'Z')
 		*options |= (one << (c - 39));
-	if (c >= '0' && c <= '9')
+	else if (c >= '0' && c <= '9')
 		*options |= (one << (c + 4));
+	else
+		*options |= (one << 63);
 }
 
 unsigned long		options(char **argv)
@@ -38,7 +45,7 @@ unsigned long		options(char **argv)
 	while (*argv)
 	{
 		str = *argv;
-		if (*str == '-' && ft_str_is_alphanumeric(str + 1))
+		if (*str == '-')
 		{
 			str++;
 			while (*str)
