@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/14 00:54:18 by dhojt             #+#    #+#             */
-/*   Updated: 2018/07/14 23:20:46 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/07/14 23:39:01 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,12 +68,6 @@ static void			options_error_check(t_frame *frame, unsigned long option_data)
 	get_compliment_of_all_options(frame, &compliment_of_all_options);
 	if (option_data &= compliment_of_all_options)
 		print_bad_options(frame, option_data &= compliment_of_all_options);
-	while (*argv)
-	{
-		if (!ft_strcmp(*argv, "-"))
-			print_bad_options(frame, option_data &= compliment_of_all_options);
-		argv++;
-	}
 }
 
 void				get_options(t_frame *frame)
