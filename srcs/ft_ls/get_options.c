@@ -6,12 +6,36 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/14 00:54:18 by dhojt             #+#    #+#             */
-/*   Updated: 2018/07/14 01:58:57 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/07/14 11:20:11 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 //display usage on error????
+
+static void			identify_bad_options(t_frame *frame, long bad_options)
+{
+	long			one;
+	unsigned char	shifts;
+
+	one = 1;
+	shifts = 0;
+	ft_putstr_fd("Bad Characters: ", 2);
+	while (shifts < 63)
+	{
+		if (bad_options & one)
+		{
+			shifts += 97;
+			write(2, &shifts, 1);
+			shifts -= 97;
+		}
+		shifts++;
+		bad_options >>= 1;
+	}
+	write(2, "\n", 1);
+	if (frame)
+		;
+}
 
 static void			options_error_check(t_frame *frame, long option_data)
 {
@@ -21,7 +45,10 @@ static void			options_error_check(t_frame *frame, long option_data)
 	argv = frame->argv;
 	compliment_of_all_options = 0xFFFFF7FEFFE5F796;
 	if (option_data &= compliment_of_all_options)
+	{
+		identify_bad_options(frame, option_data &= compliment_of_all_options);
 		error_exit(frame, "Invalid Options");
+	}
 	while (*argv)
 	{
 		if (!ft_strcmp(*argv, "-"))
