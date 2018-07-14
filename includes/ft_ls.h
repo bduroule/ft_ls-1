@@ -6,14 +6,16 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/13 01:26:16 by dhojt             #+#    #+#             */
-/*   Updated: 2018/07/14 01:05:15 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/07/14 11:45:28 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_LS_H
 # define FT_LS_H
 
-# include "libft.h"
+# define OPTIONS	"adfglrtuGR"
+
+# include			"libft.h"
 
 typedef struct		s_options
 {
