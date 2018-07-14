@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/14 00:54:18 by dhojt             #+#    #+#             */
-/*   Updated: 2018/07/14 11:20:11 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/07/14 11:38:59 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,33 @@ static void			identify_bad_options(t_frame *frame, long bad_options)
 		;
 }
 
+static long			get_compliment_of_all_options(t_frame *frame)
+{
+	char			**all_options;
+	long			compliment_of_all_options;
+
+	if(!(all_options = (char **)malloc(sizeof(char *) * 3)))
+		error_exit(frame, "Malloc Failed [all_options]");
+	all_options[0] = NULL;
+	all_options[2] = NULL;
+	if(!(all_options[1] = ft_strdup("-adfglrtuGR")))
+	{
+		free(all_options);
+		error_exit(frame, "Malloc Failed [all_options]");
+	}
+	compliment_of_all_options = ~options(all_options);
+	free(all_options[1]);
+	free(all_options);
+	return (compliment_of_all_options);
+}
+
 static void			options_error_check(t_frame *frame, long option_data)
 {
 	char			**argv;
 	long			compliment_of_all_options;
 
 	argv = frame->argv;
-	compliment_of_all_options = 0xFFFFF7FEFFE5F796;
+	compliment_of_all_options = get_compliment_of_all_options(frame);
 	if (option_data &= compliment_of_all_options)
 	{
 		identify_bad_options(frame, option_data &= compliment_of_all_options);
