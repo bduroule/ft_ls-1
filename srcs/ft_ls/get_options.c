@@ -6,16 +6,16 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/14 00:54:18 by dhojt             #+#    #+#             */
-/*   Updated: 2018/07/14 12:40:34 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/07/14 23:20:46 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-static void			identify_bad_options(t_frame *frame, long bad_options)
+static void			print_bad_options(t_frame *frame, unsigned long bad_options)
 {
 	char			option_char;
-	long			one;
+	unsigned long	one;
 	unsigned char	shifts;
 	char			correction;
 
@@ -26,6 +26,7 @@ static void			identify_bad_options(t_frame *frame, long bad_options)
 	{
 		correction = (shifts < 26) ? 97 : 39;
 		(shifts > 51) ? correction = -4 : 0;
+		(shifts > 62) ? correction = -30 : 0;
 		if (bad_options & one)
 		{
 			option_char = shifts + correction;
@@ -39,10 +40,10 @@ static void			identify_bad_options(t_frame *frame, long bad_options)
 	error_exit(frame, "] [file ...]");
 }
 
-static long			get_compliment_of_all_options(t_frame *frame)
+static void			get_compliment_of_all_options(t_frame *frame,
+		unsigned long *compliment_of_all_options)
 {
 	char			**all_options;
-	long			compliment_of_all_options;
 
 	if(!(all_options = (char **)malloc(sizeof(char *) * 3)))
 		error_exit(frame, "Malloc Failed [all_options]");
@@ -53,35 +54,32 @@ static long			get_compliment_of_all_options(t_frame *frame)
 		free(all_options);
 		error_exit(frame, "Malloc Failed [all_options]");
 	}
-	compliment_of_all_options = ~options(all_options);
+	*compliment_of_all_options = ~options(all_options);
 	free(all_options[1]);
 	free(all_options);
-	return (compliment_of_all_options);
 }
 
-static void			options_error_check(t_frame *frame, long option_data)
+static void			options_error_check(t_frame *frame, unsigned long option_data)
 {
 	char			**argv;
-	long			compliment_of_all_options;
+	unsigned long	compliment_of_all_options;
 
 	argv = frame->argv;
-	compliment_of_all_options = get_compliment_of_all_options(frame);
+	get_compliment_of_all_options(frame, &compliment_of_all_options);
 	if (option_data &= compliment_of_all_options)
-	{
-		identify_bad_options(frame, option_data &= compliment_of_all_options);
-	}
+		print_bad_options(frame, option_data &= compliment_of_all_options);
 	while (*argv)
 	{
 		if (!ft_strcmp(*argv, "-"))
-			error_exit(frame, "Invalid Options");
+			print_bad_options(frame, option_data &= compliment_of_all_options);
 		argv++;
 	}
 }
 
 void				get_options(t_frame *frame)
 {
-	long			one;
-	long			option_data;
+	unsigned long	one;
+	unsigned long	option_data;
 
 	one = 1;
 	option_data = options(frame->argv);
