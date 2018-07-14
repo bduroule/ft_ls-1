@@ -6,14 +6,14 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/13 01:26:16 by dhojt             #+#    #+#             */
-/*   Updated: 2018/07/14 12:20:15 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/07/14 12:26:49 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_LS_H
 # define FT_LS_H
 
-# define OPTIONS	"-adfglrtuGR"
+# define OPTIONS	"-GRadfglrtu"
 
 # include			"libft.h"
 
