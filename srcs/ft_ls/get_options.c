@@ -6,35 +6,37 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/14 00:54:18 by dhojt             #+#    #+#             */
-/*   Updated: 2018/07/14 11:46:08 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/07/14 12:40:34 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
-//display usage on error????
 
 static void			identify_bad_options(t_frame *frame, long bad_options)
 {
+	char			option_char;
 	long			one;
 	unsigned char	shifts;
+	char			correction;
 
 	one = 1;
 	shifts = 0;
-	ft_putstr_fd("Bad Characters: ", 2);
+	ft_putstr_fd("ft_ls: illegal option -- ", 2);
 	while (shifts < 63)
 	{
+		correction = (shifts < 26) ? 97 : 39;
+		(shifts > 51) ? correction = -4 : 0;
 		if (bad_options & one)
 		{
-			shifts += 97;
-			write(2, &shifts, 1);
-			shifts -= 97;
+			option_char = shifts + correction;
+			write(2, &option_char, 1);
 		}
 		shifts++;
 		bad_options >>= 1;
 	}
-	write(2, "\n", 1);
-	if (frame)
-		;
+	ft_putstr_fd("\nusage: ./ft_ls [", 2);
+	ft_putstr_fd(OPTIONS, 2);
+	error_exit(frame, "] [file ...]");
 }
 
 static long			get_compliment_of_all_options(t_frame *frame)
@@ -67,7 +69,6 @@ static void			options_error_check(t_frame *frame, long option_data)
 	if (option_data &= compliment_of_all_options)
 	{
 		identify_bad_options(frame, option_data &= compliment_of_all_options);
-		error_exit(frame, "Invalid Options");
 	}
 	while (*argv)
 	{
