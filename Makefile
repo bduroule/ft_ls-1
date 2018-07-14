@@ -6,7 +6,7 @@
 #    By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/27 15:32:02 by dhojt             #+#    #+#              #
-#    Updated: 2018/07/14 16:42:18 by dhojt            ###   ########.fr        #
+#    Updated: 2018/07/14 23:45:30 by dhojt            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,8 @@ D_SRC =			#files here
 L_SRC =			ft_ls.c \
 				free_frame.c \
 				error_exit.c \
-				get_options.c
+				get_options.c \
+				get_args.c
 
 S_OBJ =			$(S_SRC:%.c=%.o)
 P_OBJ =			$(P_SRC:%.c=%.o)

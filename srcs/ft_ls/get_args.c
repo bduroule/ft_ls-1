@@ -1,31 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ls.c                                            :+:      :+:    :+:   */
+/*   get_args.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/13 01:28:20 by dhojt             #+#    #+#             */
-/*   Updated: 2018/07/14 23:45:11 by dhojt            ###   ########.fr       */
+/*   Created: 2018/07/14 23:43:19 by dhojt             #+#    #+#             */
+/*   Updated: 2018/07/14 23:44:28 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-static void			ft_ls(t_frame *frame)
+void				get_args(t_frame *frame)
 {
-	get_options(frame);
-	get_args(frame);
-}
-
-int					main(int argc, char **argv)
-{
-	t_frame			frame;
-
-	ft_bzero(&frame, sizeof(frame));
-	frame.argc = argc;
-	frame.argv = argv;
-	ft_ls(&frame);
-	free_frame(&frame);
-	return (0);
+	if (frame)
+		;
 }
