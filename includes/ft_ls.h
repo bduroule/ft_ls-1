@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/13 01:26:16 by dhojt             #+#    #+#             */
-/*   Updated: 2018/07/15 01:32:43 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/07/18 22:33:24 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # define OPTIONS	"-GRadfglrtu"
 
 # include			"libft.h"
+# include			<dirent.h>
 
 typedef struct		s_options
 {
@@ -37,7 +38,9 @@ typedef struct		s_args
 	char			*str;
 	unsigned char	file	: 1;
 	unsigned char	dir		: 1;
-	unsigned char	fill	: 1;
+	unsigned char	fill	: 6;
+
+	struct s_args	next;
 }					t_args;
 
 typedef struct		s_frame
