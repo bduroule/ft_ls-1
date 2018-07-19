@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/14 00:54:18 by dhojt             #+#    #+#             */
-/*   Updated: 2018/07/14 23:39:01 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/07/19 15:36:17 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,8 +75,10 @@ void				get_options(t_frame *frame)
 	unsigned long	one;
 	unsigned long	option_data;
 
+	if (!frame->argv_options)
+		return ;
 	one = 1;
-	option_data = options(frame->argv);
+	option_data = options(frame->argv_options);
 	frame->option.a = (option_data & (one << ('a' - 97))) ? 1 : 0;
 	frame->option.d = (option_data & (one << ('d' - 97))) ? 1 : 0;
 	frame->option.f = (option_data & (one << ('f' - 97))) ? 1 : 0;
