@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/13 01:26:16 by dhojt             #+#    #+#             */
-/*   Updated: 2018/07/18 22:33:24 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/07/19 11:13:47 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,13 +40,15 @@ typedef struct		s_args
 	unsigned char	dir		: 1;
 	unsigned char	fill	: 6;
 
-	struct s_args	next;
+	struct s_args	*next;
 }					t_args;
 
 typedef struct		s_frame
 {
 	int				argc;
 	char			**argv;
+
+	char			**argv_options;
 
 	t_options		option;
 	t_args			*args;
