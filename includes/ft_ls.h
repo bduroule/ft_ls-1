@@ -6,31 +6,36 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/13 01:26:16 by dhojt             #+#    #+#             */
-/*   Updated: 2018/07/19 21:51:21 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/07/19 23:31:55 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_LS_H
 # define FT_LS_H
 
-# define OPTIONS	"-GRadfglrtu"
+# define OPTIONS	"-AFGRSacdfgloprtu1"
 
 # include			"libft.h"
 # include			<dirent.h>
 
 typedef struct		s_options
 {
-	unsigned short	a		: 1;
-	unsigned short	d		: 1;
-	unsigned short	f		: 1;
-	unsigned short	g		: 1;
-	unsigned short	l		: 1;
-	unsigned short	r		: 1;
-	unsigned short	t		: 1;
-	unsigned short	u		: 1;
-	unsigned short	G		: 1;
-	unsigned short	R		: 1;
-	unsigned short	fill	: 6;
+	unsigned short	a		: 1; //show hidden
+	unsigned short	c		: 1; //SORT (-t) by modification time
+	unsigned short	d		: 1; //directories shown as plain files
+	unsigned short	f		: 1; //SORT by nothing, turns on -a
+	unsigned short	g		: 1; //owner name surpressed
+	unsigned short	l		: 1; //list in long format
+	unsigned short	o		: 1; //group name surpressed
+	unsigned short	r		: 1; //reverse
+	unsigned short	t		: 1; //SORT by modified time
+	unsigned short	u		: 1; //SORT (-t) by access time
+	unsigned short	A		: 1; //shows hidden files except '.' and '..'
+	unsigned short	F		: 1; //prints some character after filename
+	unsigned short	G		: 1; //colours
+	unsigned short	R		: 1; //Recursivly list subdirectories
+	unsigned short	S		: 1; //SORT by size
+	unsigned short	one		: 1; //Forces one column output (turns off -a)
 }					t_options;
 
 typedef struct		s_args

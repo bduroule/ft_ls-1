@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/14 00:54:18 by dhojt             #+#    #+#             */
-/*   Updated: 2018/07/19 15:36:17 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/07/19 23:32:22 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,14 +80,20 @@ void				get_options(t_frame *frame)
 	one = 1;
 	option_data = options(frame->argv_options);
 	frame->option.a = (option_data & (one << ('a' - 97))) ? 1 : 0;
+	frame->option.c = (option_data & (one << ('c' - 97))) ? 1 : 0;
 	frame->option.d = (option_data & (one << ('d' - 97))) ? 1 : 0;
 	frame->option.f = (option_data & (one << ('f' - 97))) ? 1 : 0;
 	frame->option.g = (option_data & (one << ('g' - 97))) ? 1 : 0;
 	frame->option.l = (option_data & (one << ('l' - 97))) ? 1 : 0;
+	frame->option.o = (option_data & (one << ('o' - 97))) ? 1 : 0;
 	frame->option.r = (option_data & (one << ('r' - 97))) ? 1 : 0;
 	frame->option.t = (option_data & (one << ('t' - 97))) ? 1 : 0;
 	frame->option.u = (option_data & (one << ('u' - 97))) ? 1 : 0;
+	frame->option.A = (option_data & (one << ('A' - 39))) ? 1 : 0;
+	frame->option.F = (option_data & (one << ('F' - 39))) ? 1 : 0;
 	frame->option.G = (option_data & (one << ('G' - 39))) ? 1 : 0;
 	frame->option.R = (option_data & (one << ('R' - 39))) ? 1 : 0;
+	frame->option.S = (option_data & (one << ('S' - 39))) ? 1 : 0;
+	frame->option.one = (option_data & (one << ('1' + 4))) ? 1 : 0;
 	options_error_check(frame, option_data);
 }
