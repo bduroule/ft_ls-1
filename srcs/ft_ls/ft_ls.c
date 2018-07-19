@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/13 01:28:20 by dhojt             #+#    #+#             */
-/*   Updated: 2018/07/14 23:45:11 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/07/19 15:34:46 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 static void			ft_ls(t_frame *frame)
 {
-	get_options(frame);
 	get_args(frame);
+	get_options(frame);
 }
 
 int					main(int argc, char **argv)
