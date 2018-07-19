@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/14 23:43:19 by dhojt             #+#    #+#             */
-/*   Updated: 2018/07/19 16:35:23 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/07/19 16:44:45 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static void			parse_options(t_frame *frame, int option)
 	*frame->argv_options = *frame->argv;	
 	argv = frame->argv + 1;
 	argv_options = frame->argv_options + 1;
-	while (*argv && **argv == '-')
+	while (*argv && **argv == '-' && argv[0][1])
 	{
 		*argv_options = *argv;
 		argv++;
@@ -64,7 +64,7 @@ static int			calculate_option_strings(t_frame *frame)
 
 	option = 0;
 	argv = frame->argv + 1;
-	while (*argv && **argv == '-')
+	while (*argv && **argv == '-' && argv[0][1])
 	{
 		option++;
 		argv++;
