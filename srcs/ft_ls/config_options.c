@@ -1,20 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parse.c                                            :+:      :+:    :+:   */
+/*   config_options.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/19 19:31:36 by dhojt             #+#    #+#             */
-/*   Updated: 2018/07/19 21:51:34 by dhojt            ###   ########.fr       */
+/*   Created: 2018/07/19 21:51:46 by dhojt             #+#    #+#             */
+/*   Updated: 2018/07/19 22:17:15 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-void				parse(t_frame *frame)
+void				config_options(t_frame *frame)
 {
-	get_args(frame);
-	get_options(frame);
-	config_options(frame);
+	if (frame->option.d)
+		frame->option.R = 0;
+	if (frame->option.f)
+		frame->option.a = 1;
+	if (!frame->option.t)
+		frame->option.u = 0;
 }
