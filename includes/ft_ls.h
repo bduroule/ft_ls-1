@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/13 01:26:16 by dhojt             #+#    #+#             */
-/*   Updated: 2018/07/19 16:17:13 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/07/19 21:40:12 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,13 +50,18 @@ typedef struct		s_frame
 
 	char			**argv_options;
 
+	unsigned char	headers	: 1;
+	unsigned char	fill	: 7;
+
 	t_options		option;
 	t_args			*args;
 }					t_frame;
 
-void				free_frame(t_frame *frame);
-void				error_exit(t_frame *frame, char *error_str);
-void				get_options(t_frame *frame);
+void				parse(t_frame *frame);
 void				get_args(t_frame *frame);
+void				get_options(t_frame *frame);
+
+void				error_exit(t_frame *frame, char *error_str);
+void				free_frame(t_frame *frame);
 
 #endif
