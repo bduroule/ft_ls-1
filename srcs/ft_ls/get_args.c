@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/14 23:43:19 by dhojt             #+#    #+#             */
-/*   Updated: 2018/07/19 15:14:22 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/07/19 16:01:59 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,19 +24,18 @@ static void			parse_options(t_frame *frame)
 		argv++;
 	if (!i)
 		return ;
-	if (!(frame->argv_options = (char **)malloc(sizeof(char *) * (i + 1))))
+	if (!(frame->argv_options = (char **)malloc(sizeof(char *) * (i + 2))))
 		error_exit(frame, "Malloc Failed [frame->argv_options]");
+	*frame->argv_options = *frame->argv;	
 	argv = frame->argv + 1;
-	argv_options = frame->argv_options;
+	argv_options = frame->argv_options + 1;
 	while (*argv && **argv == '-')
 	{
-		*argv_options = NULL;
-		if (!(*argv_options = ft_strdup(*argv)))
-			error_exit(frame, "Malloc Failed [*argv_options]");
+		*argv_options = *argv;
 		argv++;
 		argv_options++;
-		*argv_options = NULL;
 	}
+	*argv_options = NULL;
 }
 
 void				get_args(t_frame *frame)
