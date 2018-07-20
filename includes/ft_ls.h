@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/13 01:26:16 by dhojt             #+#    #+#             */
-/*   Updated: 2018/07/20 19:39:34 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/07/20 19:43:47 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,10 @@ typedef struct		s_args
 	char			*user;
 	char			*group;
 	int				size;
+	int				c_time;
+	int				t_time;
+	int				u_time;
+	int				U_time;
 
 	struct s_args	*next;
 }					t_args;
