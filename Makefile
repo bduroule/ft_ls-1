@@ -6,7 +6,7 @@
 #    By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/27 15:32:02 by dhojt             #+#    #+#              #
-#    Updated: 2018/07/19 22:15:09 by dhojt            ###   ########.fr        #
+#    Updated: 2018/07/20 12:01:58 by dhojt            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ COMP =			gcc -Wall -Werror -Wextra -I $(INCLUDES) -I $(LIBFT)/includes -c -o
 
 OBJ_DIR =		obj/
 S_SRC_DIR =		srcs/solution/#amend
-P_SRC_DIR =		srcs/parse/#amend
+I_SRC_DIR =		srcs/issuance/#amend
 D_SRC_DIR =		srcs/display/#amend
 L_SRC_DIR =		srcs/ft_ls/
 
@@ -28,7 +28,7 @@ LIBFT =			libft/
 
 S_SRC =			#files here
 
-P_SRC =			#files here
+I_SRC =			issuance.c
 
 D_SRC =			#files here
 
@@ -41,22 +41,22 @@ L_SRC =			ft_ls.c \
 				config_options.c
 
 S_OBJ =			$(S_SRC:%.c=%.o)
-P_OBJ =			$(P_SRC:%.c=%.o)
+I_OBJ =			$(I_SRC:%.c=%.o)
 D_OBJ =			$(D_SRC:%.c=%.o)
 L_OBJ =			$(L_SRC:%.c=%.o)
-OBJ =			$(S_OBJ) $(P_OBJ) $(D_OBJ) $(L_OBJ)
+OBJ =			$(S_OBJ) $(I_OBJ) $(D_OBJ) $(L_OBJ)
 
 S_SRC_PATH =   	$(S_SRC:%=$(S_SRC_DIR)%)
-P_SRC_PATH =   	$(P_SRC:%=$(P_SRC_DIR)%)
+I_SRC_PATH =   	$(I_SRC:%=$(I_SRC_DIR)%)
 D_SRC_PATH =   	$(D_SRC:%=$(D_SRC_DIR)%)
 L_SRC_PATH =   	$(L_SRC:%=$(L_SRC_DIR)%)
-SRC_PATH =		$(S_SRC_PATH) $(P_SRC_PATH) $(D_SRC_PATH) $(L_SRC_PATH)
+SRC_PATH =		$(S_SRC_PATH) $(I_SRC_PATH) $(D_SRC_PATH) $(L_SRC_PATH)
 
 S_OBJ_PATH =	$(addprefix $(OBJ_DIR), $(S_OBJ))
-P_OBJ_PATH =	$(addprefix $(OBJ_DIR), $(P_OBJ))
+I_OBJ_PATH =	$(addprefix $(OBJ_DIR), $(I_OBJ))
 D_OBJ_PATH =	$(addprefix $(OBJ_DIR), $(D_OBJ))
 L_OBJ_PATH =	$(addprefix $(OBJ_DIR), $(L_OBJ))
-OBJ_PATH =		$(S_OBJ_PATH) $(P_OBJ_PATH) $(D_OBJ_PATH) $(L_OBJ_PATH)
+OBJ_PATH =		$(S_OBJ_PATH) $(I_OBJ_PATH) $(D_OBJ_PATH) $(L_OBJ_PATH)
 
 all:			colour do_libft $(OBJ_DIR) $(NAME)
 				@echo "\\n$(NAME) COMPLETE"
@@ -66,7 +66,7 @@ $(OBJ_DIR):
 				@echo Create: Object directory
 
 $(NAME):		$(OBJ_PATH)
-				@gcc $(S_OBJ_PATH) $(P_OBJ_PATH) \
+				@gcc $(S_OBJ_PATH) $(I_OBJ_PATH) \
 				$(D_OBJ_PATH) $(L_OBJ_PATH) \
 				$(LIBFT_A) $(FT_PRINTF_A) \
 				-o $(NAME) -I $(INCLUDES) -I $(LIBFT)/includes
@@ -74,8 +74,8 @@ $(NAME):		$(OBJ_PATH)
 $(S_OBJ_PATH):	$(S_SRC_PATH) $(HEADER)
 				@$(MAKE) $(S_OBJ)
 
-$(P_OBJ_PATH):	$(P_SRC_PATH) $(HEADER)
-				@$(MAKE) $(P_OBJ)
+$(I_OBJ_PATH):	$(I_SRC_PATH) $(HEADER)
+				@$(MAKE) $(I_OBJ)
 
 $(D_OBJ_PATH):	$(D_SRC_PATH) $(HEADER)
 				@$(MAKE) $(D_OBJ)
@@ -86,9 +86,9 @@ $(L_OBJ_PATH):	$(L_SRC_PATH) $(HEADER)
 $(S_OBJ):		$(LIBFT_A) $(FT_PRINTF_A)
 				@echo Create: $(@:obj/%=%)"\x1b[1A\x1b[M"
 				@$(COMP) $(OBJ_DIR)$@ $(S_SRC_DIR)$(@:%.o=%.c)
-$(P_OBJ):		$(LIBFT_A) $(FT_PRINTF_A)
+$(I_OBJ):		$(LIBFT_A) $(FT_PRINTF_A)
 				@echo Create: $(@:obj/%=%)"\x1b[1A\x1b[M"
-				@$(COMP) $(OBJ_DIR)$@ $(P_SRC_DIR)$(@:%.o=%.c)
+				@$(COMP) $(OBJ_DIR)$@ $(I_SRC_DIR)$(@:%.o=%.c)
 $(D_OBJ):		$(LIBFT_A) $(FT_PRINTF_A)
 				@echo Create: $(@:obj/%=%)"\x1b[1A\x1b[M"
 				@$(COMP) $(OBJ_DIR)$@ $(D_SRC_DIR)$(@:%.o=%.c)
