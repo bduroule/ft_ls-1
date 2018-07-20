@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/13 01:26:16 by dhojt             #+#    #+#             */
-/*   Updated: 2018/07/20 14:43:07 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/07/20 16:11:02 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ typedef struct		s_args
 {
 	char			*str;
 
+	int				type;
 	char			*user;
 	char			*group;
 	int				size;
