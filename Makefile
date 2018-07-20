@@ -6,7 +6,7 @@
 #    By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/27 15:32:02 by dhojt             #+#    #+#              #
-#    Updated: 2018/07/20 12:14:15 by dhojt            ###   ########.fr        #
+#    Updated: 2018/07/20 12:28:01 by dhojt            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,8 @@ LIBFT =			libft/
 
 S_SRC =			sort.c
 
-I_SRC =			issuance.c
+I_SRC =			issuance.c \
+				get_attributes.c
 
 D_SRC =			#files here
 

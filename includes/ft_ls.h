@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/13 01:26:16 by dhojt             #+#    #+#             */
-/*   Updated: 2018/07/20 12:14:42 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/07/20 12:26:36 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,7 @@ void				get_options(t_frame *frame);
 void				config_options(t_frame *frame);
 
 void				issuance(t_frame *frame);
+void				get_attributes(t_frame *frame);
 
 void				sort(t_frame *frame);
 
