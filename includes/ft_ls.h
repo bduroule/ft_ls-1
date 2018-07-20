@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/13 01:26:16 by dhojt             #+#    #+#             */
-/*   Updated: 2018/07/20 12:46:20 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/07/20 12:57:05 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ typedef struct		s_frame
 	t_options		option;
 
 	t_args			*args;
-	t_args			*sort;
+	t_args			*current_args;
 }					t_frame;
 
 void				parse(t_frame *frame);
