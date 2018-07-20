@@ -6,7 +6,7 @@
 #    By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/27 15:32:02 by dhojt             #+#    #+#              #
-#    Updated: 2018/07/20 12:01:58 by dhojt            ###   ########.fr        #
+#    Updated: 2018/07/20 12:14:15 by dhojt            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,14 +19,14 @@ FT_PRINTF_A =	ft_printf.a
 COMP =			gcc -Wall -Werror -Wextra -I $(INCLUDES) -I $(LIBFT)/includes -c -o
 
 OBJ_DIR =		obj/
-S_SRC_DIR =		srcs/solution/#amend
-I_SRC_DIR =		srcs/issuance/#amend
-D_SRC_DIR =		srcs/display/#amend
+S_SRC_DIR =		srcs/sort/
+I_SRC_DIR =		srcs/issuance/
+D_SRC_DIR =		srcs/display/
 L_SRC_DIR =		srcs/ft_ls/
 
 LIBFT =			libft/
 
-S_SRC =			#files here
+S_SRC =			sort.c
 
 I_SRC =			issuance.c
 
