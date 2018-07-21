@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/13 01:26:16 by dhojt             #+#    #+#             */
-/*   Updated: 2018/07/21 13:44:26 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/07/21 17:38:44 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,12 +61,13 @@ typedef struct		s_options
 	unsigned char	fill 	: 6;
 }					t_options;
 
-typedef struct		s_args
+typedef struct		s_data
 {
+	char			*str;
+
 	unsigned char	no_file	: 1;
 	unsigned char	fill	: 7;
 
-	char			*str;
 	long long		ino;
 	int				type;
 	int				links;
@@ -77,7 +78,11 @@ typedef struct		s_args
 	int				t_time;
 	int				u_time;
 	int				U_time;
+}					t_data;
 
+typedef struct		s_args
+{
+	t_data			data;
 	struct s_args	*next;
 }					t_args;
 

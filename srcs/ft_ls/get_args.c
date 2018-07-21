@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/14 23:43:19 by dhojt             #+#    #+#             */
-/*   Updated: 2018/07/19 23:51:01 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/07/21 17:46:28 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static t_args		*create_args(t_frame *frame, char *str)
 	if (!(args = (t_args *)malloc(sizeof(t_args))))
 		error_exit(frame, "Malloc Failed [args]");
 	ft_bzero(args, sizeof(*args));
-	args->str = str;
+	args->data.str = str;
 	return (args);
 }
 
