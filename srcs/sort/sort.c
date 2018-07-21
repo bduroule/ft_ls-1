@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/20 12:13:10 by dhojt             #+#    #+#             */
-/*   Updated: 2018/07/21 18:23:22 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/07/21 18:32:09 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ static int			swap(t_args *track) //ALPHABETICAL
 		tmp = track->data;
 		track->data = track->next->data;
 		track->next->data = tmp;
-		ft_putstr("SWAP\n");
 		return (1);
 	}
 	return (0);
