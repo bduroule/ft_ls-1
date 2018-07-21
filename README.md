@@ -21,7 +21,6 @@ Allowed functions for the mandatory part are `write`, `opendir`, `readdir`, `clo
 To compile, run `make`. Follow development with `./ft_ls`. Any number of arguments can be supplied. Arguments should be files or directories. For example:
 ```console
 $> ./ft_ls *
-./ft_ls *
 8876706  100644  Dav  staff     3745  1532080065  Makefile
 8345787  100644  Dav  staff       97  1531434059  README.md
 8347636  100644  Dav  staff        6  1531434176  author
