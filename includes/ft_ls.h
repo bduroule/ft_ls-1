@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/13 01:26:16 by dhojt             #+#    #+#             */
-/*   Updated: 2018/07/20 19:43:47 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/07/21 09:42:02 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,26 @@
 # define FT_LS_H
 
 # define OPTIONS	"-AFGRSUacdfgiloprtu1"
+
+# define PER_LEN	11
+# define PER_BLOC	"b"
+# define PER_CHAR	"c"
+# define PER_DIR	"d"
+# define PER_SYM	"l"
+# define PER_SOCK	"s"
+# define PER_FIFO	"p"
+# define PER_REG	"-"
+# define PER_0		"-"
+# define PER_R		"r"
+# define PER_W		"w"
+# define PER_X		"x"
+# define PER_1		PER_0 PER_0 PER_X
+# define PER_2		PER_0 PER_W PER_0
+# define PER_3		PER_0 PER_W PER_X
+# define PER_4		PER_R PER_0 PER_0
+# define PER_5		PER_R PER_0 PER_X
+# define PER_6		PER_R PER_W PER_0
+# define PER_7		PER_R PER_W PER_X
 
 # include			"libft.h"
 # include			<dirent.h>
