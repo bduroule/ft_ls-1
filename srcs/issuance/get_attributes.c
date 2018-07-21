@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/20 12:25:28 by dhojt             #+#    #+#             */
-/*   Updated: 2018/07/21 17:45:15 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/07/21 18:25:27 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,21 +44,4 @@ void				get_attributes(t_frame *frame)
 			data->no_file = 1;
 		args = args->next;
 	}
-	args = frame->current_args;
-	while (args)
-	{
-		data = &args->data;
-		if (data->no_file)
-			ft_printf("ft_ls: %s: No such file or directory\n", data->str);
-		args = args->next;
-	}
-	args = frame->current_args;
-	while (args)
-	{
-		data = &args->data;
-		if (!data->no_file)
-		ft_printf("%d  %-7o %s  %s %8d  %d  %-15.15s \n", data->ino, data->type, data->user, data->group, data->size, data->t_time, data->str);
-		args = args->next;
-	}
-
 }
