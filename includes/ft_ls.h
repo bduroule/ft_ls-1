@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/13 01:26:16 by dhojt             #+#    #+#             */
-/*   Updated: 2018/07/21 10:43:58 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/07/21 13:44:26 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 # define PER_0		"-"
 # define PER_R		"r"
 # define PER_W		"w"
-# define PER_X		"x"
+# define PER_X		"x"// CHECK - COULD BE S or s.
 # define PER_1		PER_0 PER_0 PER_X
 # define PER_2		PER_0 PER_W PER_0
 # define PER_3		PER_0 PER_W PER_X
@@ -40,29 +40,32 @@
 
 typedef struct		s_options
 {
-	unsigned char	a	: 1; //show hidden
-	unsigned char	c	: 1; //SORT (-t) by status change time
-	unsigned char	d	: 1; //directories shown as plain files
-	unsigned char	f	: 1; //SORT by nothing, turns on -a
-	unsigned char	g	: 1; //owner name surpressed
-	unsigned char	i	: 1; //print inode
-	unsigned char	l	: 1; //list in long format
-	unsigned char	o	: 1; //group name surpressed
-	unsigned char	r	: 1; //reverse
-	unsigned char	t	: 1; //SORT by modified time
-	unsigned char	u	: 1; //SORT (-t) by access time
-	unsigned char	A	: 1; //shows hidden files except '.' and '..'
-	unsigned char	F	: 1; //prints some character after filename
-	unsigned char	G	: 1; //colours
-	unsigned char	R	: 1; //Recursivly list subdirectories
-	unsigned char	S	: 1; //SORT by size
-	unsigned char	U	: 1; //SORT by (-t) by birth time
-	unsigned char	one	: 1; //Forces one column output (turns off -a)
-	unsigned char	fil : 6;
+	unsigned char	a		: 1; //show hidden
+	unsigned char	c		: 1; //SORT (-t) by status change time
+	unsigned char	d		: 1; //directories shown as plain files
+	unsigned char	f		: 1; //SORT by nothing, turns on -a
+	unsigned char	g		: 1; //owner name surpressed
+	unsigned char	i		: 1; //print inode
+	unsigned char	l		: 1; //list in long format
+	unsigned char	o		: 1; //group name surpressed
+	unsigned char	r		: 1; //reverse
+	unsigned char	t		: 1; //SORT by modified time
+	unsigned char	u		: 1; //SORT (-t) by access time
+	unsigned char	A		: 1; //shows hidden files except '.' and '..'
+	unsigned char	F		: 1; //prints some character after filename
+	unsigned char	G		: 1; //colours
+	unsigned char	R		: 1; //Recursivly list subdirectories
+	unsigned char	S		: 1; //SORT by size
+	unsigned char	U		: 1; //SORT by (-t) by birth time
+	unsigned char	one		: 1; //Forces one column output (turns off -a)
+	unsigned char	fill 	: 6;
 }					t_options;
 
 typedef struct		s_args
 {
+	unsigned char	no_file	: 1;
+	unsigned char	fill	: 7;
+
 	char			*str;
 	long long		ino;
 	int				type;
