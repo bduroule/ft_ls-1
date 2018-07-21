@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/20 12:25:28 by dhojt             #+#    #+#             */
-/*   Updated: 2018/07/20 19:51:08 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/07/21 10:43:41 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ void				get_attributes(t_frame *frame)
 		stat(args->str, &the_file);//protect  |  check for sym links
 		args->ino = the_file.st_ino;
 		args->type = the_file.st_mode;
+		args->links = 0; //Discover hard links
 		args->user = getpwuid(the_file.st_uid)->pw_name;
 		args->group = getgrgid(the_file.st_gid)->gr_name;
 		args->size = the_file.st_size;
