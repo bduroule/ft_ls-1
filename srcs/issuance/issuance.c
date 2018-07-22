@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/20 11:55:05 by dhojt             #+#    #+#             */
-/*   Updated: 2018/07/22 16:31:18 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/07/22 16:41:15 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ static void			distribution(t_frame *frame)
 	while (frame->args)
 	{
 		frame->exec_args = frame->args;
-		if (is_file(args))
-			display(frame, args);
+		if (is_file(frame->exec_args))
+			display(frame, frame->exec_args);
 		frame->args = frame->args->next;
 	}
 }
