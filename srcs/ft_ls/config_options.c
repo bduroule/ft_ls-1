@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/19 21:51:46 by dhojt             #+#    #+#             */
-/*   Updated: 2018/07/22 13:06:52 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/07/22 13:23:35 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,11 @@
 
 static void			assign_sort(t_frame *frame)
 {
-	frame->sort_function = &sort_alpha;
+	//TEMP:
+	if (frame->option.r)
+		frame->sort_function = &sort_alpha_r;
+	else
+		frame->sort_function = &sort_alpha;
 }
 
 
