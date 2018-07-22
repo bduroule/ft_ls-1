@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/20 12:25:28 by dhojt             #+#    #+#             */
-/*   Updated: 2018/07/21 18:25:27 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/07/23 00:10:39 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void				get_attributes(t_frame *frame)
 	while (args)
 	{
 		data = &args->data;
-		if (!stat(data->str, &the_file)) //check for sym links
+		if (!stat(data->path, &the_file)) //check for sym links
 		{
 			data->ino = the_file.st_ino;
 			data->type = the_file.st_mode;
