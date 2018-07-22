@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/13 01:26:16 by dhojt             #+#    #+#             */
-/*   Updated: 2018/07/22 13:13:55 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/07/22 13:26:43 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,6 +119,7 @@ void				do_ls(t_frame *frame);
 
 void				sort(t_frame *frame);
 bool				sort_alpha(t_frame *frame);
+bool				sort_alpha_r(t_frame *frame);
 
 void				error_exit(t_frame *frame, char *error_str);
 void				free_frame(t_frame *frame);

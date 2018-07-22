@@ -6,13 +6,13 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/20 12:13:10 by dhojt             #+#    #+#             */
-/*   Updated: 2018/07/22 13:14:58 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/07/22 13:21:37 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-static int			swap(t_frame *frame) //ALPHABETICAL
+static int			swap(t_frame *frame)
 {
 	t_data			tmp;
 	if (frame->sort_function(frame))

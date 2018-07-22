@@ -6,7 +6,7 @@
 #    By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/27 15:32:02 by dhojt             #+#    #+#              #
-#    Updated: 2018/07/22 12:01:09 by dhojt            ###   ########.fr        #
+#    Updated: 2018/07/22 13:27:13 by dhojt            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,8 @@ L_SRC_DIR =		srcs/ft_ls/
 LIBFT =			libft/
 
 S_SRC =			sort.c \
-				sort_alpha.c
+				sort_alpha.c \
+				sort_alpha_r.c
 
 I_SRC =			issuance.c \
 				get_attributes.c \
