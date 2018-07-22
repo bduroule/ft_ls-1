@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/13 01:26:16 by dhojt             #+#    #+#             */
-/*   Updated: 2018/07/22 17:25:39 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/07/22 17:28:03 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,6 +117,7 @@ void				get_attributes(t_frame *frame);
 void				do_ls(t_frame *frame);
 void				loop_no_file(t_frame *frame);
 void				loop_files(t_frame *frame);
+bool				is_file(t_args *args);
 
 void				sort(t_frame *frame);
 bool				sort_alpha(t_frame *frame);
