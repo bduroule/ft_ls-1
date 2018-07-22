@@ -6,7 +6,7 @@
 #    By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/27 15:32:02 by dhojt             #+#    #+#              #
-#    Updated: 2018/07/22 16:39:20 by dhojt            ###   ########.fr        #
+#    Updated: 2018/07/22 17:21:05 by dhojt            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,9 +32,11 @@ S_SRC =			sort.c \
 
 I_SRC =			issuance.c \
 				get_attributes.c \
-				do_ls.c
+				do_ls.c \
+				loop_no_file.c
 
-D_SRC =			display.c
+D_SRC =			display.c \
+				no_file.c
 
 L_SRC =			ft_ls.c \
 				free_frame.c \
