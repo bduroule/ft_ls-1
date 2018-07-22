@@ -6,11 +6,28 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/14 23:43:19 by dhojt             #+#    #+#             */
-/*   Updated: 2018/07/23 00:07:05 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/07/23 01:03:44 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
+
+static void			get_path(t_frame *frame, t_args *args, char *path, char *name)
+{
+	char			*new_path;
+	char			*tmp;
+
+	args->data.str = name;
+	if (!(new_path = ft_strnew(ft_strlen(path) + ft_strlen(name) + 1)))
+		error_exit(frame, "Malloc Failed [new_path]");
+	tmp = new_path;
+	while (path && *path)
+		*(tmp ++) = *(path ++);
+	*(tmp++) = '/';
+	while (name && *name)
+		*(tmp++) = *(name++);
+	args->data.path = new_path;
+}
 
 static void			parse_options(t_frame *frame, int option)
 {
@@ -53,7 +70,7 @@ static void			parse_args(t_frame *frame, int option)
 	while (*argv)
 	{
 		args = create_args(frame);
-		args->data.str = *argv;
+		get_path(frame, args, ".", *argv);
 		if(!(args->data.path = ft_strdup(*argv)))
 			error_exit(frame, "Malloc Failed [path]");
 		if (!frame->args)

@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/20 12:47:00 by dhojt             #+#    #+#             */
-/*   Updated: 2018/07/22 23:55:32 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/07/23 01:03:20 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static void			get_path(t_frame *frame, t_args *args, char *path, char *name)
 
 	args->data.str = name;
 	if (!(new_path = ft_strnew(ft_strlen(path) + ft_strlen(name) + 1)))
-		error_exit(frame, "Malloc Failed [new_path]");
+		error_exit(frame, "Malloc Failed [new_path]");// Handle carefully (recurse)
 	tmp = new_path;
 	while (path && *path)
 		*(tmp ++) = *(path ++);
@@ -48,8 +48,6 @@ void				do_ls(t_frame *frame, t_args *args)
 	{
 		tmp = create_args(frame);
 		get_path(frame, tmp, args->data.path, dir->d_name);
-		tmp->data.str = dir->d_name;
-		tmp->data.path = args->data.path;
 		if (!head)
 			head = tmp;
 		else
@@ -62,4 +60,16 @@ void				do_ls(t_frame *frame, t_args *args)
 	sort(frame);
 	head = frame->current_args;
 	loop_valid_dir(frame, head);
+	if (frame->option.R)
+	{
+		tmp = head;
+		while (tmp)
+		{
+			if (!is_file(tmp) && ft_strcmp(tmp->data.str, ".")
+						&& ft_strcmp(tmp->data.str, ".."))
+				do_ls(frame, tmp);
+			tmp = tmp->next;
+		}
+	}
+	//free head
 }
