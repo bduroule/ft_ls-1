@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/14 23:43:19 by dhojt             #+#    #+#             */
-/*   Updated: 2018/07/21 17:46:28 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/07/22 19:35:44 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,17 +33,6 @@ static void			parse_options(t_frame *frame, int option)
 	*argv_options = NULL;
 }
 
-static t_args		*create_args(t_frame *frame, char *str)
-{
-	t_args			*args;
-
-	if (!(args = (t_args *)malloc(sizeof(t_args))))
-		error_exit(frame, "Malloc Failed [args]");
-	ft_bzero(args, sizeof(*args));
-	args->data.str = str;
-	return (args);
-}
-
 static void			parse_args(t_frame *frame, int option)
 {
 	char			**argv;
@@ -54,10 +43,15 @@ static void			parse_args(t_frame *frame, int option)
 	if (*argv)
 		argv++;
 	if (!*argv)
-		frame->args = create_args(frame, ".");
+	{
+		frame->args = create_args(frame);
+		frame->no_args[0] = '.';
+		frame->args->data.str = frame->no_args;
+	}
 	while (*argv)
 	{
-		args = create_args(frame, *argv);
+		args = create_args(frame);
+		args->data.str = *argv;
 		if (!frame->args)
 			frame->args = args;
 		else

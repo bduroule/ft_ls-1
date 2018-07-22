@@ -6,7 +6,7 @@
 #    By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/27 15:32:02 by dhojt             #+#    #+#              #
-#    Updated: 2018/07/22 17:33:03 by dhojt            ###   ########.fr        #
+#    Updated: 2018/07/22 19:26:13 by dhojt            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,7 +47,8 @@ L_SRC =			ft_ls.c \
 				get_options.c \
 				get_args.c \
 				parse.c \
-				config_options.c
+				config_options.c \
+				create_args.c
 
 S_OBJ =			$(S_SRC:%.c=%.o)
 I_OBJ =			$(I_SRC:%.c=%.o)

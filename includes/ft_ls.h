@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/13 01:26:16 by dhojt             #+#    #+#             */
-/*   Updated: 2018/07/22 17:32:48 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/07/22 19:30:05 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,6 +97,8 @@ typedef struct		s_frame
 	unsigned char	headers	: 1;//
 	unsigned char	fill	: 7;//
 
+	char			no_args[2];
+
 	t_options		option;
 
 	t_args			*args;
@@ -111,14 +113,15 @@ void				parse(t_frame *frame);
 void				get_args(t_frame *frame);
 void				get_options(t_frame *frame);
 void				config_options(t_frame *frame);
+t_args				*create_args(t_frame *frame);
 
 void				issuance(t_frame *frame);
 void				get_attributes(t_frame *frame);
-void				do_ls(t_frame *frame);
 void				loop_no_file(t_frame *frame);
 void				loop_files(t_frame *frame);
 void				loop_dirs(t_frame *frame);
 bool				is_file(t_args *args);
+void				do_ls(t_frame *frame, t_args *args);
 
 void				sort(t_frame *frame);
 bool				sort_alpha(t_frame *frame);
