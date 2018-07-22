@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/13 01:26:16 by dhojt             #+#    #+#             */
-/*   Updated: 2018/07/22 12:03:02 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/07/22 12:10:30 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@
 
 # include			"libft.h"
 # include			<dirent.h>
+#include			<stdbool.h>
 
 typedef struct		s_options
 {
@@ -114,7 +115,7 @@ void				get_attributes(t_frame *frame);
 void				do_ls(t_frame *frame);
 
 void				sort(t_frame *frame);
-int					sort_alpha(t_frame *frame);
+bool				sort_alpha(t_frame *frame);
 
 void				error_exit(t_frame *frame, char *error_str);
 void				free_frame(t_frame *frame);

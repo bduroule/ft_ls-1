@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/20 12:13:10 by dhojt             #+#    #+#             */
-/*   Updated: 2018/07/22 11:43:21 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/07/22 12:04:46 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static int			swap(t_frame *frame) //ALPHABETICAL
 {
 	t_data			tmp;
-	if (ft_strcmp(frame->track->data.str, frame->track->next->data.str) > 0)
+	if (sort_alpha(frame))
 	{
 		tmp = frame->track->data;
 		frame->track->data = frame->track->next->data;
