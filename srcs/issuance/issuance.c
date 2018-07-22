@@ -6,17 +6,25 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/20 11:55:05 by dhojt             #+#    #+#             */
-/*   Updated: 2018/07/20 12:59:03 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/07/22 16:31:18 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
+static bool			is_file(t_args *args)
+{
+	if (args->data.type >> 15 != 1)
+		return (true);
+	return (false);
+}
 
 static void			distribution(t_frame *frame)
 {
 	while (frame->args)
 	{
-		do_ls(frame);
+		frame->exec_args = frame->args;
+		if (is_file(args))
+			display(frame, args);
 		frame->args = frame->args->next;
 	}
 }
