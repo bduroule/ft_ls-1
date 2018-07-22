@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/20 12:13:10 by dhojt             #+#    #+#             */
-/*   Updated: 2018/07/22 12:04:46 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/07/22 13:14:58 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static int			swap(t_frame *frame) //ALPHABETICAL
 {
 	t_data			tmp;
-	if (sort_alpha(frame))
+	if (frame->sort_function(frame))
 	{
 		tmp = frame->track->data;
 		frame->track->data = frame->track->next->data;
@@ -47,7 +47,6 @@ static void			do_sort(t_frame *frame)
 void				sort(t_frame *frame)
 {
 	frame->head = frame->current_args;
-	// Chose sorting method
 	do_sort(frame);
 	frame->current_args = frame->head;
 }

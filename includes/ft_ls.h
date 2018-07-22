@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/13 01:26:16 by dhojt             #+#    #+#             */
-/*   Updated: 2018/07/22 12:10:30 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/07/22 13:13:55 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,10 @@ typedef struct		s_frame
 	t_args			*current_args;
 	t_args			*head;
 	t_args			*track;
+
+	bool			(*sort_function)(struct s_frame *frame);
 }					t_frame;
+
 
 void				parse(t_frame *frame);
 void				get_args(t_frame *frame);

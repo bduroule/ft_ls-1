@@ -6,13 +6,19 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/19 21:51:46 by dhojt             #+#    #+#             */
-/*   Updated: 2018/07/19 23:07:46 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/07/22 13:06:52 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-void				config_options(t_frame *frame)
+static void			assign_sort(t_frame *frame)
+{
+	frame->sort_function = &sort_alpha;
+}
+
+
+static void			do_config(t_frame *frame)
 {
 	if (frame->option.a)
 		frame->option.A = 0;
@@ -29,4 +35,10 @@ void				config_options(t_frame *frame)
 	}
 	if (frame->option.one)
 		frame->option.l = 0;
+}
+
+void				config_options(t_frame *frame)
+{
+	do_config(frame);
+	assign_sort(frame);
 }
