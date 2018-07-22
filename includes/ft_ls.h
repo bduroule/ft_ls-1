@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/13 01:26:16 by dhojt             #+#    #+#             */
-/*   Updated: 2018/07/22 19:30:05 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/07/22 20:10:11 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,6 +120,7 @@ void				get_attributes(t_frame *frame);
 void				loop_no_file(t_frame *frame);
 void				loop_files(t_frame *frame);
 void				loop_dirs(t_frame *frame);
+void				loop_valid_dir(t_frame *frame, t_args *args);
 bool				is_file(t_args *args);
 void				do_ls(t_frame *frame, t_args *args);
 

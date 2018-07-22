@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/20 12:47:00 by dhojt             #+#    #+#             */
-/*   Updated: 2018/07/22 19:42:53 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/07/22 20:48:25 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,9 @@ void				do_ls(t_frame *frame, t_args *args)
 		last_args = tmp;
 	}
 	closedir(directory);
-	while (head)
-	{
-		ft_printf("%s\n", head->data.str);
-		head = head->next;
-	}
+	frame->current_args = head;
+	get_attributes(frame);
+	sort(frame);
+	head = frame->current_args;
+	loop_valid_dir(frame, head);
 }
