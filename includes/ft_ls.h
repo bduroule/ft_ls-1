@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/13 01:26:16 by dhojt             #+#    #+#             */
-/*   Updated: 2018/07/21 17:38:44 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/07/22 12:03:02 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,6 +100,8 @@ typedef struct		s_frame
 
 	t_args			*args;
 	t_args			*current_args;
+	t_args			*head;
+	t_args			*track;
 }					t_frame;
 
 void				parse(t_frame *frame);
@@ -112,6 +114,7 @@ void				get_attributes(t_frame *frame);
 void				do_ls(t_frame *frame);
 
 void				sort(t_frame *frame);
+int					sort_alpha(t_frame *frame);
 
 void				error_exit(t_frame *frame, char *error_str);
 void				free_frame(t_frame *frame);
