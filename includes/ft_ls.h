@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/13 01:26:16 by dhojt             #+#    #+#             */
-/*   Updated: 2018/07/22 20:10:11 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/07/22 23:14:54 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ typedef struct		s_options
 typedef struct		s_data
 {
 	char			*str;
+	char			*path;
 
 	unsigned char	no_file	: 1;
 	unsigned char	fill	: 7;
