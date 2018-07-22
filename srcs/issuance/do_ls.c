@@ -6,14 +6,15 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/20 12:47:00 by dhojt             #+#    #+#             */
-/*   Updated: 2018/07/20 12:50:26 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/07/22 17:54:04 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
+#include <sys/stat.h>
 
 void				do_ls(t_frame *frame)
 {
 	if (frame)
-		;
+		is_file(frame->args);
 }
