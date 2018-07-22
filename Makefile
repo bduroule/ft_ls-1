@@ -6,7 +6,7 @@
 #    By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/27 15:32:02 by dhojt             #+#    #+#              #
-#    Updated: 2018/07/22 20:09:55 by dhojt            ###   ########.fr        #
+#    Updated: 2018/07/22 23:41:25 by dhojt            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,8 @@ HEADER =		$(INCLUDES)/ft_ls.h
 LIBFT_A =		libft.a
 FT_PRINTF_A =	ft_printf.a
 
-COMP =			gcc -Wall -Werror -Wextra -I $(INCLUDES) -I $(LIBFT)/includes -c -o
+#  --------------------REMOVE -g  #
+COMP =			gcc -Wall -Werror -Wextra -I $(INCLUDES) -I $(LIBFT)/includes -c -g -o
 
 OBJ_DIR =		obj/
 S_SRC_DIR =		srcs/sort/
