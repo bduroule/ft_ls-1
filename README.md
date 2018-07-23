@@ -21,22 +21,22 @@ Allowed functions for the mandatory part are `write`, `opendir`, `readdir`, `clo
 The following options will be implemented.  
 `-a` Show hidden.  
 `-c` Sort by last status change time.  
-`-d` Directories are listed as plain files (not searched recursively).  
-`-f` Output is not sorted. Forces `-a` on.  
-`-g` List in long format but omit owner.  
-`-i` Show serial number (inode number).  
-`-l` List in long format.  
-`-o` List in long format but omit group.   
-`-r` Reverse sort.  
-`-t` Sort by time of last modification.  
-`-u` Sort by time of last access.  
-`-A` List all entries except for `.` and `..`.  
-`-F` Display after pathname: `/`directory, `*`executable, `@`sym link, `=`socket, `%`whiteout, `|`FIFO.  
-`-G` Coloured output.  
-`-R` Recursively search directories  
-`-S` Sort by file size.  
-`-U` Sort by time of file creation.  
-`-1` Force output to be one entry per line.  
+`-d` ❌Directories are listed as plain files (not searched recursively).  
+`-f` ✅Output is not sorted. Forces `-a` on.  
+`-g` ❌List in long format but omit owner.  
+`-i` 🔶Show serial number (inode number). *Operational in long view*  
+`-l` ❌List in long format.  
+`-o` ❌List in long format but omit group.   
+`-r` 🔶Reverse sort. *Operational except were two sort values are identical*  
+`-t` ❌Sort by time of last modification.  
+`-u` ❌Sort by time of last access.  
+`-A` ❌List all entries except for `.` and `..`.  
+`-F` ❌Display after pathname: `/`directory, `*`executable, `@`sym link, `=`socket, `%`whiteout, `|`FIFO.  
+`-G` ❌Coloured output.  
+`-R` ✅Recursively search directories  
+`-S` ❌Sort by file size.  
+`-U` ❌Sort by time of file creation.  
+`-1` ❌Force output to be one entry per line.  
 ***
 ### Using the project
 ***Note*** *During development, expected results* ***will*** *differ from `ls`, but will function.*  
