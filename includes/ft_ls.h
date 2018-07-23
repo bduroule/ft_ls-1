@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/13 01:26:16 by dhojt             #+#    #+#             */
-/*   Updated: 2018/07/22 23:14:54 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/07/23 14:39:19 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,16 +23,17 @@
 # define PER_SOCK	"s"
 # define PER_FIFO	"p"
 # define PER_REG	"-"
-# define PER_0		"-"
+# define PER_N		"-"
 # define PER_R		"r"
 # define PER_W		"w"
 # define PER_X		"x"// CHECK - COULD BE S or s.
-# define PER_1		PER_0 PER_0 PER_X
-# define PER_2		PER_0 PER_W PER_0
-# define PER_3		PER_0 PER_W PER_X
-# define PER_4		PER_R PER_0 PER_0
-# define PER_5		PER_R PER_0 PER_X
-# define PER_6		PER_R PER_W PER_0
+# define PER_0		PER_N PER_N PER_N
+# define PER_1		PER_N PER_N PER_X
+# define PER_2		PER_N PER_W PER_N
+# define PER_3		PER_N PER_W PER_X
+# define PER_4		PER_R PER_N PER_N
+# define PER_5		PER_R PER_N PER_X
+# define PER_6		PER_R PER_W PER_N
 # define PER_7		PER_R PER_W PER_X
 
 # include			"libft.h"
@@ -131,6 +132,7 @@ bool				sort_alpha_r(t_frame *frame);
 
 void				display(t_frame *frame, t_args *args);
 void				no_file(t_frame *frame, t_args *args);
+char                *type(t_frame *frame, t_args *args);
 
 void				error_exit(t_frame *frame, char *error_str);
 void				free_frame(t_frame *frame);

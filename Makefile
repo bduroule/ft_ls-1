@@ -6,7 +6,7 @@
 #    By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/27 15:32:02 by dhojt             #+#    #+#              #
-#    Updated: 2018/07/22 23:41:25 by dhojt            ###   ########.fr        #
+#    Updated: 2018/07/23 14:36:38 by dhojt            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,7 +41,8 @@ I_SRC =			issuance.c \
 				is_file.c
 
 D_SRC =			display.c \
-				no_file.c
+				no_file.c \
+				type.c
 
 L_SRC =			ft_ls.c \
 				free_frame.c \
