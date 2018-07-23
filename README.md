@@ -19,8 +19,8 @@ Allowed functions for the mandatory part are `write`, `opendir`, `readdir`, `clo
 ***
 ### Development
 The following options will be implemented.  
-`-a` Show hidden.  
-`-c` Sort by last status change time.  
+`-a` ❌Show hidden.  
+`-c` ❌Sort by last status change time.  
 `-d` ❌Directories are listed as plain files (not searched recursively).  
 `-f` ✅Output is not sorted. Forces `-a` on.  
 `-g` ❌List in long format but omit owner.  
