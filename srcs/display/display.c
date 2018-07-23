@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/22 16:35:50 by dhojt             #+#    #+#             */
-/*   Updated: 2018/07/23 16:03:19 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/07/23 16:12:59 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,5 @@ void				display(t_frame *frame, t_args *args)
 	data = &args->data;
 	ino(frame, args);
 	type(frame, args);
-	ft_printf("%s  %s %8d  %d  %-15.15s \n", data->user, data->group, data->size, data->t_time, data->str);
+	ft_printf("%6d %s  %s %8d  %d  %-15.15s \n", data->links, data->user, data->group, data->size, data->t_time, data->str);
 }

@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/23 13:42:45 by dhojt             #+#    #+#             */
-/*   Updated: 2018/07/23 16:05:28 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/07/23 16:15:33 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,6 @@ void				type(t_frame *frame, t_args *args)
 		tmp += 3;
 	}
 	*tmp = '\0';
-	ft_printf("-%-12s", str);
+	ft_printf("%-12s", str);
 	free(str);
 }
