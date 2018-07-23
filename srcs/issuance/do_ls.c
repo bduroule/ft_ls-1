@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/20 12:47:00 by dhojt             #+#    #+#             */
-/*   Updated: 2018/07/23 01:03:20 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/07/23 12:56:13 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ static void			get_path(t_frame *frame, t_args *args, char *path, char *name)
 	char			*new_path;
 	char			*tmp;
 
-	args->data.str = name;
+	if(!(args->data.str = ft_strdup(name)))
+		error_exit(frame, "Malloc Failed [new_name]");// Handle carefully (recurse)
 	if (!(new_path = ft_strnew(ft_strlen(path) + ft_strlen(name) + 1)))
 		error_exit(frame, "Malloc Failed [new_path]");// Handle carefully (recurse)
 	tmp = new_path;
@@ -39,6 +40,7 @@ void				do_ls(t_frame *frame, t_args *args)
 	struct dirent	*dir;
 
 	head = NULL;
+	ft_printf("\n%s:\n", args->data.path);
 	if (!(directory = opendir(args->data.path)))
 	{
 		ft_printf("ls: %s: Permission denied\n", args->data.str);
