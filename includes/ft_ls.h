@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/13 01:26:16 by dhojt             #+#    #+#             */
-/*   Updated: 2018/07/23 16:02:17 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/07/23 16:31:11 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,8 @@
 
 # include			"libft.h"
 # include			<dirent.h>
-#include			<stdbool.h>
+# include			<stdbool.h>
+# include			<time.h>
 
 typedef struct		s_options
 {
@@ -77,10 +78,10 @@ typedef struct		s_data
 	char			*user;
 	char			*group;
 	int				size;
-	int				c_time;
-	int				t_time;
-	int				u_time;
-	int				U_time;
+	time_t			c_time;
+	time_t			t_time;
+	time_t			u_time;
+	time_t			U_time;
 }					t_data;
 
 typedef struct		s_args
