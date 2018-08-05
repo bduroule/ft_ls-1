@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/13 01:26:16 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/06 01:18:03 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/06 01:27:21 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -151,9 +151,10 @@ void				display(t_frame *frame, t_args *args);
 void				no_file(t_frame *frame, t_args *args);
 void				ino(t_frame *frame, t_args *args);
 void				links(t_frame *frame, t_args *args);
-void                type(t_frame *frame, t_args *args);
-void                size(t_frame *frame, t_args *args);
-void                show_time(t_frame *frame, t_args *args);
+void				type(t_frame *frame, t_args *args);
+void				user(t_frame *frame, t_args *args);
+void				size(t_frame *frame, t_args *args);
+void				show_time(t_frame *frame, t_args *args);
 void				print_spaces(int diff);
 
 void				error_exit(t_frame *frame, char *error_str);

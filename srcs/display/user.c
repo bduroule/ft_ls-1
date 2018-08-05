@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   display.c                                          :+:      :+:    :+:   */
+/*   user.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/22 16:35:50 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/06 01:26:16 by dhojt            ###   ########.fr       */
+/*   Created: 2018/08/06 01:23:26 by dhojt             #+#    #+#             */
+/*   Updated: 2018/08/06 01:32:24 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-void				display(t_frame *frame, t_args *args)
+static int			get_diff(t_frame *frame, t_args *args)
 {
-	t_data			*data;
+	int				len;
 
-	data = &args->data;
-	ino(frame, args);//Do len
-	type(frame, args);
-	links(frame, args);
-	user(frame, args);
-	ft_printf("%s  ", data->group);
-	size(frame, args);
-	show_time(frame, args);
-	ft_printf("%s\n", data->str);
+	len = ft_strlen(args->data.user);
+	return (frame->len_user - len);
+}
+
+void				user(t_frame *frame, t_args *args)
+{
+	ft_putstr(args->data.user);
+	print_spaces(get_diff(frame, args) + 2);
 }
