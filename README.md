@@ -28,7 +28,7 @@ The following options will be implemented.
 `-l` ❌List in long format.  
 `-o` ❌List in long format but omit group.   
 `-r` 🔶Reverse sort. *Operational except were two sort values are identical*  
-`-t` ❌Sort by time of last modification.  
+`-t` 🔶Sort by time of last modification. *Works except in one case of the same time ft_ls and .*  
 `-u` ❌Sort by time of last access.  
 `-A` ❌List all entries except for `.` and `..`.  
 `-F` ❌Display after pathname: `/`directory, `*`executable, `@`sym link, `=`socket, `%`whiteout, `|`FIFO.  

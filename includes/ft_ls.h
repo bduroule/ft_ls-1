@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/13 01:26:16 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/06 00:22:40 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/06 00:29:40 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,6 +106,7 @@ typedef struct		s_frame
 	time_t			time_now;
 	time_t			time_6_months_ago;
 
+	int				len_ino;
 	int				len_links;
 	int				len_user;
 	int				len_group;
