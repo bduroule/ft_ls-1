@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/13 01:26:16 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/05 13:56:59 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/05 14:53:34 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,6 +101,9 @@ typedef struct		s_frame
 	unsigned char	fill	: 7;//
 
 	char			no_args[2];
+
+	time_t			time_now;
+	time_t			time_6_months_ago;
 
 	t_options		option;
 
