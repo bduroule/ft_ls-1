@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/20 12:13:10 by dhojt             #+#    #+#             */
-/*   Updated: 2018/07/23 21:56:33 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/05 20:38:57 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,18 @@ static void			do_sort(t_frame *frame)
 
 void				sort(t_frame *frame)
 {
+	bool			(*tmp)(struct s_frame *frame);
+
 	if (frame->option.f)
 		return ;
+	tmp = frame->sort_function;
+	if (!frame->option.r)
+		frame->sort_function = &sort_alpha;
+	else
+		frame->sort_function = &sort_alpha_r;
 	frame->head = frame->current_args;
+	do_sort(frame);
+	frame->sort_function = tmp;
 	do_sort(frame);
 	frame->current_args = frame->head;
 }
