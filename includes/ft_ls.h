@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/13 01:26:16 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/05 14:53:34 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/05 14:59:03 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FT_LS_H
 
 # define OPTIONS	"-AFGRSUacdfgiloprtu1"
+# define SIX_MONTHS	15768000
 
 # define PER_LEN	11
 # define PER_BLOC	"b"
