@@ -1,27 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   display.c                                          :+:      :+:    :+:   */
+/*   size.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/22 16:35:50 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/06 01:19:34 by dhojt            ###   ########.fr       */
+/*   Created: 2018/08/06 01:14:34 by dhojt             #+#    #+#             */
+/*   Updated: 2018/08/06 01:14:54 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-void				display(t_frame *frame, t_args *args)
+static int			get_diff(t_frame *frame, t_args *args)
 {
-	t_data			*data;
+	int				len;
+	int				num;
 
-	data = &args->data;
-	ino(frame, args);//Do len
-	type(frame, args);
-	links(frame, args);
-	ft_printf("%s  %s  ", data->user, data->group);
-	size(frame, args);
-	show_time(frame, args);
-	ft_printf("%s\n", data->str);
+	len = 1;
+	num = args->data.size;
+	while (num >= 10)
+	{
+		num /= 10;
+		len++;
+	}
+	return (frame->len_size - len);
+}
+
+void				size(t_frame *frame, t_args *args)
+{
+	print_spaces(get_diff(frame, args));
+	ft_printf("%d ", args->data.size);
 }
