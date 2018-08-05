@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/05 23:43:22 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/06 00:20:43 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/06 00:22:51 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,15 @@ static void			calc_len_user(t_frame *frame, t_args *args)
 		frame->len_user = len;
 }
 
+static void			calc_len_group(t_frame *frame, t_args *args)
+{
+	int				len;
+
+	len = ft_strlen(args->data.group);
+	if (len > frame->len_group)
+		frame->len_group = len;
+}
+
 static void			calc_len_size(t_frame *frame, t_args *args)
 {
 	int				len;
@@ -59,15 +68,16 @@ void				get_column_widths(t_frame *frame, t_args *args)
 
 	frame->len_links = 0;
 	frame->len_user = 0;
-	frame->len_groups = 0;
+	frame->len_group = 0;
 	frame->len_size = 0;
 	head = args;
 	while (head)
 	{
 		calc_len_links(frame, head);
 		calc_len_user(frame, head);
+		calc_len_group(frame, head);
 		calc_len_size(frame, head);
 		head = head->next;
 	}
-	ft_printf("%d | %d | %d | %d\n\n", frame->len_links, frame->len_user, frame->len_groups, frame->len_size);
+	ft_printf("%d | %d | %d | %d\n\n", frame->len_links, frame->len_user, frame->len_group, frame->len_size);
 }
