@@ -6,7 +6,7 @@
 #    By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/27 15:32:02 by dhojt             #+#    #+#              #
-#    Updated: 2018/08/05 19:58:07 by dhojt            ###   ########.fr        #
+#    Updated: 2018/08/05 20:19:34 by dhojt            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,6 +30,7 @@ LIBFT =			libft/
 S_SRC =			sort.c \
 				sort_alpha.c \
 				sort_alpha_r.c \
+				sort_size.c \
 				assign_sort.c
 
 I_SRC =			issuance.c \
