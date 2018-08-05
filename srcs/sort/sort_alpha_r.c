@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/22 11:59:00 by dhojt             #+#    #+#             */
-/*   Updated: 2018/07/22 13:33:20 by dhojt            ###   ########.fr       */
+/*   Created: 2018/07/23 22:41:07 by dhojt             #+#    #+#             */
+/*   Updated: 2018/07/23 22:41:13 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 bool				sort_alpha_r(t_frame *frame)
 {
-	if (sort_alpha(frame))
-		return (false);
-	return (true);
+	if (ft_strcmp(frame->track->data.str, frame->track->next->data.str) < 0)
+		return (true);
+	return (false);
 }
