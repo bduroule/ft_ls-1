@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/13 01:26:16 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/06 00:29:40 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/06 01:02:27 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -150,6 +150,7 @@ bool				sort_time_t_r(t_frame *frame);
 void				display(t_frame *frame, t_args *args);
 void				no_file(t_frame *frame, t_args *args);
 void				ino(t_frame *frame, t_args *args);
+void				links(t_frame *frame, t_args *args);
 void                type(t_frame *frame, t_args *args);
 void                show_time(t_frame *frame, t_args *args);
 
