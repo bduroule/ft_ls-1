@@ -6,7 +6,7 @@
 #    By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/27 15:32:02 by dhojt             #+#    #+#              #
-#    Updated: 2018/08/05 23:15:12 by dhojt            ###   ########.fr        #
+#    Updated: 2018/08/06 00:05:13 by dhojt            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,6 +43,7 @@ I_SRC =			issuance.c \
 				loop_files.c \
 				loop_dirs.c \
 				loop_valid_dir.c \
+				get_column_widths.c \
 				is_file.c
 
 D_SRC =			display.c \

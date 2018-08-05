@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/13 01:26:16 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/05 23:15:31 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/06 00:04:28 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,6 +106,11 @@ typedef struct		s_frame
 	time_t			time_now;
 	time_t			time_6_months_ago;
 
+	int				len_links;
+	int				len_user;
+	int				len_groups;
+	int				len_size;
+
 	t_options		option;
 
 	t_args			*args;
@@ -127,8 +132,9 @@ void				get_attributes(t_frame *frame);
 void				loop_no_file(t_frame *frame);
 void				loop_files(t_frame *frame);
 void				loop_dirs(t_frame *frame);
-void				loop_valid_dir(t_frame *frame, t_args *args);
 bool				is_file(t_args *args);
+void				get_column_widths(t_frame *frame, t_args *args);
+void				loop_valid_dir(t_frame *frame, t_args *args);
 void				do_ls(t_frame *frame, t_args *args);
 
 void				sort(t_frame *frame);

@@ -1,0 +1,46 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_column_widths.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/08/05 23:43:22 by dhojt             #+#    #+#             */
+/*   Updated: 2018/08/06 00:06:16 by dhojt            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "ft_ls.h"
+
+static void			calc_len_links(t_frame *frame, t_args *args)
+{
+	int				len;
+	int				num;
+
+	len = 1;
+	num = args->data.links;
+	while (num >= 10)
+	{
+		num /= 10;
+		len++;
+	}
+	if (len > frame->len_links)
+		frame->len_links = len;
+}
+
+void				get_column_widths(t_frame *frame, t_args *args)
+{
+	t_args			*head;
+
+	frame->len_links = 0;
+	frame->len_user = 0;
+	frame->len_groups = 0;
+	frame->len_size = 0;
+	head = args;
+	while (head)
+	{
+		calc_len_links(frame, head);
+		head = head->next;
+	}
+	ft_printf("%d\n\n", frame->len_links);
+}
