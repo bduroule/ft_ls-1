@@ -34,7 +34,7 @@ The following options will be implemented.
 `-F` ❌Display after pathname: `/`directory, `*`executable, `@`sym link, `=`socket, `%`whiteout, `|`FIFO.  
 `-G` ❌Coloured output.  
 `-R` ✅Recursively search directories  
-`-S` ❌Sort by file size.  
+`-S` ✅Sort by file size.  
 `-U` ❌Sort by time of file creation.  
 `-1` ❌Force output to be one entry per line.  
 ***
