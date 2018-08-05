@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/05 23:43:22 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/06 00:06:16 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/06 00:13:40 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,22 @@ static void			calc_len_links(t_frame *frame, t_args *args)
 		frame->len_links = len;
 }
 
+static void			calc_len_size(t_frame *frame, t_args *args)
+{
+	int				len;
+	int				num;
+
+	len = 1;
+	num = args->data.size;
+	while (num >= 10)
+	{
+		num /= 10;
+		len++;
+	}
+	if (len > frame->len_size)
+		frame->len_size = len;
+}
+
 void				get_column_widths(t_frame *frame, t_args *args)
 {
 	t_args			*head;
@@ -40,7 +56,8 @@ void				get_column_widths(t_frame *frame, t_args *args)
 	while (head)
 	{
 		calc_len_links(frame, head);
+		calc_len_size(frame, head);
 		head = head->next;
 	}
-	ft_printf("%d\n\n", frame->len_links);
+	ft_printf("%d | %d | %d | %d\n\n", frame->len_links, frame->len_user, frame->len_groups, frame->len_size);
 }
