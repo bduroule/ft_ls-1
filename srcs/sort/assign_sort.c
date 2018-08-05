@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/05 19:56:57 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/05 21:15:03 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/05 23:16:13 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ static void			sort_reverse(t_frame *frame)
 {
 	if (frame->option.S)
 		frame->sort_function = &sort_size_r;
+	else if (frame->option.t)
+		frame->sort_function = &sort_time_t_r;
 	else
 		frame->sort_function = NULL;
 }
