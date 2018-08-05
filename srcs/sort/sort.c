@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/20 12:13:10 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/05 20:38:57 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/05 20:50:39 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ void				sort(t_frame *frame)
 	frame->head = frame->current_args;
 	do_sort(frame);
 	frame->sort_function = tmp;
-	do_sort(frame);
+	if (tmp)
+		do_sort(frame);
 	frame->current_args = frame->head;
 }
