@@ -6,14 +6,14 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/13 01:26:16 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/06 13:00:52 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/06 14:48:52 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_LS_H
 # define FT_LS_H
 
-# define OPTIONS	"-AFGRSUacdfgiloprtu1"
+# define OPTIONS	"-AFGRSTUacdfgiloprtu1"
 # define SIX_MONTHS	15768000
 
 # define PER_LEN	11
@@ -60,9 +60,10 @@ typedef struct		s_options
 	unsigned char	G		: 1; //colours
 	unsigned char	R		: 1; //Recursivly list subdirectories
 	unsigned char	S		: 1; //SORT by size
+	unsigned char	T		: 1; //Shows time in full format
 	unsigned char	U		: 1; //SORT by (-t) by birth time
 	unsigned char	one		: 1; //Forces one column output (turns off -a)
-	unsigned char	fill 	: 6;
+	unsigned char	fill 	: 5;
 }					t_options;
 
 typedef struct		s_data

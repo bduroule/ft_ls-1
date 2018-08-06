@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/14 00:54:18 by dhojt             #+#    #+#             */
-/*   Updated: 2018/07/20 19:38:50 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/06 14:48:42 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,6 +95,7 @@ void				get_options(t_frame *frame)
 	frame->option.G = (option_data & (one << ('G' - 39))) ? 1 : 0;
 	frame->option.R = (option_data & (one << ('R' - 39))) ? 1 : 0;
 	frame->option.S = (option_data & (one << ('S' - 39))) ? 1 : 0;
+	frame->option.T = (option_data & (one << ('T' - 39))) ? 1 : 0;
 	frame->option.U = (option_data & (one << ('U' - 39))) ? 1 : 0;
 	frame->option.one = (option_data & (one << ('1' + 4))) ? 1 : 0;
 	options_error_check(frame, option_data);
