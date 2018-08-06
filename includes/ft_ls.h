@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/13 01:26:16 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/06 01:36:01 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/06 13:00:52 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -144,8 +144,8 @@ bool				sort_alpha(t_frame *frame);
 bool				sort_alpha_r(t_frame *frame);
 bool				sort_size(t_frame *frame);
 bool				sort_size_r(t_frame *frame);
-bool				sort_time_t(t_frame *frame);
-bool				sort_time_t_r(t_frame *frame);
+bool				sort_time(t_frame *frame);
+bool				sort_time_r(t_frame *frame);
 
 void				display(t_frame *frame, t_args *args);
 void				no_file(t_frame *frame, t_args *args);
