@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/19 21:51:46 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/05 19:56:40 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/06 12:09:20 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,6 @@ static void			do_config(t_frame *frame)
 		frame->option.a = 1;
 	if (frame->option.S)
 		frame->option.t = 0;
-	if (!frame->option.t)
-	{
-		frame->option.u = 0;
-		frame->option.c = 0;
-	}
 	if (frame->option.one)
 		frame->option.l = 0;
 }
