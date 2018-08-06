@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/05 13:38:31 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/06 12:11:12 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/06 14:56:27 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,9 @@ void				show_time(t_frame *frame, t_args *args)
 	string = ctime(&time);
 	ft_printf("%2.2s ", string + 8);
 	ft_printf("%3.3s ", string + 4);
-	if (time < frame->time_6_months_ago || time > frame->time_now)
+	if (frame->option.T)
+		ft_printf("%.13s ", string + 11);
+	else if (time < frame->time_6_months_ago || time > frame->time_now)
 		ft_printf("%5.4s ", string + 20);
 	else
 		ft_printf("%5.5s ", string + 11);
