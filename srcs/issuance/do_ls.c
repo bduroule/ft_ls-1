@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/20 12:47:00 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/06 16:55:56 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/06 17:01:15 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void				do_ls(t_frame *frame, t_args *args)
 	ft_printf("\n%s:\n", args->data.path);
 	if (!(directory = opendir(args->data.path)))
 	{
-		ft_printf("ls: %s: Permission denied\n", args->data.str);
+		ft_printf("ft_ls: %s: Permission denied\n", args->data.str);
 		return ;
 	}
 	while ((dir = readdir(directory)))
