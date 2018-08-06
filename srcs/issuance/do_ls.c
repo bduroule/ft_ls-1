@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/20 12:47:00 by dhojt             #+#    #+#             */
-/*   Updated: 2018/07/23 12:56:13 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/06 16:55:56 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,13 +48,18 @@ void				do_ls(t_frame *frame, t_args *args)
 	}
 	while ((dir = readdir(directory)))
 	{
-		tmp = create_args(frame);
-		get_path(frame, tmp, args->data.path, dir->d_name);
-		if (!head)
-			head = tmp;
+		if (dir->d_name[0] == '.' && !frame->option.a)
+			;
 		else
-			last_args->next = tmp;
-		last_args = tmp;
+		{
+			tmp = create_args(frame); //Malloc protection
+			get_path(frame, tmp, args->data.path, dir->d_name);
+			if (!head)
+				head = tmp;
+			else
+				last_args->next = tmp;
+			last_args = tmp;
+		}
 	}
 	closedir(directory);
 	frame->current_args = head;
