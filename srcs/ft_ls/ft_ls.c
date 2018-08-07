@@ -6,11 +6,12 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/13 01:28:20 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/05 14:59:52 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/07 14:41:58 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
+#include <sys/ioctl.h>
 
 static void			ft_ls(t_frame *frame)
 {
@@ -19,15 +20,27 @@ static void			ft_ls(t_frame *frame)
 	free_frame(frame);
 }
 
-int					main(int argc, char **argv)
+static t_frame		create_frame(int argc, char **argv)
 {
 	t_frame			frame;
+	struct winsize	window_size;
 
 	ft_bzero(&frame, sizeof(frame));
 	frame.argc = argc;
 	frame.argv = argv;
 	time(&frame.time_now);
 	frame.time_6_months_ago = frame.time_now - SIX_MONTHS;
+	if(ioctl(STDOUT_FILENO, TIOCGWINSZ, &window_size) == -1)
+		error_exit(&frame, "Failed to get window size");
+	frame.width = window_size.ws_col;
+	return (frame);
+}
+
+int					main(int argc, char **argv)
+{
+	t_frame			frame;
+
+	frame = create_frame(argc, argv);
 	ft_ls(&frame);
 	return (0);
 }
