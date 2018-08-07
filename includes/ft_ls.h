@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/13 01:26:16 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/07 11:38:22 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/07 11:50:21 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,13 @@
 #define TYPE_WHT	0160000  /* whiteout */
 
 # define PER_LEN	11
-# define PER_BLK	"b"
-# define PER_CHR	"c"
-# define PER_DIR	"d"
-# define PER_LNK	"l"
-# define PER_SOCK	"s"
-# define PER_IFO	"p"
-# define PER_REG	"-"
+# define PER_BLK	'b'
+# define PER_CHR	'c'
+# define PER_DIR	'd'
+# define PER_LNK	'l'
+# define PER_SOCK	's'
+# define PER_IFO	'p'
+# define PER_REG	'-'
 # define PER_N		"-"
 # define PER_R		"r"
 # define PER_W		"w"
