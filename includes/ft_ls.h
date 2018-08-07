@@ -6,35 +6,37 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/13 01:26:16 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/07 12:54:10 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/07 13:17:11 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_LS_H
 # define FT_LS_H
 
+# define COLOUR		1
+
 # define OPTIONS	"-AFGRSTUacdfgiloprtu1"
 # define SIX_MONTHS	15768000
 
-#define TYPE_IFO	010000
-#define TYPE_CHR	020000
-#define TYPE_DIR	040000
-#define TYPE_BLK	060000
-#define TYPE_REG	0100000
-#define TYPE_LNK	0120000
-#define TYPE_SOCK	0140000
-#define TYPE_WHT	0160000
+# define TYPE_IFO	010000
+# define TYPE_CHR	020000
+# define TYPE_DIR	040000
+# define TYPE_BLK	060000
+# define TYPE_REG	0100000
+# define TYPE_LNK	0120000
+# define TYPE_SOCK	0140000
+# define TYPE_WHT	0160000
 
-#define COL_IFO		"\x1b[31m"
-#define COL_CHR		"\x1b[31m"
-#define COL_DIR		"\x1b[1m\x1b[36m"
-#define COL_BLK		"\x1b[31m"
-#define COL_REG		"\x1b[0m"
-#define COL_LNK		"\x1b[31m"
-#define COL_SOCK	"\x1b[31m"
-#define COL_WHT		"\x1b[31m"
-#define COL_EXE		"\x1b[31m"
-#define COL_CLR		"\x1b[0m"
+# define COL_IFO	"\x1b[31m"
+# define COL_CHR	"\x1b[31m"
+# define COL_DIR	"\x1b[1m\x1b[36m"
+# define COL_BLK	"\x1b[31m"
+# define COL_REG	"\x1b[0m"
+# define COL_LNK	"\x1b[31m"
+# define COL_SOCK	"\x1b[31m"
+# define COL_WHT	"\x1b[31m"
+# define COL_EXE	"\x1b[31m"
+# define COL_CLR	"\x1b[0m"
 
 # define PER_LEN	11
 # define PER_BLK	'b'
