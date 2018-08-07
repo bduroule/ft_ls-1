@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/13 01:26:16 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/07 11:59:18 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/07 12:13:38 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,23 @@
 # define OPTIONS	"-AFGRSTUacdfgiloprtu1"
 # define SIX_MONTHS	15768000
 
-#define TYPE_IFO	010000  /* named pipe (fifo) */
-#define TYPE_CHR	020000  /* character special */
-#define TYPE_DIR	040000  /* directory */
-#define TYPE_BLK	060000  /* block special */
-#define TYPE_REG	0100000  /* regular */
-#define TYPE_LNK	0120000  /* symbolic link */
-#define TYPE_SOCK	0140000  /* socket */
-#define TYPE_WHT	0160000  /* whiteout */
+#define TYPE_IFO	010000
+#define TYPE_CHR	020000
+#define TYPE_DIR	040000
+#define TYPE_BLK	060000
+#define TYPE_REG	0100000
+#define TYPE_LNK	0120000
+#define TYPE_SOCK	0140000
+#define TYPE_WHT	0160000
+
+#define COL_IFO		"\x1b[31m"
+#define COL_CHR		"\x1b[31m"
+#define COL_DIR		"\x1b[31m"
+#define COL_BLK		"\x1b[31m"
+#define COL_REG		"\x1b[31m"
+#define COL_LNK		"\x1b[31m"
+#define COL_SOC		"\x1b[31m"
+#define COL_WHT		"\x1b[31m"
 
 # define PER_LEN	11
 # define PER_BLK	'b'
