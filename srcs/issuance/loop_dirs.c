@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/22 17:32:15 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/07 12:01:27 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/07 13:38:31 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void				loop_dirs(t_frame *frame)
 {
 	t_args			*args;
 
+	if (frame->option.d)
+		return ;
 	args = frame->args;
 	while (args)
 	{

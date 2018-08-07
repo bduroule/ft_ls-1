@@ -21,7 +21,7 @@ Allowed functions for the mandatory part are `write`, `opendir`, `readdir`, `clo
 The following options will be implemented.  
 `-a` ✅Show hidden.  
 `-c` ✅Sort by last status change time.  
-`-d` ❌Directories are listed as plain files (not searched recursively).  
+`-d` ✅Directories are listed as plain files (not searched recursively).  
 `-f` ✅Output is not sorted. Forces `-a` on.  
 `-g` ✅List in long format but omit owner.  
 `-i` ✅Show serial number (inode number).  
@@ -32,7 +32,7 @@ The following options will be implemented.
 `-u` ✅Sort by time of last access.  
 `-A` ✅List all entries except for `.` and `..`.  
 `-F` ❌Display after pathname: directory, `*`executable, `@`sym link, `=`socket, `%`whiteout, `|`FIFO.  
-`-G` ❌Coloured output.  
+`-G` 🔶Coloured output. *Operational - just need to add colours for links etc.*  
 `-R` ✅Recursively search directories  
 `-S` ✅Sort by file size.  
 `-T` ✅Show time information in full.  
