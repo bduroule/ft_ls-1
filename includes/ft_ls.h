@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/13 01:26:16 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/07 10:04:32 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/07 11:38:22 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,14 @@
 # define OPTIONS	"-AFGRSTUacdfgiloprtu1"
 # define SIX_MONTHS	15768000
 
-#define TYPE_IFO	10000  /* named pipe (fifo) */
-#define TYPE_CHR	20000  /* character special */
-#define TYPE_DIR	40000  /* directory */
-#define TYPE_BLK	60000  /* block special */
-#define TYPE_REG	100000  /* regular */
-#define TYPE_LNK	120000  /* symbolic link */
-#define TYPE_SOCK	140000  /* socket */
-#define TYPE_WHT	160000  /* whiteout */
+#define TYPE_IFO	010000  /* named pipe (fifo) */
+#define TYPE_CHR	020000  /* character special */
+#define TYPE_DIR	040000  /* directory */
+#define TYPE_BLK	060000  /* block special */
+#define TYPE_REG	0100000  /* regular */
+#define TYPE_LNK	0120000  /* symbolic link */
+#define TYPE_SOCK	0140000  /* socket */
+#define TYPE_WHT	0160000  /* whiteout */
 
 # define PER_LEN	11
 # define PER_BLK	"b"
