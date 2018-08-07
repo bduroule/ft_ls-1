@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/20 12:47:00 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/07 08:21:24 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/07 08:31:04 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,9 @@ static t_args		*read_directory(t_frame *frame, t_args *args)
 	}
 	while ((file = readdir(directory)))
 	{
-		if (((ft_strcmp(file->d_name, ".") && ft_strcmp(file->d_name, ".."))
-					&& frame->option.A)
-				|| (file->d_name[0] == '.' && frame->option.a)
+		if ((frame->option.A && (ft_strcmp(file->d_name, ".")
+						&& ft_strcmp(file->d_name, "..")))
+				|| (frame->option.a && file->d_name[0] == '.')
 				|| (file->d_name[0] != '.'))
 		{
 			tmp = create_args(frame); //Malloc protection
