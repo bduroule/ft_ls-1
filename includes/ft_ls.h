@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/13 01:26:16 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/07 12:26:23 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/07 12:54:10 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,13 @@
 
 #define COL_IFO		"\x1b[31m"
 #define COL_CHR		"\x1b[31m"
-#define COL_DIR		"\x1b[31m"
+#define COL_DIR		"\x1b[1m\x1b[36m"
 #define COL_BLK		"\x1b[31m"
-#define COL_REG		"\x1b[31m"
+#define COL_REG		"\x1b[0m"
 #define COL_LNK		"\x1b[31m"
 #define COL_SOCK	"\x1b[31m"
 #define COL_WHT		"\x1b[31m"
+#define COL_EXE		"\x1b[31m"
 #define COL_CLR		"\x1b[0m"
 
 # define PER_LEN	11
