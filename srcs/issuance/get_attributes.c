@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/20 12:25:28 by dhojt             #+#    #+#             */
-/*   Updated: 2018/07/23 16:14:35 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/07 10:28:44 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,29 @@
 #include <pwd.h>
 #include <grp.h>
 #include <uuid/uuid.h>
+
+static void			get_type(t_args *args)
+{
+	int				type;
+
+	type = args->data.type;
+	if ((TYPE_IFO & type) == TYPE_IFO)
+		args->data.ifo = 1;
+	else if ((TYPE_CHR & type) == TYPE_CHR)
+		args->data.chr = 1;
+	else if ((TYPE_DIR & type) == TYPE_DIR)
+		args->data.dir = 1;
+	else if ((TYPE_BLK & type) == TYPE_BLK)
+		args->data.blk = 1;
+	else if ((TYPE_REG & type) == TYPE_REG)
+		args->data.reg = 1;
+	else if ((TYPE_LNK & type) == TYPE_LNK)
+		args->data.lnk = 1;
+	else if ((TYPE_SOCK & type) == TYPE_SOCK)
+		args->data.sock = 1;
+	else if ((TYPE_WHT & type) == TYPE_WHT)
+		args->data.wht = 1;
+}
 
 void				get_attributes(t_frame *frame)
 {
@@ -37,6 +60,7 @@ void				get_attributes(t_frame *frame)
 			args->data.t_time = the_file.st_mtimespec.tv_sec;
 			args->data.u_time = the_file.st_atimespec.tv_sec;
 			args->data.U_time = the_file.st_birthtimespec.tv_sec;
+			get_type(args);
 		}
 		else
 			args->data.no_file = 1;

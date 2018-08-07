@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/13 01:26:16 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/07 09:10:29 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/07 10:04:32 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,22 @@
 # define OPTIONS	"-AFGRSTUacdfgiloprtu1"
 # define SIX_MONTHS	15768000
 
+#define TYPE_IFO	10000  /* named pipe (fifo) */
+#define TYPE_CHR	20000  /* character special */
+#define TYPE_DIR	40000  /* directory */
+#define TYPE_BLK	60000  /* block special */
+#define TYPE_REG	100000  /* regular */
+#define TYPE_LNK	120000  /* symbolic link */
+#define TYPE_SOCK	140000  /* socket */
+#define TYPE_WHT	160000  /* whiteout */
+
 # define PER_LEN	11
-# define PER_BLOC	"b"
-# define PER_CHAR	"c"
+# define PER_BLK	"b"
+# define PER_CHR	"c"
 # define PER_DIR	"d"
-# define PER_SYM	"l"
+# define PER_LNK	"l"
 # define PER_SOCK	"s"
-# define PER_FIFO	"p"
+# define PER_IFO	"p"
 # define PER_REG	"-"
 # define PER_N		"-"
 # define PER_R		"r"
@@ -84,6 +93,15 @@ typedef struct		s_data
 	time_t			t_time;
 	time_t			u_time;
 	time_t			U_time;
+
+	unsigned char	ifo		: 1;
+	unsigned char	chr		: 1;
+	unsigned char	dir		: 1;
+	unsigned char	blk		: 1;
+	unsigned char	reg		: 1;
+	unsigned char	lnk		: 1;
+	unsigned char	sock	: 1;
+	unsigned char	wht		: 1;
 }					t_data;
 
 typedef struct		s_args
