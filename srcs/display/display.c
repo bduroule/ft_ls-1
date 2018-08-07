@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/22 16:35:50 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/07 09:11:13 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/07 12:18:09 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,5 @@ void				display(t_frame *frame, t_args *args)
 	user_and_group(frame, args);
 	size(frame, args);
 	show_time(frame, args);
-	ft_printf("%s\n", data->str);
+	file_name(frame, args);
 }

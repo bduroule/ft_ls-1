@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/13 01:26:16 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/07 12:13:38 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/07 12:26:23 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,9 @@
 #define COL_BLK		"\x1b[31m"
 #define COL_REG		"\x1b[31m"
 #define COL_LNK		"\x1b[31m"
-#define COL_SOC		"\x1b[31m"
+#define COL_SOCK	"\x1b[31m"
 #define COL_WHT		"\x1b[31m"
+#define COL_CLR		"\x1b[0m"
 
 # define PER_LEN	11
 # define PER_BLK	'b'
@@ -182,6 +183,7 @@ void				type(t_frame *frame, t_args *args);
 void				user_and_group(t_frame *frame, t_args *args);
 void				size(t_frame *frame, t_args *args);
 void				show_time(t_frame *frame, t_args *args);
+void				file_name(t_frame *frame, t_args *args);
 void				print_spaces(int diff);
 
 void				error_exit(t_frame *frame, char *error_str);
