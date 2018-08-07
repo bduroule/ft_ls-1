@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/20 12:47:00 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/07 07:52:16 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/07 08:21:24 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,29 +31,29 @@ static void			get_path(t_frame *frame, t_args *args, char *path, char *name)
 	args->data.path = new_path;
 }
 
-void				do_ls(t_frame *frame, t_args *args)
+static t_args		*read_directory(t_frame *frame, t_args *args)
 {
-	t_args			*head;
 	t_args			*tmp;
+	t_args			*head;
 	t_args			*last_args;
 	DIR				*directory;
-	struct dirent	*dir;
+	struct dirent	*file;
 
 	head = NULL;
-	ft_printf("\n%s:\n", args->data.path);
 	if (!(directory = opendir(args->data.path)))
 	{
 		ft_printf("ft_ls: %s: Permission denied\n", args->data.str);
-		return ;
+		return (NULL);
 	}
-	while ((dir = readdir(directory)))
+	while ((file = readdir(directory)))
 	{
-		if (((ft_strcmp(dir->d_name, ".") && ft_strcmp(dir->d_name, "..")) && frame->option.A)
-				|| (dir->d_name[0] == '.' && frame->option.a)
-				|| (dir->d_name[0] != '.'))
+		if (((ft_strcmp(file->d_name, ".") && ft_strcmp(file->d_name, ".."))
+					&& frame->option.A)
+				|| (file->d_name[0] == '.' && frame->option.a)
+				|| (file->d_name[0] != '.'))
 		{
 			tmp = create_args(frame); //Malloc protection
-			get_path(frame, tmp, args->data.path, dir->d_name);
+			get_path(frame, tmp, args->data.path, file->d_name);
 			if (!head)
 				head = tmp;
 			else
@@ -62,6 +62,17 @@ void				do_ls(t_frame *frame, t_args *args)
 		}
 	}
 	closedir(directory);
+	return (head);
+}
+
+void				do_ls(t_frame *frame, t_args *args)
+{
+	t_args			*head;
+	t_args			*tmp;
+
+	ft_printf("\n%s:\n", args->data.path);
+	if(!(head = read_directory(frame, args)))
+		return ;
 	frame->current_args = head;
 	get_attributes(frame);
 	sort(frame);
