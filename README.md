@@ -23,11 +23,11 @@ The following options will be implemented.
 `-c` ✅Sort by last status change time.  
 `-d` ❌Directories are listed as plain files (not searched recursively).  
 `-f` ✅Output is not sorted. Forces `-a` on.  
-`-g` ❌List in long format but omit owner.  
-`-i` 🔶Show serial number (inode number). *Operational in long view*  
+`-g` ✅List in long format but omit owner.  
+`-i` ✅Show serial number (inode number).  
 `-l` ❌List in long format.  
-`-o` ❌List in long format but omit group.   
-`-r` 🔶Reverse sort. *Operational except were two sort values are identical*  
+`-o` ✅List in long format but omit group.   
+`-r` ✅Reverse sort.  
 `-t` 🔶Sort by time of last modification. *Works except in one case of the same time ft_ls and .*  
 `-u` ✅Sort by time of last access.  
 `-A` ✅List all entries except for `.` and `..`.  
@@ -46,20 +46,21 @@ To compile, run `make`. Follow development with `./ft_ls`. Any number of argumen
 ```console
 $> ./ft_ls *
 .:
--rwxr-xr-x      18 Dav  staff      576  Mon Jul 23 16:36:30 2018 .
--rwxr-xr-x      15 Dav  staff      480  Fri Jul 13 21:25:06 2018 ..
--rwxr-xr-x      16 Dav  staff      512  Mon Jul 23 18:11:20 2018 .git
--rw-r--r--       1 Dav  staff     3980  Mon Jul 23 15:56:04 2018 Makefile
--rw-r--r--       1 Dav  staff     1692  Sat Jul 21 17:56:12 2018 README.md
--rw-r--r--       1 Dav  staff        6  Fri Jul 13 01:22:56 2018 author
--rwxr-xr-x       1 Dav  staff    44376  Mon Jul 23 16:36:30 2018 ft_ls
--rw-r--r--       1 Dav  staff  1462757  Fri Jun 29 22:24:15 2018 ft_ls.en.pdf
--rw-r--r--       1 Dav  staff    38688  Mon Jul 23 16:36:30 2018 ft_printf.a
--rwxr-xr-x       3 Dav  staff       96  Mon Jul 23 18:06:44 2018 includes
--rwxr-xr-x       7 Dav  staff      224  Sun Jul 22 23:40:17 2018 libft
--rw-r--r--       1 Dav  staff    76336  Mon Jul 23 16:36:30 2018 libft.a
--rwxr-xr-x      25 Dav  staff      800  Mon Jul 23 16:36:30 2018 obj
--rwxr-xr-x       6 Dav  staff      192  Fri Jul 20 12:11:35 2018 srcs
-----------       2 Dav  staff       64  Sat Jul 21 13:39:00 2018 test_directory
-----------       1 Dav  staff        0  Sat Jul 21 13:39:34 2018 test_file
+-rw-r--r--     1 Dav  staff     4191  7 Aug 09:10 Makefile
+-rw-r--r--     1 Dav  staff     3205  7 Aug 09:16 README.md
+-rw-r--r--     1 Dav  staff        6 13 Jul 01:22 author
+-rwxr-xr-x  1003 Dav  staff    32096 23 Jul 11:51 big
+-rwxr-xr-x     1 Dav  staff    53184  7 Aug 09:13 ft_ls
+-rwxr-xr-x     3 Dav  staff       96 23 Jul 22:45 ft_ls.dSYM
+-rw-r--r--     1 Dav  staff  1462757 29 Jun 22:24 ft_ls.en.pdf
+-rw-r--r--     1 Dav  staff    38688  7 Aug 09:13 ft_printf.a
+-rwxr-xr-x     3 Dav  staff       96  7 Aug 09:10 includes
+-rwxr-xr-x     7 Dav  staff      224  5 Aug 13:09 libft
+-rw-r--r--     1 Dav  staff    76336  7 Aug 09:13 libft.a
+-rwxr-xr-x    40 Dav  staff     1280  7 Aug 09:13 obj
+-rwxr-xr-x     6 Dav  staff      192 20 Jul 12:11 srcs
+-rw-r--r--     1 Dav  staff       72 23 Jul 20:25 temp
+----------     2 Dav  staff       64 21 Jul 13:39 test_directory
+----------     1 Dav  staff        0  5 Aug 15:52 test_file
+-rw-r--r--     1 Dav  staff        0  5 Aug  2019 time_test
 ```
