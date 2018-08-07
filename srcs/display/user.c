@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/06 01:23:26 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/06 01:32:24 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/07 08:58:33 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ static int			get_diff(t_frame *frame, t_args *args)
 
 void				user(t_frame *frame, t_args *args)
 {
+	if (frame->option.g)
+		return ;
 	ft_putstr(args->data.user);
 	print_spaces(get_diff(frame, args) + 2);
 }
