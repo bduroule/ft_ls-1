@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/22 17:32:15 by dhojt             #+#    #+#             */
-/*   Updated: 2018/07/22 17:55:32 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/07 12:01:27 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void				loop_dirs(t_frame *frame)
 	args = frame->args;
 	while (args)
 	{
-		if (!is_file(args) && !args->data.no_file)
+		if (args->data.dir && !args->data.no_file)
 			do_ls(frame, args);
 		args = args->next;
 	}

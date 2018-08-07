@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/20 12:25:28 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/07 11:37:35 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/07 11:54:38 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ static void			get_type(t_args *args)
 	int				type;
 
 	type = args->data.type;
-	ft_printf("%8o (%o)\n", type, TYPE_REG);
 	if ((TYPE_REG & type) == TYPE_REG)
 		args->data.reg = 1;
 	else if ((TYPE_LNK & type) == TYPE_LNK)

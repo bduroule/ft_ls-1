@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/22 17:24:47 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/05 23:42:49 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/07 12:00:47 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void				loop_files(t_frame *frame)
 	get_column_widths(frame, args);
 	while (args)
 	{
-		if (is_file(args) && !args->data.no_file)
+		if (args->data.reg && !args->data.no_file)
 			display(frame, args);
 		args = args->next;
 	}
