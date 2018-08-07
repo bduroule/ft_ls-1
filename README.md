@@ -19,7 +19,7 @@ Allowed functions for the mandatory part are `write`, `opendir`, `readdir`, `clo
 ***
 ### Development
 The following options will be implemented.  
-`-a` ❌Show hidden.  
+`-a` ✅Show hidden.  
 `-c` ✅Sort by last status change time.  
 `-d` ❌Directories are listed as plain files (not searched recursively).  
 `-f` ✅Output is not sorted. Forces `-a` on.  
@@ -30,8 +30,8 @@ The following options will be implemented.
 `-r` 🔶Reverse sort. *Operational except were two sort values are identical*  
 `-t` 🔶Sort by time of last modification. *Works except in one case of the same time ft_ls and .*  
 `-u` ✅Sort by time of last access.  
-`-A` ❌List all entries except for `.` and `..`.  
-`-F` ❌Display after pathname: `/`directory, `*`executable, `@`sym link, `=`socket, `%`whiteout, `|`FIFO.  
+`-A` ✅List all entries except for `.` and `..`.  
+`-F` ❌Display after pathname: directory, `*`executable, `@`sym link, `=`socket, `%`whiteout, `|`FIFO.  
 `-G` ❌Coloured output.  
 `-R` ✅Recursively search directories  
 `-S` ✅Sort by file size.  
