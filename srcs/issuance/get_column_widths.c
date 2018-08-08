@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/05 23:43:22 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/06 00:32:30 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/08 11:11:34 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,12 +90,15 @@ void				get_column_widths(t_frame *frame, t_args *args)
 	head = args;
 	while (head)
 	{
-		if (frame->option.i)
-			calc_len_ino(frame, head);
-		calc_len_links(frame, head);
-		calc_len_user(frame, head);
-		calc_len_group(frame, head);
-		calc_len_size(frame, head);
+		if (!args->data.no_file)
+		{
+			if (frame->option.i)
+				calc_len_ino(frame, head);
+			calc_len_links(frame, head);
+			calc_len_user(frame, head);
+			calc_len_group(frame, head);
+			calc_len_size(frame, head);
+		}
 		head = head->next;
 	}
 }
