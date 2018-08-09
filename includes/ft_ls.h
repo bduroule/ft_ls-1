@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/13 01:26:16 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/07 14:07:31 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/09 15:18:23 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -145,6 +145,8 @@ typedef struct		s_frame
 	int				len_user;
 	int				len_group;
 	int				len_size;
+	int				len_file_name;
+	int				items_to_display;
 
 	t_options		option;
 

@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/05 23:43:22 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/08 11:11:34 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/09 15:27:20 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,15 @@ static void			calc_len_size(t_frame *frame, t_args *args)
 		frame->len_size = len;
 }
 
+static void			calc_len_file_name(t_frame *frame, t_args *args)
+{
+	int				len;
+
+	len = ft_strlen(args->data.str);
+	if (len > frame->len_file_name)
+		frame->len_file_name = len;
+}
+
 void				get_column_widths(t_frame *frame, t_args *args)
 {
 	t_args			*head;
@@ -87,6 +96,8 @@ void				get_column_widths(t_frame *frame, t_args *args)
 	frame->len_user = 0;
 	frame->len_group = 0;
 	frame->len_size = 0;
+	frame->len_file_name = 0;
+	frame->items_to_display = 0;
 	head = args;
 	while (head)
 	{
@@ -98,6 +109,8 @@ void				get_column_widths(t_frame *frame, t_args *args)
 			calc_len_user(frame, head);
 			calc_len_group(frame, head);
 			calc_len_size(frame, head);
+			calc_len_file_name(frame, head);
+			frame->items_to_display++;
 		}
 		head = head->next;
 	}
