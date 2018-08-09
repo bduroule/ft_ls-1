@@ -25,7 +25,7 @@ The following options will be implemented.
 `-f` ✅Output is not sorted. Forces `-a` on.  
 `-g` ✅List in long format but omit owner.  
 `-i` ✅Show serial number (inode number).  
-`-l` ❌List in long format.  
+`-l` ✅List in long format.  
 `-o` ✅List in long format but omit group.   
 `-r` ✅Reverse sort.  
 `-t` 🔶Sort by time of last modification. *Works except in one case of the same time ft_ls and .*  

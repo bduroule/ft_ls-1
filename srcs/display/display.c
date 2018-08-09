@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/22 16:35:50 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/07 12:18:09 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/09 11:49:11 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,13 @@ void				display(t_frame *frame, t_args *args)
 
 	data = &args->data;
 	ino(frame, args);//Do len
-	type(frame, args);
-	links(frame, args);
-	user_and_group(frame, args);
-	size(frame, args);
-	show_time(frame, args);
+	if (frame->option.l)
+	{
+		type(frame, args);
+		links(frame, args);
+		user_and_group(frame, args);
+		size(frame, args);
+		show_time(frame, args);
+	}
 	file_name(frame, args);
 }
