@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/14 23:43:19 by dhojt             #+#    #+#             */
-/*   Updated: 2018/07/23 01:03:44 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/09 14:47:25 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,8 @@ static int			calculate_option_strings(t_frame *frame)
 	while (*argv && **argv == '-' && argv[0][1])
 	{
 		option++;
+		if (!ft_strcmp(*argv, "--"))
+			break ;
 		argv++;
 	}
 	return (option);

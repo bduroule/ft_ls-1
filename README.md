@@ -63,4 +63,7 @@ $> ./ft_ls *
 ----------     2 Dav  staff       64 21 Jul 13:39 test_directory
 ----------     1 Dav  staff        0  5 Aug 15:52 test_file
 -rw-r--r--     1 Dav  staff        0  5 Aug  2019 time_test
-```
+```  
+##### Bonus
+* Displays all illegal options. `ls` only displays 1.
+* Handles `--`
