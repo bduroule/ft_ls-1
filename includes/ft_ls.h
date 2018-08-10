@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/13 01:26:16 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/10 17:19:29 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/10 17:37:17 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # define COLOUR		1
 
-# define OPTIONS	"-AFGNRSTUacdfgiloprtu1"
+# define OPTIONS	"-AFGNRSTUacdfgiloprtux1"
 # define NUM_FILES	"--------------\nFiles: %d\n"
 # define SIX_MONTHS	15768000
 
@@ -78,6 +78,7 @@ typedef struct		s_options
 	unsigned char	r		: 1; //reverse
 	unsigned char	t		: 1; //SORT by modified time
 	unsigned char	u		: 1; //SORT (-t) by access time
+	unsigned char	x		: 1; //Horizontal list
 	unsigned char	A		: 1; //shows hidden files except '.' and '..'
 	unsigned char	F		: 1; //prints some character after filename
 	unsigned char	G		: 1; //colours
@@ -87,7 +88,7 @@ typedef struct		s_options
 	unsigned char	T		: 1; //Shows time in full format
 	unsigned char	U		: 1; //SORT by (-t) by birth time
 	unsigned char	one		: 1; //Forces one column output (turns off -a)
-	unsigned char	fill 	: 4;
+	unsigned char	fill 	: 3;
 }					t_options;
 
 typedef struct		s_data

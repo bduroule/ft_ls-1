@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/22 20:03:57 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/10 17:23:14 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/10 17:44:47 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,9 +76,11 @@ void				loop_valid_dir(t_frame *frame, t_args *head)
 			ft_putchar('\n');
 			position_on_row = 0;
 		}
+		else if (!frame->option.x)
+			ft_putchar('\n');
 		args = args->next;
 	}
-	if (position_on_row)
+	if (position_on_row && frame->option.x)
 		ft_putchar('\n');
 	if (frame->option.N)
 		ft_printf(NUM_FILES, frame->items_to_display);
