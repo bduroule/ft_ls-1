@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/13 01:26:16 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/09 15:18:23 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/10 13:57:23 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -169,9 +169,14 @@ void				get_attributes(t_frame *frame);
 void				loop_no_file(t_frame *frame);
 void				loop_files(t_frame *frame);
 void				loop_dirs(t_frame *frame);
-void				get_column_widths(t_frame *frame, t_args *args);
 void				loop_valid_dir(t_frame *frame, t_args *args);
 void				do_ls(t_frame *frame, t_args *args);
+void				calc_len_ino(t_frame *frame, t_args *args);
+void				calc_len_links(t_frame *frame, t_args *args);
+void				calc_len_user(t_frame *frame, t_args *args);
+void				calc_len_group(t_frame *frame, t_args *args);
+void				calc_len_size(t_frame *frame, t_args *args);
+void				calc_len_file_name(t_frame *frame, t_args *args);
 
 void				sort(t_frame *frame);
 void				assign_sort(t_frame *frame);
