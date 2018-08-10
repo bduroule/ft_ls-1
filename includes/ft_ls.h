@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/13 01:26:16 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/10 14:39:45 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/10 17:19:29 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -135,8 +135,6 @@ typedef struct		s_frame
 	unsigned char	headers	: 1;//
 	unsigned char	fill	: 7;//
 
-	int				width;
-
 	char			no_args[2];
 
 	time_t			time_now;
@@ -149,6 +147,9 @@ typedef struct		s_frame
 	int				len_size;
 	int				len_file_name;
 	int				items_to_display;
+
+	int				width;
+	int				number_of_columns;
 
 	t_options		option;
 

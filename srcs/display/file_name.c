@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/07 12:16:42 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/10 15:21:02 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/10 17:22:19 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,5 +58,6 @@ void				file_name(t_frame *frame, t_args *args)
 		print_colour(args);
 	else
 		ft_printf("%s", args->data.str);
-	print_spaces(get_diff(frame, args->data.str) + 1);
+	if (frame->number_of_columns)
+		print_spaces(get_diff(frame, args->data.str) + 1);
 }
