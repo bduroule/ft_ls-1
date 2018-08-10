@@ -33,6 +33,7 @@ The following options will be implemented.
 `-A` ✅List all entries except for `.` and `..`.  
 `-F` ❌Display after pathname: directory, `*`executable, `@`sym link, `=`socket, `%`whiteout, `|`FIFO.  
 `-G` 🔶Coloured output. *Operational - just need to add colours for links etc.*  
+`-N` 🔶Displays number of files read. *Operational but should only print when there are files to display*  
 `-R` ✅Recursively search directories  
 `-S` ✅Sort by file size.  
 `-T` ✅Show time information in full.  
@@ -67,3 +68,4 @@ $> ./ft_ls *
 ##### Bonus
 * Displays all illegal options. `ls` only displays 1.
 * Handles `--`
+* `-N`

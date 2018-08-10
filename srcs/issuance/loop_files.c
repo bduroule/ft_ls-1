@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/22 17:24:47 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/10 14:20:36 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/10 14:44:32 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static void			get_column_widths(t_frame *frame, t_args *args)
 	head = args;
 	while (head)
 	{
-		if ((!args->data.dir || frame->option.d) && !args->data.no_file)
+		if ((!head->data.dir || frame->option.d) && !head->data.no_file)
 		{
 			if (frame->option.i)
 				calc_len_ino(frame, head);
@@ -41,7 +41,6 @@ static void			get_column_widths(t_frame *frame, t_args *args)
 			calc_len_file_name(frame, head);
 			frame->items_to_display++;
 		}
-		ft_printf("num = %d\n", frame->items_to_display);
 		head = head->next;
 	}
 }
@@ -58,5 +57,6 @@ void				loop_files(t_frame *frame)
 			display(frame, args);
 		args = args->next;
 	}
-	ft_printf("FILES: %d\n", frame->items_to_display);
+	if (frame->option.N && frame->items_to_display)
+		ft_printf(NUM_FILES, frame->items_to_display);
 }
