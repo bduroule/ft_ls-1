@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/07 12:16:42 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/07 13:23:18 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/10 15:10:51 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static void			print_colour(t_args *args)
 		ft_putstr(COL_LNK);
 	if (args->data.sock)
 		ft_putstr(COL_SOCK);
-	ft_printf("%s\n", args->data.str);
+	ft_printf("%s", args->data.str);
 	ft_putstr(COL_CLR);
 }
 
@@ -49,7 +49,7 @@ void				file_name(t_frame *frame, t_args *args)
 	if (frame->option.G || COLOUR)
 		print_colour(args);
 	else
-		ft_printf("%s\n", args->data.str);
+		ft_printf("%s", args->data.str);
 	if (frame)
 		;
 }

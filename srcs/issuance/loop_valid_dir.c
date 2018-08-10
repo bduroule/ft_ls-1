@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/22 20:03:57 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/10 14:40:08 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/10 15:08:19 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,14 +48,24 @@ static void			get_column_widths(t_frame *frame, t_args *args)
 void				loop_valid_dir(t_frame *frame, t_args *head)
 {
 	t_args			*args;
+	int				position_on_row;
+	int				number_of_columns;
 
+	position_on_row = 0;
 	if (frame->option.d)
 		return ;
 	args = head;
 	get_column_widths(frame, head);
+	number_of_columns = frame->width / frame->len_file_name; 
 	while (args)
 	{
 		display(frame, args);
+		position_on_row++;
+		if (position_on_row >= number_of_columns)
+		{
+			ft_putchar('\n');
+			position_on_row = 0;
+		}
 		args = args->next;
 	}
 	if (frame->option.N)
