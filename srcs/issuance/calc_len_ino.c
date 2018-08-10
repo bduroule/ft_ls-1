@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/10 13:44:12 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/10 13:45:02 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/10 17:06:52 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void				calc_len_ino(t_frame *frame, t_args *args)
 {
 	int				len;
-	int				num;
+	long long		num;
 
 	len = 1;
 	num = args->data.ino;

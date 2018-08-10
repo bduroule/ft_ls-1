@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/22 20:03:57 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/10 15:23:29 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/10 17:00:44 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,19 @@ static void			get_column_widths(t_frame *frame, t_args *args)
 	}
 }
 
+//MAKING COLUMN FORMULA
+static int			calculate_number_of_columns(t_frame *frame)
+{
+	int				column_width;
+
+	column_width = frame->len_file_name + 1;
+	if (frame->option.i)
+		column_width += frame->len_ino + 1;
+	ft_printf("%d\n", frame->len_ino);
+	ft_printf("%d\n", column_width);
+	return (frame->width / column_width);
+}
+
 void				loop_valid_dir(t_frame *frame, t_args *head)
 {
 	t_args			*args;
@@ -56,7 +69,7 @@ void				loop_valid_dir(t_frame *frame, t_args *head)
 		return ;
 	args = head;
 	get_column_widths(frame, head);
-	number_of_columns = frame->width / (frame->len_file_name + 1); 
+	number_of_columns = calculate_number_of_columns(frame);
 	while (args)
 	{
 		display(frame, args);
@@ -68,6 +81,8 @@ void				loop_valid_dir(t_frame *frame, t_args *head)
 		}
 		args = args->next;
 	}
+	if (position_on_row)
+		ft_putchar('\n');
 	if (frame->option.N)
 		ft_printf(NUM_FILES, frame->items_to_display);
 }
