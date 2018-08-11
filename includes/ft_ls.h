@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/13 01:26:16 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/11 13:21:42 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/11 13:31:01 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -182,6 +182,7 @@ void				calc_len_user(t_frame *frame, t_args *args);
 void				calc_len_group(t_frame *frame, t_args *args);
 void				calc_len_size(t_frame *frame, t_args *args);
 void				calc_len_file_name(t_frame *frame, t_args *args);
+void				calculate_number_of_columns(t_frame *frame);
 
 void				sort(t_frame *frame);
 void				assign_sort(t_frame *frame);
