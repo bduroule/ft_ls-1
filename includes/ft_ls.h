@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/13 01:26:16 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/11 13:31:01 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/11 20:14:37 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,13 @@
 
 # define COLOUR		1
 # define COLUMN		1
+
+# define LEN_INO	1
+# define LEN_LINKS	2
+# define LEN_USER	3
+# define LEN_GROUP	4
+# define LEN_SIZE	5
+# define LEN_NAME	6
 
 # define OPTIONS	"-AFGNRSTUacdfgiloprtux1"
 # define NUM_FILES	"--------------\nFiles: %d\n"
@@ -203,6 +210,7 @@ void				size(t_frame *frame, t_args *args);
 void				show_time(t_frame *frame, t_args *args);
 void				file_name(t_frame *frame, t_args *args);
 void				print_spaces(int diff);
+int					get_diff(t_frame *frame, char *str, long long num, int flag);
 
 void				error_exit(t_frame *frame, char *error_str);
 void				free_frame(t_frame *frame);

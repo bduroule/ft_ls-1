@@ -6,7 +6,7 @@
 #    By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/27 15:32:02 by dhojt             #+#    #+#              #
-#    Updated: 2018/08/11 13:31:33 by dhojt            ###   ########.fr        #
+#    Updated: 2018/08/11 19:59:59 by dhojt            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -56,6 +56,7 @@ D_SRC =			display.c \
 				ino.c \
 				type.c \
 				links.c \
+				get_diff.c \
 				user_and_group.c \
 				size.c \
 				show_time.c \

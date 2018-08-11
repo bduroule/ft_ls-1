@@ -6,19 +6,11 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/07 12:16:42 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/11 13:23:30 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/11 20:18:05 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
-
-static int			get_diff(t_frame *frame, char *str)
-{
-	int				len;
-
-	len = ft_strlen(str);
-	return (frame->len_file_name - len);
-}
 
 static bool			is_executeable(t_args *args)
 {
@@ -59,5 +51,5 @@ void				file_name(t_frame *frame, t_args *args)
 	else
 		ft_printf("%s", args->data.str);
 	if (frame->number_of_columns)
-		print_spaces(get_diff(frame, args->data.str) + 1);
+		print_spaces(get_diff(frame, args->data.str, 0, LEN_NAME) + 1);
 }
