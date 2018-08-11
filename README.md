@@ -30,6 +30,7 @@ The following options will be implemented.
 `-r` ✅Reverse sort.  
 `-t` 🔶Sort by time of last modification. *Works except in one case of the same time ft_ls and .*  
 `-u` ✅Sort by time of last access.  
+`-x` ✅Displays columns horizonaly sorted.  
 `-A` ✅List all entries except for `.` and `..`.  
 `-F` ❌Display after pathname: directory, `*`executable, `@`sym link, `=`socket, `%`whiteout, `|`FIFO.  
 `-G` 🔶Coloured output. *Operational - just need to add colours for links etc.*  
@@ -47,23 +48,17 @@ To compile, run `make`. Follow development with `./ft_ls`. Any number of argumen
 ```console
 $> ./ft_ls *
 .:
--rw-r--r--     1 Dav  staff     4191  7 Aug 09:10 Makefile
--rw-r--r--     1 Dav  staff     3205  7 Aug 09:16 README.md
--rw-r--r--     1 Dav  staff        6 13 Jul 01:22 author
--rwxr-xr-x  1003 Dav  staff    32096 23 Jul 11:51 big
--rwxr-xr-x     1 Dav  staff    53184  7 Aug 09:13 ft_ls
--rwxr-xr-x     3 Dav  staff       96 23 Jul 22:45 ft_ls.dSYM
--rw-r--r--     1 Dav  staff  1462757 29 Jun 22:24 ft_ls.en.pdf
--rw-r--r--     1 Dav  staff    38688  7 Aug 09:13 ft_printf.a
--rwxr-xr-x     3 Dav  staff       96  7 Aug 09:10 includes
--rwxr-xr-x     7 Dav  staff      224  5 Aug 13:09 libft
--rw-r--r--     1 Dav  staff    76336  7 Aug 09:13 libft.a
--rwxr-xr-x    40 Dav  staff     1280  7 Aug 09:13 obj
--rwxr-xr-x     6 Dav  staff      192 20 Jul 12:11 srcs
--rw-r--r--     1 Dav  staff       72 23 Jul 20:25 temp
-----------     2 Dav  staff       64 21 Jul 13:39 test_directory
-----------     1 Dav  staff        0  5 Aug 15:52 test_file
--rw-r--r--     1 Dav  staff        0  5 Aug  2019 time_test
+-rw-r--r--   1 dhojt  2017_paris     4358 11 Aug 19:59 Makefile
+-rw-r--r--   1 dhojt  2017_paris     3338 11 Aug 20:26 README.md
+-rw-r--r--   1 dhojt  2017_paris        6 11 Aug 17:57 author
+-rwxr-xr-x   1 dhojt  2017_paris    59792 11 Aug 20:19 ft_ls
+-rw-r--r--   1 dhojt  2017_paris  1462757 11 Aug 17:57 ft_ls.en.pdf
+-rw-r--r--   1 dhojt  2017_paris    38688 11 Aug 20:19 ft_printf.a
+drwxr-xr-x   3 dhojt  2017_paris      102 11 Aug 20:14 includes
+drwxr-xr-x   7 dhojt  2017_paris      238 11 Aug 17:57 libft
+-rw-r--r--   1 dhojt  2017_paris    76456 11 Aug 20:19 libft.a
+drwxr-xr-x  43 dhojt  2017_paris     1462 11 Aug 20:19 obj
+drwxr-xr-x   6 dhojt  2017_paris      204 11 Aug 17:57 srcs
 ```  
 ##### Bonus
 * Displays all illegal options. `ls` only displays 1.
