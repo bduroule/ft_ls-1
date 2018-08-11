@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/07 12:16:42 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/11 20:18:05 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/11 20:33:32 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static void			print_colour(t_args *args)
 {
 	if (is_executeable(args))
 		ft_putstr(COL_EXE);
-	if (args->data.ifo)	
+	if (args->data.ifo)
 		ft_putstr(COL_IFO);
 	if (args->data.chr)
 		ft_putstr(COL_CHR);

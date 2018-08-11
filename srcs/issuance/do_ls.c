@@ -6,25 +6,26 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/20 12:47:00 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/07 12:00:03 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/11 21:04:38 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 #include <sys/stat.h>
 
-static void			get_path(t_frame *frame, t_args *args, char *path, char *name)
+static void			get_path(t_frame *frame, t_args *args,
+		char *path, char *name)
 {
 	char			*new_path;
 	char			*tmp;
 
-	if(!(args->data.str = ft_strdup(name)))
+	if (!(args->data.str = ft_strdup(name)))
 		error_exit(frame, "Malloc Failed [new_name]");// Handle carefully (recurse)
 	if (!(new_path = ft_strnew(ft_strlen(path) + ft_strlen(name) + 1)))
 		error_exit(frame, "Malloc Failed [new_path]");// Handle carefully (recurse)
 	tmp = new_path;
 	while (path && *path)
-		*(tmp ++) = *(path ++);
+		*(tmp++) = *(path++);
 	*(tmp++) = '/';
 	while (name && *name)
 		*(tmp++) = *(name++);
@@ -71,7 +72,7 @@ void				do_ls(t_frame *frame, t_args *args)
 	t_args			*tmp;
 
 	ft_printf("\n%s:\n", args->data.path);
-	if(!(head = read_directory(frame, args)))
+	if (!(head = read_directory(frame, args)))
 		return ;
 	frame->current_args = head;
 	get_attributes(frame);
@@ -83,7 +84,7 @@ void				do_ls(t_frame *frame, t_args *args)
 		tmp = head;
 		while (tmp)
 		{
-			if (tmp->data.dir  && ft_strcmp(tmp->data.str, ".")
+			if (tmp->data.dir && ft_strcmp(tmp->data.str, ".")
 						&& ft_strcmp(tmp->data.str, ".."))
 				do_ls(frame, tmp);
 			tmp = tmp->next;

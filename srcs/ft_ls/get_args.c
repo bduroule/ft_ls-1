@@ -6,13 +6,14 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/14 23:43:19 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/09 14:47:25 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/11 20:58:56 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-static void			get_path(t_frame *frame, t_args *args, char *path, char *name)
+static void			get_path(t_frame *frame, t_args *args,
+		char *path, char *name)
 {
 	char			*new_path;
 	char			*tmp;
@@ -22,7 +23,7 @@ static void			get_path(t_frame *frame, t_args *args, char *path, char *name)
 		error_exit(frame, "Malloc Failed [new_path]");
 	tmp = new_path;
 	while (path && *path)
-		*(tmp ++) = *(path ++);
+		*(tmp++) = *(path++);
 	*(tmp++) = '/';
 	while (name && *name)
 		*(tmp++) = *(name++);
@@ -38,7 +39,7 @@ static void			parse_options(t_frame *frame, int option)
 		return ;
 	if (!(frame->argv_options = (char **)malloc(sizeof(char *) * (option + 2))))
 		error_exit(frame, "Malloc Failed [frame->argv_options]");
-	*frame->argv_options = *frame->argv;	
+	*frame->argv_options = *frame->argv;
 	argv = frame->argv + 1;
 	argv_options = frame->argv_options + 1;
 	while (*argv && **argv == '-' && argv[0][1])
@@ -71,7 +72,7 @@ static void			parse_args(t_frame *frame, int option)
 	{
 		args = create_args(frame);
 		get_path(frame, args, ".", *argv);
-		if(!(args->data.path = ft_strdup(*argv)))
+		if (!(args->data.path = ft_strdup(*argv)))
 			error_exit(frame, "Malloc Failed [path]");
 		if (!frame->args)
 			frame->args = args;

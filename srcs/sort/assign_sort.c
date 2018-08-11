@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/05 19:56:57 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/06 13:00:36 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/11 21:08:15 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static void			sort_reverse(t_frame *frame)
 	else
 		frame->sort_function = NULL;
 }
-	
+
 static void			sort_normal(t_frame *frame)
 {
 	if (frame->option.S)
@@ -31,7 +31,7 @@ static void			sort_normal(t_frame *frame)
 	else
 		frame->sort_function = NULL;
 }
-	
+
 void				assign_sort(t_frame *frame)
 {
 	if (!frame->option.r)

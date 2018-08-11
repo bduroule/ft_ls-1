@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/14 00:54:18 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/10 17:38:03 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/11 20:59:34 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,11 +45,11 @@ static void			get_compliment_of_all_options(t_frame *frame,
 {
 	char			**all_options;
 
-	if(!(all_options = (char **)malloc(sizeof(char *) * 3)))
+	if (!(all_options = (char **)malloc(sizeof(char *) * 3)))
 		error_exit(frame, "Malloc Failed [all_options]");
 	all_options[0] = NULL;
 	all_options[2] = NULL;
-	if(!(all_options[1] = ft_strdup(OPTIONS)))
+	if (!(all_options[1] = ft_strdup(OPTIONS)))
 	{
 		free(all_options);
 		error_exit(frame, "Malloc Failed [all_options]");
@@ -59,7 +59,8 @@ static void			get_compliment_of_all_options(t_frame *frame,
 	free(all_options);
 }
 
-static void			options_error_check(t_frame *frame, unsigned long option_data)
+static void			options_error_check(t_frame *frame,
+		unsigned long option_data)
 {
 	char			**argv;
 	unsigned long	compliment_of_all_options;
