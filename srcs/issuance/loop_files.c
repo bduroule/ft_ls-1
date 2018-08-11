@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/22 17:24:47 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/10 14:44:32 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/11 13:15:52 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,18 +45,43 @@ static void			get_column_widths(t_frame *frame, t_args *args)
 	}
 }
 
+static void			calculate_number_of_columns(t_frame *frame)
+{
+	int				column_width;
+
+	column_width = frame->len_file_name + 1;
+	if (frame->option.i)
+		column_width += frame->len_ino + 1;
+	frame->number_of_columns = frame->width / column_width;
+}
+
 void				loop_files(t_frame *frame)
 {
 	t_args			*args;
+	int				position_on_row;
 
+	position_on_row = 0;
 	args = frame->args;
 	get_column_widths(frame, args);
+	calculate_number_of_columns(frame);
 	while (args)
 	{
 		if ((!args->data.dir || frame->option.d) && !args->data.no_file)
+		{
 			display(frame, args);
+			position_on_row++;
+			if (position_on_row >= frame->number_of_columns)
+			{
+				ft_putchar('\n');
+				position_on_row = 0;
+			}
+			else if (!frame->option.x)
+				ft_putchar('\n');
+		}
 		args = args->next;
 	}
+	if (position_on_row && frame->option.x)
+		ft_putchar('\n');
 	if (frame->option.N && frame->items_to_display)
 		ft_printf(NUM_FILES, frame->items_to_display);
 }
