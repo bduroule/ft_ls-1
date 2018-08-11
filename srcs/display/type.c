@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/23 13:42:45 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/11 20:43:28 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/11 20:45:05 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void				type(t_frame *frame, t_args *args)
 	type = args->data.type;
 	if (!(str = (char *)malloc(sizeof(char) * 12)))
 	{
-		ft_putstr("----------  ");
+		ft_putstr("MALLOC FAIL ");
 		return ;
 	}
 	tmp = str;
