@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/23 13:42:45 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/07 11:53:02 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/11 20:43:28 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static char			*get_str(int value)
 
 static char			get_type(t_args *args)
 {
-	if (args->data.ifo)	
+	if (args->data.ifo)
 		return (PER_IFO);
 	if (args->data.chr)
 		return (PER_CHR);
@@ -60,7 +60,10 @@ void				type(t_frame *frame, t_args *args)
 	i = 3;
 	type = args->data.type;
 	if (!(str = (char *)malloc(sizeof(char) * 12)))
-		error_exit(frame, "Malloc Failed, [permission]"); //Handle
+	{
+		ft_putstr("----------  ");
+		return ;
+	}
 	tmp = str;
 	*(tmp++) = get_type(args);
 	while (i--)
@@ -71,4 +74,6 @@ void				type(t_frame *frame, t_args *args)
 	*tmp = '\0';
 	ft_printf("%-12s", str);
 	free(str);
+	if (frame)//
+		;
 }
