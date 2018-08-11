@@ -1,0 +1,13 @@
+# vim
+*.swp
+
+# git
+.gitignore
+
+# valgrind
+*.dSYM
+
+# objects
+*.a
+*obj
+ft_ls
