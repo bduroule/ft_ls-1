@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/07 12:16:42 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/10 17:22:19 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/11 13:23:30 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ static void			print_colour(t_args *args)
 
 void				file_name(t_frame *frame, t_args *args)
 {
-	if (frame->option.G || COLOUR)
+	if (frame->option.G)
 		print_colour(args);
 	else
 		ft_printf("%s", args->data.str);

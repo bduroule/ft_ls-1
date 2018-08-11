@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/19 21:51:46 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/07 07:20:29 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/11 13:24:55 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 
 static void			do_config(t_frame *frame)
 {
+	if (COLOUR)
+		frame->option.G = 1;
+	if (COLUMN)
+		frame->option.x = 1;
 	if (frame->option.d)
 		frame->option.R = 0;
 	if (frame->option.f)

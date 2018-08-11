@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/22 20:03:57 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/10 17:44:47 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/11 13:23:56 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ static void			get_column_widths(t_frame *frame, t_args *args)
 	}
 }
 
-//MAKING COLUMN FORMULA
 static void			calculate_number_of_columns(t_frame *frame)
 {
 	int				column_width;

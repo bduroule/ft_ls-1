@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/13 01:26:16 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/10 17:37:17 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/11 13:21:42 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FT_LS_H
 
 # define COLOUR		1
+# define COLUMN		1
 
 # define OPTIONS	"-AFGNRSTUacdfgiloprtux1"
 # define NUM_FILES	"--------------\nFiles: %d\n"
