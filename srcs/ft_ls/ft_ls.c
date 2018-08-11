@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/13 01:28:20 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/09 15:13:35 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/11 20:54:12 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ static t_frame		create_frame(int argc, char **argv)
 	frame.argv = argv;
 	time(&frame.time_now);
 	frame.time_6_months_ago = frame.time_now - SIX_MONTHS;
-	if(ioctl(STDOUT_FILENO, TIOCGWINSZ, &window_size) == -1)//
-		error_exit(&frame, "Failed to get window size");
+	if(ioctl(STDOUT_FILENO, TIOCGWINSZ, &window_size) == -1)
+		frame.option.one = 1;
 	frame.width = window_size.ws_col;
 	return (frame);
 }
