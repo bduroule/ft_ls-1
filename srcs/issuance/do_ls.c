@@ -6,31 +6,12 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/20 12:47:00 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/11 21:04:38 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/12 17:20:41 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 #include <sys/stat.h>
-
-static void			get_path(t_frame *frame, t_args *args,
-		char *path, char *name)
-{
-	char			*new_path;
-	char			*tmp;
-
-	if (!(args->data.str = ft_strdup(name)))
-		error_exit(frame, "Malloc Failed [new_name]");// Handle carefully (recurse)
-	if (!(new_path = ft_strnew(ft_strlen(path) + ft_strlen(name) + 1)))
-		error_exit(frame, "Malloc Failed [new_path]");// Handle carefully (recurse)
-	tmp = new_path;
-	while (path && *path)
-		*(tmp++) = *(path++);
-	*(tmp++) = '/';
-	while (name && *name)
-		*(tmp++) = *(name++);
-	args->data.path = new_path;
-}
 
 static t_args		*read_directory(t_frame *frame, t_args *args)
 {
@@ -54,7 +35,7 @@ static t_args		*read_directory(t_frame *frame, t_args *args)
 				|| (file->d_name[0] != '.'))
 		{
 			tmp = create_args(frame); //Malloc protection
-			get_path(frame, tmp, args->data.path, file->d_name);
+			path(frame, tmp, args->data.path, file->d_name);
 			if (!head)
 				head = tmp;
 			else

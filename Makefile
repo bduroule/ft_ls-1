@@ -6,7 +6,7 @@
 #    By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/27 15:32:02 by dhojt             #+#    #+#              #
-#    Updated: 2018/08/11 19:59:59 by dhojt            ###   ########.fr        #
+#    Updated: 2018/08/12 17:19:35 by dhojt            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,6 +39,7 @@ S_SRC =			sort.c \
 I_SRC =			issuance.c \
 				get_attributes.c \
 				do_ls.c \
+				path.c \
 				loop_no_file.c \
 				loop_files.c \
 				loop_dirs.c \
