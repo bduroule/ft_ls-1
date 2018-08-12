@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/14 23:43:19 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/11 22:13:50 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/12 15:59:50 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,8 +72,8 @@ static void			parse_args(t_frame *frame, int option)
 	{
 		args = create_args(frame);//Careful
 		get_path(frame, args, ".", *argv);//Careful
-		if (!(args->data.path = ft_strdup(*argv)))
-			error_exit(frame, "Malloc Failed [path]");
+		//if (!(args->data.path = ft_strdup(*argv)))//Careful
+		//	error_exit(frame, "Malloc Failed [path]");
 		if (!frame->args)
 			frame->args = args;
 		else
