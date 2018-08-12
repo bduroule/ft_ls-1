@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/20 12:47:00 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/12 17:33:34 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/12 20:11:17 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,11 @@ static t_args		*read_directory(t_frame *frame, t_args *args)
 				|| (frame->option.a && file->d_name[0] == '.')
 				|| (file->d_name[0] != '.'))
 		{
-			tmp = create_args(frame); //Malloc protection
+			if (!(tmp = create_args()))//DONE
+			{
+				free_args(&head);
+				return (NULL);
+			}
 			path(frame, tmp, args->data.path, file->d_name);
 			if (!head)
 				head = tmp;
@@ -53,7 +57,7 @@ void				do_ls(t_frame *frame, t_args *args)
 	t_args			*tmp;
 
 	ft_printf("\n%s:\n", args->data.path);
-	if (!(head = read_directory(frame, args)))
+	if (!(head = read_directory(frame, args)))//DONE
 		return ;
 	frame->current_args = head;
 	get_attributes(frame);

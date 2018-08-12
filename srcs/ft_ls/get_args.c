@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/14 23:43:19 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/12 17:21:10 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/12 19:35:59 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static void			parse_options(t_frame *frame, int option)
 	if (!option)
 		return ;
 	if (!(frame->argv_options = (char **)malloc(sizeof(char *) * (option + 2))))
-		error_exit(frame, "Malloc Failed [frame->argv_options]");
+		error_exit(frame, "Malloc Failed");//DONE
 	*frame->argv_options = *frame->argv;
 	argv = frame->argv + 1;
 	argv_options = frame->argv_options + 1;
@@ -44,18 +44,22 @@ static void			parse_args(t_frame *frame, int option)
 		argv++;
 	if (!*argv)
 	{
-		frame->args = create_args(frame);//Careful
-		if (!(frame->args->data.str = ft_strdup(".")))
-			error_exit(frame, "Malloc Failed [. path]");//Careful
-		if (!(frame->args->data.path = ft_strdup(".")))
-			error_exit(frame, "Malloc Failed [. path]");//Careful
+		if (!(frame->args = create_args()))//DONE
+			error_exit(frame, "Malloc Failed");
+		if (!(frame->args->data.str = ft_strdup(".")))//DONE
+			error_exit(frame, "Malloc Failed");
+		if (!(frame->args->data.path = ft_strdup(".")))//DONE
+			error_exit(frame, "Malloc Failed");
 	}
 	while (*argv)
 	{
-		args = create_args(frame);//Careful
+		if(!(args = create_args()))//DONE
+			error_exit(frame, "Malloc Failed");
 		path(frame, args, ".", *argv);//Careful
-		//if (!(args->data.path = ft_strdup(*argv)))//Careful
-		//	error_exit(frame, "Malloc Failed [path]");
+		//{
+		//	free(args);
+		//	error_exit(frame, "Malloc Failed");
+		//}
 		if (!frame->args)
 			frame->args = args;
 		else
