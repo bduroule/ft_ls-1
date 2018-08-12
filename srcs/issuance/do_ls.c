@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/20 12:47:00 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/12 17:20:41 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/12 17:32:08 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,5 +71,6 @@ void				do_ls(t_frame *frame, t_args *args)
 			tmp = tmp->next;
 		}
 	}
+	free_args(&head);
 	//free head
 }
