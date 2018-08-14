@@ -6,7 +6,7 @@
 /*   By: dhojt <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/12 17:18:49 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/12 17:19:00 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/15 17:52:36 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,12 @@ void				path(t_frame *frame, t_args *args, char *path, char *name)
 	if (!(new_path = ft_strnew(ft_strlen(path) + ft_strlen(name) + 1)))
 		error_exit(frame, "Malloc Failed [new_path]");// Handle carefully (recurse)
 	tmp = new_path;
-	while (path && *path)
-		*(tmp++) = *(path++);
-	*(tmp++) = '/';
+	if (ft_strcmp(path, "."))
+	{
+		while (path && *path)
+			*(tmp++) = *(path++);
+		*(tmp++) = '/';
+	}
 	while (name && *name)
 		*(tmp++) = *(name++);
 	args->data.path = new_path;
