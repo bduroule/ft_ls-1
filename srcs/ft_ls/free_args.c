@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/16 22:36:12 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/16 22:36:28 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/17 16:04:03 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,18 @@ static void		free_individual_arg(t_args *args)
 	free(args->data.group);
 }
 
-void			free_args(t_args **args)
+void			free_args(t_args **head)
 {
-	while (*args)
+	t_args		*args;
+	t_args		*tmp;
+
+	args = *head;
+	while (args)
 	{
-		free_individual_arg(*args);
-		*args = (*args)->next;
+		tmp = args;
+		free_individual_arg(args);
+		args = args->next;
+		free(tmp);
 	}
+	*head = NULL;
 }
