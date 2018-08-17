@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/20 12:25:28 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/16 22:57:57 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/17 16:34:20 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,25 @@
 #include <grp.h>
 #include <uuid/uuid.h>
 
+static void			get_sym_path(t_args *args)
+{
+	int				len;
+
+	if ((len = readlink(args->data.path, args->data.sym_path, RL_BUFSIZE)) != -1)
+		args->data.sym_path[len] = '\0';
+	ft_printf("LINK: %s -> %s\n", args->data.str, args->data.sym_path);
+}
+
 static void			get_type(t_args *args)
 {
 	int				type;
 
 	type = args->data.type;
 	if ((TYPE_LNK & type) == TYPE_LNK)
+	{
 		args->data.lnk = 1;
+		get_sym_path(args);
+	}
 	else if ((TYPE_REG & type) == TYPE_REG)
 		args->data.reg = 1;
 	else if ((TYPE_SOCK & type) == TYPE_SOCK)

@@ -6,12 +6,17 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/13 01:26:16 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/16 23:16:30 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/17 16:32:16 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_LS_H
 # define FT_LS_H
+
+# define OPTIONS	"-AFGNRSTUacdfgiloprtux1"
+# define SIX_MONTHS	15768000
+# define RL_BUFSIZE	1024
+# define NUM_FILES	"--------------\nFiles: %d\n"
 
 # define COLOUR		1
 # define COLUMN		1
@@ -22,10 +27,6 @@
 # define LEN_GROUP	4
 # define LEN_SIZE	5
 # define LEN_NAME	6
-
-# define OPTIONS	"-AFGNRSTUacdfgiloprtux1"
-# define NUM_FILES	"--------------\nFiles: %d\n"
-# define SIX_MONTHS	15768000
 
 # define TYPE_IFO	010000
 # define TYPE_CHR	020000
@@ -117,6 +118,7 @@ typedef struct		s_data
 	time_t			t_time;
 	time_t			u_time;
 	time_t			U_time;
+	char			sym_path[RL_BUFSIZE + 1];
 
 	unsigned char	ifo		: 1;
 	unsigned char	chr		: 1;
