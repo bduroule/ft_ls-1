@@ -6,11 +6,29 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/07 12:16:42 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/18 14:57:45 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/18 16:18:26 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
+
+static void			print_F_flag(t_frame *frame, t_args *args)
+{
+	if (!frame->option.F)
+		return ;
+	if (args->data.ifo)
+		ft_putchar('|');
+	else if (args->data.dir)
+		ft_putchar('/');
+	else if (args->data.lnk)
+		ft_putchar('@');
+	else if (args->data.sock)
+		ft_putchar('=');
+	else if (args->data.wht)
+		ft_putchar('%');
+	else if (is_executeable(args))
+		ft_putchar('*');
+}
 
 static void			print_colour(t_args *args)
 {
@@ -40,6 +58,7 @@ void				file_name(t_frame *frame, t_args *args)
 		print_colour(args);
 	else
 		ft_printf("%s", args->data.str);
+	print_F_flag(frame, args);
 	if (frame->option.l && args->data.lnk)
 		ft_printf(" -> %s", args->data.sym_path);
 	if (frame->number_of_columns && !frame->option.l)
