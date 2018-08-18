@@ -6,21 +6,11 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/07 12:16:42 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/18 14:46:51 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/18 14:57:45 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
-
-static bool			is_executeable(t_args *args)
-{
-	int				type;
-
-	type = args->data.type;
-	if ((type & 1) == 1 || (type >> 3 & 1) == 1 || (type >> 6 & 1) == 1)
-		return (true);
-	return (false);
-}
 
 static void			print_colour(t_args *args)
 {

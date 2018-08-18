@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/13 01:26:16 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/17 16:32:16 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/18 14:58:48 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -192,6 +192,7 @@ void				calc_len_size(t_frame *frame, t_args *args);
 void				calc_len_file_name(t_frame *frame, t_args *args);
 void				calculate_number_of_columns(t_frame *frame);
 void				path(t_frame *frame, t_args *args, char *path, char *name);
+bool				is_executeable(t_args *args);
 
 void				sort(t_frame *frame);
 void				assign_sort(t_frame *frame);

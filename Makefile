@@ -6,7 +6,7 @@
 #    By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/27 15:32:02 by dhojt             #+#    #+#              #
-#    Updated: 2018/08/12 17:29:05 by dhojt            ###   ########.fr        #
+#    Updated: 2018/08/18 14:59:09 by dhojt            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,6 +50,7 @@ I_SRC =			issuance.c \
 				calc_len_group.c \
 				calc_len_size.c \
 				calc_len_file_name.c \
+				is_executeable.c \
 				calculate_number_of_columns.c
 
 D_SRC =			display.c \
