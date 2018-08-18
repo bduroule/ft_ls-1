@@ -2,3 +2,7 @@
 [ ]Remove -g from all makefiles
 
 [ ]LEAKS / MALLOCS
+
+[ ]STUFF
+[ ]Deal with symlinks (exapnd with / and when specfically targetted.)
+[ ]Deal with types (b does not work)
