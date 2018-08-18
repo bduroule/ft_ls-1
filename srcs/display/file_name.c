@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/07 12:16:42 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/18 16:18:26 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/18 16:30:39 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,5 +62,5 @@ void				file_name(t_frame *frame, t_args *args)
 	if (frame->option.l && args->data.lnk)
 		ft_printf(" -> %s", args->data.sym_path);
 	if (frame->number_of_columns && !frame->option.l)
-		print_spaces(get_diff(frame, args->data.str, 0, LEN_NAME) + 1);
+		print_spaces(get_diff(frame, args->data.str, args->data.len_of_str, LEN_NAME) + 1);
 }

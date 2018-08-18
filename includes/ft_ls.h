@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/13 01:26:16 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/18 14:58:48 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/18 16:28:42 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,6 +104,8 @@ typedef struct		s_data
 {
 	char			*str;
 	char			*path;
+
+	int				len_of_str;
 
 	unsigned char	no_file	: 1;
 	unsigned char	fill	: 7;

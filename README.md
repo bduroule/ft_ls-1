@@ -32,8 +32,8 @@ The following options will be implemented.
 `-u` ✅Sort by time of last access.  
 `-x` ✅Displays columns horizonaly sorted.  
 `-A` ✅List all entries except for `.` and `..`.  
-`-F` ❌Display after pathname: directory, `*`executable, `@`sym link, `=`socket, `%`whiteout, `|`FIFO.  
-`-G` 🔶Coloured output. *Operational - just need to add colours for links etc.*  
+`-F` ✅Display after pathname: directory, `*`executable, `@`sym link, `=`socket, `%`whiteout, `|`FIFO.  
+`-G` 🔶Coloured output. *Operational - just need to add all colours*  
 `-N` ✅Displays number of files read. *Operational but should only print when there are files to display*  
 `-R` ✅Recursively search directories  
 `-S` ✅Sort by file size.  
