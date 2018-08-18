@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/13 01:26:16 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/18 16:28:42 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/18 16:54:16 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,7 @@ typedef struct		s_options
 	unsigned char	i		: 1; //print inode
 	unsigned char	l		: 1; //list in long format
 	unsigned char	o		: 1; //group name surpressed
+	unsigned char	p		: 1; //puts '/' after directory
 	unsigned char	r		: 1; //reverse
 	unsigned char	t		: 1; //SORT by modified time
 	unsigned char	u		: 1; //SORT (-t) by access time
@@ -97,7 +98,7 @@ typedef struct		s_options
 	unsigned char	T		: 1; //Shows time in full format
 	unsigned char	U		: 1; //SORT by (-t) by birth time
 	unsigned char	one		: 1; //Forces one column output (turns off -a)
-	unsigned char	fill 	: 3;
+	unsigned char	fill 	: 2;
 }					t_options;
 
 typedef struct		s_data
