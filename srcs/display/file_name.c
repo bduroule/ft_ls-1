@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/07 12:16:42 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/18 16:30:39 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/18 17:00:17 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,23 @@
 
 static void			print_F_flag(t_frame *frame, t_args *args)
 {
-	if (!frame->option.F)
-		return ;
-	if (args->data.ifo)
-		ft_putchar('|');
-	else if (args->data.dir)
+	if (frame->option.F)
+	{
+		if (args->data.ifo)
+			ft_putchar('|');
+		else if (args->data.dir)
+			ft_putchar('/');
+		else if (args->data.lnk)
+			ft_putchar('@');
+		else if (args->data.sock)
+			ft_putchar('=');
+		else if (args->data.wht)
+			ft_putchar('%');
+		else if (is_executeable(args))
+			ft_putchar('*');
+	}
+	else if (frame->option.p && args->data.dir)
 		ft_putchar('/');
-	else if (args->data.lnk)
-		ft_putchar('@');
-	else if (args->data.sock)
-		ft_putchar('=');
-	else if (args->data.wht)
-		ft_putchar('%');
-	else if (is_executeable(args))
-		ft_putchar('*');
 }
 
 static void			print_colour(t_args *args)
