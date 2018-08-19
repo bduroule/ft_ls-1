@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/20 12:25:28 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/19 22:10:14 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/19 22:11:27 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,11 +71,11 @@ void				get_attributes(t_frame *frame)
 			if ((passwd = getpwuid(the_file.st_uid)))
 				args->data.user = ft_strdup(passwd->pw_name);//Careful
 			else
-				args->data.user = ft_strdup(ft_itoa(the_file.st_uid));//Careful
+				args->data.user = ft_itoa(the_file.st_uid);//Careful
 			if ((group = getgrgid(the_file.st_gid)))
 				args->data.group = ft_strdup(group->gr_name);//Careful
 			else
-				args->data.group = ft_strdup(ft_itoa(the_file.st_gid));//Careful
+				args->data.group = ft_itoa(the_file.st_gid);//Careful
 			args->data.size = the_file.st_size;
 			args->data.c_time = the_file.st_ctimespec.tv_sec;
 			args->data.t_time = the_file.st_mtimespec.tv_sec;
