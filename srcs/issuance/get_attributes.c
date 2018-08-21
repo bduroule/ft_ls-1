@@ -76,6 +76,7 @@ void				get_attributes(t_frame *frame)
 				args->data.group = ft_strdup(group->gr_name);//Careful
 			else
 				args->data.group = ft_itoa(the_file.st_gid);//Careful
+			args->data.rdev = the_file.st_rdev;
 			args->data.size = the_file.st_size;
 			args->data.c_time = the_file.st_ctimespec.tv_sec;
 			args->data.t_time = the_file.st_mtimespec.tv_sec;

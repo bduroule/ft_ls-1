@@ -116,6 +116,7 @@ typedef struct		s_data
 	int				links;
 	char			*user;
 	char			*group;
+	int				rdev;
 	int				size;
 	time_t			c_time;
 	time_t			t_time;
