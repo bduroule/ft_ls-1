@@ -2,7 +2,9 @@
 [ ]Remove -g from all makefiles
 
 [ ]LEAKS / MALLOCS
+[ ]Segfault in /dev/fd
 
 [ ]STUFF
 [ ]Deal with symlinks (exapnd with / and when specfically targetted.)
 [ ]Deal with types (b does not work)
+[X]Get 'the mysterious numbers in character special files
