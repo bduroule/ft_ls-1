@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/13 01:26:16 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/23 08:45:42 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/23 14:36:27 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -219,6 +219,7 @@ void				user_and_group(t_frame *frame, t_args *args);
 void				size(t_frame *frame, t_args *args);
 void				show_time(t_frame *frame, t_args *args);
 void				file_name(t_frame *frame, t_args *args);
+void				print_path(t_frame *frame, t_args *args, bool do_print);
 void				print_spaces(int diff);
 int					get_diff(t_frame *frame, char *str, long long num, int flag);
 

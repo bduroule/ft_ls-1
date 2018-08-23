@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/20 12:47:00 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/23 12:26:42 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/23 14:36:53 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,24 +64,13 @@ static void			check_headers(t_frame *frame, t_args *head)
 	}
 }
 
-static void			print_path(t_frame *frame, t_args *args)
-{
-	static intmax_t	print_path_count = 0;
-
-	if (frame->headers && print_path_count)
-		ft_printf("\n%s:\n", args->data.path);
-	else if (frame->headers)
-		ft_printf("%s:\n", args->data.path);
-	print_path_count++;
-}
-
 void				do_ls(t_frame *frame, t_args *args)
 {
 	t_args			*head;
 	t_args			*tmp;
 
 	check_headers(frame, args);
-	print_path(frame, args);
+	print_path(frame, args, true);
 	if (!(head = read_directory(frame, args)))//DONE
 		return ;
 	frame->current_args = head;

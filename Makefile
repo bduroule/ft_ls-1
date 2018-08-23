@@ -6,7 +6,7 @@
 #    By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/27 15:32:02 by dhojt             #+#    #+#              #
-#    Updated: 2018/08/18 14:59:09 by dhojt            ###   ########.fr        #
+#    Updated: 2018/08/23 14:21:33 by dhojt            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,6 +63,7 @@ D_SRC =			display.c \
 				size.c \
 				show_time.c \
 				file_name.c \
+				print_path.c \
 				print_spaces.c
 
 L_SRC =			ft_ls.c \

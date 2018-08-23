@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/22 17:24:47 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/11 13:30:30 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/23 14:39:33 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ void				loop_files(t_frame *frame)
 	{
 		if ((!args->data.dir || frame->option.d) && !args->data.no_file)
 		{
+			print_path(frame, args, false);
 			display(frame, args);
 			position_on_row++;
 			if (position_on_row >= frame->number_of_columns)
