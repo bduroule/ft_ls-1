@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/06 01:14:34 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/22 23:32:19 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/23 07:21:47 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,14 @@
 
 void				size(t_frame *frame, t_args *args)
 {
-	print_spaces(get_diff(frame, NULL, args->data.size, LEN_SIZE));
 	if (args->data.chr)
-		ft_printf("%4d,%4d ", major(args->data.rdev), minor(args->data.rdev));
+	{
+		print_spaces(get_diff(frame, NULL, 0, LEN_SIZE_C));
+		ft_printf("%3d, %3d ", major(args->data.rdev), minor(args->data.rdev));
+	}
 	else
+	{
+		print_spaces(get_diff(frame, NULL, args->data.size, LEN_SIZE));
 		ft_printf("%d ", args->data.size);
+	}
 }
