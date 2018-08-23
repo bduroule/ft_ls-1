@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/20 12:47:00 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/12 20:11:17 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/23 12:05:17 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,12 +51,27 @@ static t_args		*read_directory(t_frame *frame, t_args *args)
 	return (head);
 }
 
+static void			check_headers(t_frame *frame, t_args *head)
+{
+	t_args			*args;
+	
+	args = head;
+	while (args && !frame->headers)
+	{
+		if (frame->option.R && args->data.dir && !frame->option.d)
+			frame->headers = 1;
+		args = args->next;
+	}
+}
+
 void				do_ls(t_frame *frame, t_args *args)
 {
 	t_args			*head;
 	t_args			*tmp;
 
-	ft_printf("\n%s:\n", args->data.path);
+	check_headers(frame, args);
+	if (frame->headers)
+		ft_printf("\n%s:\n", args->data.path);
 	if (!(head = read_directory(frame, args)))//DONE
 		return ;
 	frame->current_args = head;
