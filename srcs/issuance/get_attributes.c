@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/20 12:25:28 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/23 08:47:33 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/24 16:31:53 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,12 +53,30 @@ static void			get_type(t_args *args)
 		args->data.blk = 1;
 }
 
+static void			get_user_group(t_frame *frame, t_args *args, struct stat *the_file)
+{
+	struct passwd	*passwd;
+	struct group	*group;
+	if (frame)
+		;
+
+	if ((passwd = getpwuid(the_file->st_uid)))
+		(args->data.user = ft_strdup(passwd->pw_name));//Careful
+	else
+		args->data.user = ft_itoa(the_file->st_uid);//Careful
+	args->data.user = NULL;
+	if (!args->data.user)
+		args->data.user = frame->malloc_failed;
+	if ((group = getgrgid(the_file->st_gid)))
+		args->data.group = ft_strdup(group->gr_name);//Careful
+	else
+		args->data.group = ft_itoa(the_file->st_gid);//Careful
+}
+
 void				get_attributes(t_frame *frame)
 {
 	t_args			*args;
 	struct stat		the_file;
-	struct passwd	*passwd;
-	struct group	*group;
 
 	args = frame->current_args;
 	while (args)
@@ -69,14 +87,7 @@ void				get_attributes(t_frame *frame)
 			args->data.ino = the_file.st_ino;
 			args->data.type = the_file.st_mode;
 			args->data.links = the_file.st_nlink;
-			if ((passwd = getpwuid(the_file.st_uid)))
-				args->data.user = ft_strdup(passwd->pw_name);//Careful
-			else
-				args->data.user = ft_itoa(the_file.st_uid);//Careful
-			if ((group = getgrgid(the_file.st_gid)))
-				args->data.group = ft_strdup(group->gr_name);//Careful
-			else
-				args->data.group = ft_itoa(the_file.st_gid);//Careful
+			get_user_group(frame, args, &the_file);
 			args->data.rdev = the_file.st_rdev;
 			args->data.size = the_file.st_size;
 			args->data.c_time = the_file.st_ctimespec.tv_sec;
