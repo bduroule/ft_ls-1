@@ -2,7 +2,7 @@
 [ ]Remove -g from all makefiles
 
 [ ]LEAKS / MALLOCS
-[ ]Segfault in /dev/fd
+[X]Segfault in /dev/fd
 
 [ ]STUFF
 [ ]Deal with symlinks (exapnd with / and when specfically targetted.)

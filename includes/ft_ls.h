@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/13 01:26:16 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/23 14:36:27 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/24 16:07:53 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -146,6 +146,8 @@ typedef struct		s_frame
 {
 	int				argc;
 	char			**argv;
+
+	char			*malloc_failed;
 
 	char			**argv_options;
 
