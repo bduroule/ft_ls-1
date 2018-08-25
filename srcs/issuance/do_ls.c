@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/20 12:47:00 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/23 14:36:53 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/24 17:21:38 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static t_args		*read_directory(t_frame *frame, t_args *args)
 		{
 			if (!(tmp = create_args()))//DONE
 			{
-				free_args(&head);
+				free_args(frame, &head);
 				return (NULL);
 			}
 			path(frame, tmp, args->data.path, file->d_name);
@@ -89,5 +89,5 @@ void				do_ls(t_frame *frame, t_args *args)
 			tmp = tmp->next;
 		}
 	}
-	free_args(&head);
+	free_args(frame, &head);
 }

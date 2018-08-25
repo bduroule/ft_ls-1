@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/20 12:25:28 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/24 16:31:53 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/24 17:27:24 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,6 @@ static void			get_user_group(t_frame *frame, t_args *args, struct stat *the_file
 		(args->data.user = ft_strdup(passwd->pw_name));//Careful
 	else
 		args->data.user = ft_itoa(the_file->st_uid);//Careful
-	args->data.user = NULL;
 	if (!args->data.user)
 		args->data.user = frame->malloc_failed;
 	if ((group = getgrgid(the_file->st_gid)))
