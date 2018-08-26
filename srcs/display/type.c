@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/23 13:42:45 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/26 10:54:19 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/26 15:47:57 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,14 +35,14 @@ static char			*get_str(int value)
 
 static char			get_type(t_args *args)
 {
+	if (args->data.blk)
+		return (PER_BLK);
 	if (args->data.ifo)
 		return (PER_IFO);
 	if (args->data.chr)
 		return (PER_CHR);
 	if (args->data.dir)
 		return (PER_DIR);
-	if (args->data.blk)
-		return (PER_BLK);
 	if (args->data.reg)
 		return (PER_REG);
 	if (args->data.lnk)
