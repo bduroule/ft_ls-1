@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/23 13:42:45 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/26 15:47:57 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/26 16:02:48 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ static char			get_type(t_args *args)
 	return (' ');
 }
 
-char				get_acl(t_args *args)
+static char			get_acl(t_args *args)
 {
 	acl_t			acl;
 
