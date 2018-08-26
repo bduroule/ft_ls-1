@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/13 22:44:38 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/26 11:17:31 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/26 12:09:24 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,4 @@ void				free_frame(t_frame *frame)
 	free(frame->argv_options);
 	free(frame->malloc_failed);
 	//free everything LOL.
-	if (frame)
-		;
 }

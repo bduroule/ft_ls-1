@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/13 01:26:16 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/24 17:03:38 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/26 12:17:21 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # define SIX_MONTHS	15768000
 # define RL_BUFSIZE	1024
 # define NUM_FILES	"--------------\nFiles: %d\n"
-# define CHRSIZELEN	9
+# define CHRSIZELEN	8
 
 # define COLOUR		1
 # define COLUMN		1
