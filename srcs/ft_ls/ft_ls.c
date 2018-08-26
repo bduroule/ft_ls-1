@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/13 01:28:20 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/24 16:10:35 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/26 09:06:19 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static t_frame		create_frame(int argc, char **argv)
 	ft_bzero(&frame, sizeof(frame));
 	frame.argc = argc;
 	frame.argv = argv;
-	if(!(frame.malloc_failed = ft_strdup("Malloc failed")))
+	if(!(frame.malloc_failed = ft_strdup("MALLOC FAIL")))
 		exit(1);
 	time(&frame.time_now);
 	frame.time_6_months_ago = frame.time_now - SIX_MONTHS;
