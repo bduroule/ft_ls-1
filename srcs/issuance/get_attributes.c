@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/20 12:25:28 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/24 17:27:24 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/26 15:43:15 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ static void			get_type(t_args *args)
 		args->data.chr = 1;
 	else if ((TYPE_DIR & type) == TYPE_DIR)
 		args->data.dir = 1;
-	else if ((TYPE_BLK & type) == TYPE_BLK)
+	if ((TYPE_BLK & type) == TYPE_BLK)
 		args->data.blk = 1;
 }
 
