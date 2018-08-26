@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/23 13:42:45 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/26 09:03:55 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/26 09:06:53 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,5 @@ void				type(t_frame *frame, t_args *args)
 		free(str);
 	}
 	else
-		ft_putstr("MALLOC FAIL ");
-	if (frame)//
-		;
+		ft_printf("%s ", frame->malloc_failed);
 }
