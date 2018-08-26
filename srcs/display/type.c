@@ -6,11 +6,13 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/23 13:42:45 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/11 20:45:05 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/26 09:03:55 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
+#include <sys/acl.h>
+#include <sys/xattr.h>
 
 static char			*get_str(int value)
 {
@@ -50,6 +52,24 @@ static char			get_type(t_args *args)
 	return (' ');
 }
 
+char				get_acl(t_args *args)
+{
+	ssize_t 		xattr;
+	acl_t			acl;
+	char			acl_char;
+
+	xattr = listxattr(args->data.path, NULL, 0, XATTR_NOFOLLOW);
+	acl = acl_get_file(args->data.path, ACL_TYPE_EXTENDED);
+	if (xattr > 0)
+		acl_char = '@';
+	else if (acl)
+		acl_char = '+';
+	else
+		acl_char = ' ';
+	acl_free(acl);
+	return (acl_char);
+}
+
 void				type(t_frame *frame, t_args *args)
 {
 	int				i;
@@ -59,21 +79,22 @@ void				type(t_frame *frame, t_args *args)
 
 	i = 3;
 	type = args->data.type;
-	if (!(str = (char *)malloc(sizeof(char) * 12)))
+	if ((str = (char *)malloc(sizeof(char) * 12)))
 	{
+		tmp = str;
+		*(tmp++) = get_type(args);
+		while (i--)
+		{
+			ft_strcpy(tmp, get_str((type >> (3 * i)) & 7));
+			tmp += 3;
+		}
+		*(tmp++) = get_acl(args);
+		*tmp = '\0';
+		ft_printf("%-12s", str);
+		free(str);
+	}
+	else
 		ft_putstr("MALLOC FAIL ");
-		return ;
-	}
-	tmp = str;
-	*(tmp++) = get_type(args);
-	while (i--)
-	{
-		ft_strcpy(tmp, get_str((type >> (3 * i)) & 7));
-		tmp += 3;
-	}
-	*tmp = '\0';
-	ft_printf("%-12s", str);
-	free(str);
 	if (frame)//
 		;
 }
