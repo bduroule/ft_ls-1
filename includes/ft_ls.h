@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/13 01:26:16 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/26 12:17:21 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/26 12:24:02 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@
 # define TYPE_WHT	0160000
 
 # define COL_IFO	"\x1b[31m"
-# define COL_CHR	"\x1b[31m"
+# define COL_CHR	"\x1b[34;43m"
 # define COL_DIR	"\x1b[1m\x1b[36m"
 # define COL_BLK	"\x1b[31m"
 # define COL_REG	"\x1b[0m"
