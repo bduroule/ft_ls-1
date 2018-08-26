@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/20 12:25:28 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/26 15:43:15 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/26 16:08:10 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,7 @@ void				get_attributes(t_frame *frame)
 		{
 			frame->total_blocks += the_file.st_blocks;
 			args->data.ino = the_file.st_ino;
+			args->data.mode = the_file.st_mode;
 			args->data.type = the_file.st_mode;
 			args->data.links = the_file.st_nlink;
 			get_user_group(frame, args, &the_file);

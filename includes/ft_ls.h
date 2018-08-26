@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/13 01:26:16 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/26 15:45:21 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/26 16:06:53 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,6 +115,7 @@ typedef struct		s_data
 
 	long long		ino;
 	int				type;
+	mode_t			mode;
 	int				links;
 	char			*user;
 	char			*group;
