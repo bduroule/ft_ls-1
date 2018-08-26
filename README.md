@@ -29,12 +29,12 @@ The following options will be implemented.
 `-o` ✅List in long format but omit group.  
 `-p` ✅Display after pathname: `/`directory.  
 `-r` ✅Reverse sort.  
-`-t` 🔶Sort by time of last modification. *Works except in one case of the same time ft_ls and .*  
+`-t` ✅Sort by time of last modification. *Works except in one case of the same time ft_ls and .*  
 `-u` ✅Sort by time of last access.  
 `-x` ✅Displays columns horizonaly sorted.  
 `-A` ✅List all entries except for `.` and `..`.  
 `-F` ✅Display after pathname: `/`directory, `*`executable, `@`sym link, `=`socket, `%`whiteout, `|`FIFO.  
-`-G` 🔶Coloured output. *Operational - just need to add all colours*  
+`-G` ✅Coloured output. *Operational - just need to add all colours*  
 `-N` ✅Displays number of files read. *Operational but should only print when there are files to display*  
 `-R` ✅Recursively search directories  
 `-S` ✅Sort by file size.  
@@ -47,26 +47,59 @@ The following options will be implemented.
   
 To compile, run `make`. Follow development with `./ft_ls`. Any number of arguments can be supplied. Arguments should be files or directories. For example:
 ```console
-$> ./ft_ls -l
-.:
--rw-r--r--     1 dhojt  2017_paris     4412 Aug 18 14:59 Makefile
--rw-r--r--     1 dhojt  2017_paris     3026 Aug 18 16:33 README.md
--rw-r--r--     1 dhojt  2017_paris       64 Aug 15 17:56 TODO
--rw-r--r--     1 dhojt  2017_paris        6 Aug 11 17:57 author
-drwxr-xr-x  1002 dhojt  2017_paris    34068 Aug 15 13:22 big
--rwxr-xr-x     1 dhojt  2017_paris    60876 Aug 18 17:07 ft_ls
-drwxr-xr-x     3 dhojt  2017_paris      102 Aug 11 21:58 ft_ls.dSYM
--rw-r--r--     1 dhojt  2017_paris  1462757 Aug 11 17:57 ft_ls.en.pdf
--rw-r--r--     1 dhojt  2017_paris    38696 Aug 18 17:07 ft_printf.a
-drwxr-xr-x     3 dhojt  2017_paris      102 Aug 18 16:54 includes
-drwxr-xr-x     7 dhojt  2017_paris      238 Aug 15 17:38 libft
--rw-r--r--     1 dhojt  2017_paris    76336 Aug 18 17:07 libft.a
-lrwxr-xr-x     1 dhojt  2017_paris       18 Aug 17 16:35 link_ft_ls -> srcs/ft_ls/ft_ls.c
-lrwxr-xr-x     1 dhojt  2017_paris        4 Aug 17 16:35 link_to_todo -> TODO
-drwxr-xr-x    46 dhojt  2017_paris     1564 Aug 18 17:07 obj
-drwxr-xr-x     6 dhojt  2017_paris      204 Aug 11 17:57 srcs
+$> ls -l /
+total 1999
+drwxrwxr-x+ 68 root  admin    2176 24 Aug 14:31 Applications
+drwxr-xr-x+ 64 root  wheel    2048 20 Mar 08:00 Library
+drwxr-xr-x   2 root  wheel      64 29 Dec  2017 Network
+drwxr-xr-x@  4 root  wheel     128  1 Dec  2017 System
+drwxr-xr-x   6 root  admin     192 29 Dec  2017 Users
+drwxr-xr-x@  4 root  wheel     128 26 Aug 15:35 Volumes
+drwxr-xr-x@ 38 root  wheel    1216  1 Dec  2017 bin
+drwxrwxr-t   2 root  admin      64 29 Dec  2017 cores
+dr-xr-xr-x   3 root  wheel    5165 27 Jul 21:49 dev
+lrwxr-xr-x@  1 root  wheel      11 29 Dec  2017 etc -> private/etc
+dr-xr-xr-x   2 root  wheel       1 25 Aug 14:39 home
+-rw-r--r--   1 root  wheel     313  6 Oct  2017 installer.failurerequests
+-rwxr-xr-x@  1 Dav   wheel  210692 17 Dec  2016 lineto-circular-pro-bold.ttf
+-rwxr-xr-x@  1 Dav   wheel  197524 17 Dec  2016 lineto-circular-pro-book.ttf
+-rwxr-xr-x@  1 Dav   wheel  188952 17 Dec  2016 lineto-circular-pro-bookItalic.ttf
+-rwxr-xr-x@  1 Dav   wheel  204160 17 Dec  2016 lineto-circular-pro-medium.ttf
+-rwxr-xr-x@  1 Dav   wheel  199380 17 Dec  2016 lineto-circular-pro-mediumItalic.ttf
+dr-xr-xr-x   2 root  wheel       1 25 Aug 14:39 net
+drwxr-xr-x   6 root  wheel     192 29 Dec  2017 private
+drwxr-xr-x@ 63 root  wheel    2016 29 Dec  2017 sbin
+lrwxr-xr-x@  1 root  wheel      11 29 Dec  2017 tmp -> private/tmp
+drwxr-xr-x@ 10 root  wheel     320 29 Apr 02:51 usr
+lrwxr-xr-x@  1 root  wheel      11 29 Dec  2017 var -> private/var
+$> ./ft_ls -l /
+total 1999
+drwxrwxr-x+ 68 root  admin    2176 Aug 24 14:31 Applications
+drwxr-xr-x+ 64 root  wheel    2048 Mar 20 08:00 Library
+drwxr-xr-x   2 root  wheel      64 Dec 29  2017 Network
+drwxr-xr-x@  4 root  wheel     128 Dec  1  2017 System
+drwxr-xr-x   6 root  admin     192 Dec 29  2017 Users
+drwxr-xr-x@  4 root  wheel     128 Aug 26 15:35 Volumes
+drwxr-xr-x@ 38 root  wheel    1216 Dec  1  2017 bin
+drwxrwxr-t   2 root  admin      64 Dec 29  2017 cores
+dr-xr-xr-x   3 root  wheel    5165 Jul 27 21:49 dev
+lrwxr-xr-x@  1 root  wheel      11 Dec 29  2017 etc -> private/etc
+dr-xr-xr-x   2 root  wheel       1 Aug 25 14:39 home
+-rw-r--r--   1 root  wheel     313 Oct  6  2017 installer.failurerequests
+-rwxr-xr-x@  1 Dav   wheel  210692 Dec 17  2016 lineto-circular-pro-bold.ttf
+-rwxr-xr-x@  1 Dav   wheel  197524 Dec 17  2016 lineto-circular-pro-book.ttf
+-rwxr-xr-x@  1 Dav   wheel  188952 Dec 17  2016 lineto-circular-pro-bookItalic.ttf
+-rwxr-xr-x@  1 Dav   wheel  204160 Dec 17  2016 lineto-circular-pro-medium.ttf
+-rwxr-xr-x@  1 Dav   wheel  199380 Dec 17  2016 lineto-circular-pro-mediumItalic.ttf
+dr-xr-xr-x   2 root  wheel       1 Aug 25 14:39 net
+drwxr-xr-x   6 root  wheel     192 Dec 29  2017 private
+drwxr-xr-x@ 63 root  wheel    2016 Dec 29  2017 sbin
+lrwxr-xr-x@  1 root  wheel      11 Dec 29  2017 tmp -> private/tmp
+drwxr-xr-x@ 10 root  wheel     320 Apr 29 02:51 usr
+lrwxr-xr-x@  1 root  wheel      11 Dec 29  2017 var -> private/var
 ```  
 ##### Bonus
 * Displays all illegal options. `ls` only displays 1.
 * Handles `--`
 * `-N`
+* acl
