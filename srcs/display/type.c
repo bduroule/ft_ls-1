@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/23 13:42:45 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/26 17:21:35 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/26 17:36:07 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ static char			get_acl(t_args *args)
 	else if (!(acl = acl_get_file(args->data.path, ACL_TYPE_EXTENDED)))
 		return (' ');
 	acl_free(acl);
-	return (' ');
+	return ('+');
 }
 
 static void			swap_exec_char(t_args *args, int i, char *exec_char)
