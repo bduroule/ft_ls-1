@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/20 12:25:28 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/26 16:08:10 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/26 17:22:42 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,10 @@ static void			get_type(t_args *args)
 		args->data.lnk = 1;
 		get_sym_path(args);
 	}
-	else if ((TYPE_REG & type) == TYPE_REG)
-		args->data.reg = 1;
 	else if ((TYPE_SOCK & type) == TYPE_SOCK)
 		args->data.sock = 1;
+	else if ((TYPE_REG & type) == TYPE_REG)
+		args->data.reg = 1;
 	else if ((TYPE_WHT & type) == TYPE_WHT)
 		args->data.wht = 1;
 	else if ((TYPE_IFO & type) == TYPE_IFO)

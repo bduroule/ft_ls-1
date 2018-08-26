@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/13 01:26:16 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/26 16:06:53 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/26 17:23:29 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@
 # define COL_BLK	"\x1b[34;46m"
 # define COL_REG	"\x1b[0m"
 # define COL_LNK	"\x1b[35m"
-# define COL_SOCK	"\x1b[31m"
+# define COL_SOCK	"\x1b[32m"
 # define COL_WHT	"\x1b[31m"
 # define COL_EXE	"\x1b[31m"
 # define COL_CLR	"\x1b[0m"

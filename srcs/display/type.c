@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/23 13:42:45 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/26 16:21:09 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/26 17:21:35 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ static char			get_type(t_args *args)
 {
 	if (args->data.blk)
 		return (PER_BLK);
+	if (args->data.sock)
+		return (PER_SOCK);
 	if (args->data.ifo)
 		return (PER_IFO);
 	if (args->data.chr)
@@ -48,8 +50,6 @@ static char			get_type(t_args *args)
 		return (PER_REG);
 	if (args->data.lnk)
 		return (PER_LNK);
-	if (args->data.sock)
-		return (PER_SOCK);
 	return (' ');
 }
 
