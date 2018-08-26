@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/23 13:42:45 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/26 09:06:53 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/26 10:54:19 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,20 +54,14 @@ static char			get_type(t_args *args)
 
 char				get_acl(t_args *args)
 {
-	ssize_t 		xattr;
 	acl_t			acl;
-	char			acl_char;
 
-	xattr = listxattr(args->data.path, NULL, 0, XATTR_NOFOLLOW);
-	acl = acl_get_file(args->data.path, ACL_TYPE_EXTENDED);
-	if (xattr > 0)
-		acl_char = '@';
-	else if (acl)
-		acl_char = '+';
-	else
-		acl_char = ' ';
+	if (listxattr(args->data.path, NULL, 0, XATTR_NOFOLLOW) > 0)
+		return ('@');
+	else if (!(acl = acl_get_file(args->data.path, ACL_TYPE_EXTENDED)))
+		return (' ');
 	acl_free(acl);
-	return (acl_char);
+	return (' ');
 }
 
 void				type(t_frame *frame, t_args *args)
