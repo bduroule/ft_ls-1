@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/22 20:03:57 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/27 20:18:17 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/27 20:20:59 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,7 @@ static void			get_column_widths(t_frame *frame, t_args *args)
 	}
 }
 
-static void			loop_args(t_frame *frame, t_args *args,
-		int *position_on_row)
+static void			do_loop(t_frame *frame, t_args *args, int *position_on_row)
 {
 	while (args)
 	{
@@ -80,7 +79,7 @@ void				loop_valid_dir(t_frame *frame, t_args *head)
 		ft_printf("total %d\n", frame->total_blocks);
 	get_column_widths(frame, head);
 	calculate_number_of_columns(frame);
-	loop_args(frame, args, &position_on_row);
+	do_loop(frame, args, &position_on_row);
 	if (position_on_row && frame->option.x)
 		ft_putchar('\n');
 	if (frame->option.N)
