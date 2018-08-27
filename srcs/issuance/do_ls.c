@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/20 12:47:00 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/24 17:21:38 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/27 19:24:59 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ static t_args		*read_directory(t_frame *frame, t_args *args)
 static void			check_headers(t_frame *frame, t_args *head)
 {
 	t_args			*args;
-	
+
 	args = head;
 	while (args && !frame->headers)
 	{

@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/07 12:16:42 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/18 19:23:21 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/27 19:12:13 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,10 @@ static void			print_colour(t_args *args)
 void				file_name(t_frame *frame, t_args *args)
 {
 	t_data			*data;
+	int				len;
 
 	data = &args->data;
+	len = data->len_of_str;
 	if (frame->option.G)
 		print_colour(args);
 	else
@@ -68,5 +70,5 @@ void				file_name(t_frame *frame, t_args *args)
 	if (frame->option.l && data->lnk)
 		ft_printf(" -> %s", data->sym_path);
 	if (frame->number_of_columns && !frame->option.l)
-		print_spaces(get_diff(frame, data->str, data->len_of_str, LEN_NAME) + 1);
+		print_spaces(get_diff(frame, data->str, len, LEN_NAME) + 1);
 }

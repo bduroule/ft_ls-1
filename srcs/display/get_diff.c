@@ -6,7 +6,7 @@
 /*   By: dhojt <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/11 19:58:55 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/23 07:29:42 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/27 19:14:08 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int					get_diff(t_frame *frame, char *str, long long num, int flag)
 {
 	int				len;
 
-	if (str)
+	if ((len = 1) && str)
 	{
 		if (flag == LEN_USER)
 			return (frame->len_user - ft_strlen(str));
@@ -27,7 +27,6 @@ int					get_diff(t_frame *frame, char *str, long long num, int flag)
 	}
 	if (flag == LEN_SIZE_C)
 		return (frame->len_size - CHRSIZELEN);
-	len = 1;
 	while (num >= 10)
 	{
 		num /= 10;
