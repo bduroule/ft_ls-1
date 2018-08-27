@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/20 12:25:28 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/27 20:13:51 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/27 20:24:39 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,6 @@ void				read_f(t_frame *frame, t_args *args, struct stat *f)
 	args->data.U_time = f->st_birthtimespec.tv_sec;
 	get_type(args);
 }
-
 
 void				get_attributes(t_frame *frame)
 {
