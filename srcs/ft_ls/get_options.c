@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/14 00:54:18 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/18 16:55:19 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/27 20:36:25 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,15 +71,11 @@ static void			options_error_check(t_frame *frame,
 		print_bad_options(frame, option_data &= compliment_of_all_options);
 }
 
-void				get_options(t_frame *frame)
+static void			fetch_options(t_frame *frame, unsigned long option_data)
 {
 	unsigned long	one;
-	unsigned long	option_data;
 
-	if (!frame->argv_options)
-		return ;
 	one = 1;
-	option_data = options(frame->argv_options);
 	frame->option.a = (option_data & (one << ('a' - 97))) ? 1 : 0;
 	frame->option.c = (option_data & (one << ('c' - 97))) ? 1 : 0;
 	frame->option.d = (option_data & (one << ('d' - 97))) ? 1 : 0;
@@ -102,5 +98,15 @@ void				get_options(t_frame *frame)
 	frame->option.T = (option_data & (one << ('T' - 39))) ? 1 : 0;
 	frame->option.U = (option_data & (one << ('U' - 39))) ? 1 : 0;
 	frame->option.one = (option_data & (one << ('1' + 4))) ? 1 : 0;
+}
+
+void				get_options(t_frame *frame)
+{
+	unsigned long	option_data;
+
+	if (!frame->argv_options)
+		return ;
+	option_data = options(frame->argv_options);
+	fetch_options(frame, option_data);
 	options_error_check(frame, option_data);
 }
