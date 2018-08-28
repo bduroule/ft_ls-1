@@ -1,5 +1,6 @@
 [ ]MAKEFILE
-[ ]Remove -g from all makefiles
+[X]Remove -g from all makefiles
+[ ]80 characters?
 
 [ ]LEAKS / MALLOCS
 [X]Segfault in /dev/fd
