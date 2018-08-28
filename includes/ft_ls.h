@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/13 01:26:16 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/26 17:29:22 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/29 01:26:03 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@
 # define PER_N		"-"
 # define PER_R		"r"
 # define PER_W		"w"
-# define PER_X		"x"// CHECK - COULD BE S or s.
+# define PER_X		"x"
 # define PER_0		PER_N PER_N PER_N
 # define PER_1		PER_N PER_N PER_X
 # define PER_2		PER_N PER_W PER_N
@@ -78,28 +78,28 @@
 
 typedef struct		s_options
 {
-	unsigned char	a		: 1; //show hidden
-	unsigned char	c		: 1; //SORT (-t) by status change time
-	unsigned char	d		: 1; //directories shown as plain files
-	unsigned char	f		: 1; //SORT by nothing, turns on -a
-	unsigned char	g		: 1; //owner name surpressed
-	unsigned char	i		: 1; //print inode
-	unsigned char	l		: 1; //list in long format
-	unsigned char	o		: 1; //group name surpressed
-	unsigned char	p		: 1; //puts '/' after directory
-	unsigned char	r		: 1; //reverse
-	unsigned char	t		: 1; //SORT by modified time
-	unsigned char	u		: 1; //SORT (-t) by access time
-	unsigned char	x		: 1; //Horizontal list
-	unsigned char	A		: 1; //shows hidden files except '.' and '..'
-	unsigned char	F		: 1; //prints some character after filename
-	unsigned char	G		: 1; //colours
-	unsigned char	N		: 1; //Number of files displayed.
-	unsigned char	R		: 1; //Recursivly list subdirectories
-	unsigned char	S		: 1; //SORT by size
-	unsigned char	T		: 1; //Shows time in full format
-	unsigned char	U		: 1; //SORT by (-t) by birth time
-	unsigned char	one		: 1; //Forces one column output (turns off -a)
+	unsigned char	a		: 1;
+	unsigned char	c		: 1;
+	unsigned char	d		: 1;
+	unsigned char	f		: 1;
+	unsigned char	g		: 1;
+	unsigned char	i		: 1;
+	unsigned char	l		: 1;
+	unsigned char	o		: 1;
+	unsigned char	p		: 1;
+	unsigned char	r		: 1;
+	unsigned char	t		: 1;
+	unsigned char	u		: 1;
+	unsigned char	x		: 1;
+	unsigned char	A		: 1;
+	unsigned char	F		: 1;
+	unsigned char	G		: 1;
+	unsigned char	N		: 1;
+	unsigned char	R		: 1;
+	unsigned char	S		: 1;
+	unsigned char	T		: 1;
+	unsigned char	U		: 1;
+	unsigned char	one		: 1;
 	unsigned char	fill 	: 2;
 }					t_options;
 
@@ -152,8 +152,8 @@ typedef struct		s_frame
 
 	char			**argv_options;
 
-	unsigned char	headers	: 1;//
-	unsigned char	fill	: 7;//
+	unsigned char	headers	: 1;
+	unsigned char	fill	: 7;
 
 	time_t			time_now;
 	time_t			time_6_months_ago;
