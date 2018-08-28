@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/20 12:47:00 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/27 19:24:59 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/29 01:04:38 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static t_args		*read_directory(t_frame *frame, t_args *args)
 				|| (frame->option.a && file->d_name[0] == '.')
 				|| (file->d_name[0] != '.'))
 		{
-			if (!(tmp = create_args()))//DONE
+			if (!(tmp = create_args()))
 			{
 				free_args(frame, &head);
 				return (NULL);
@@ -71,7 +71,7 @@ void				do_ls(t_frame *frame, t_args *args)
 
 	check_headers(frame, args);
 	print_path(frame, args, true);
-	if (!(head = read_directory(frame, args)))//DONE
+	if (!(head = read_directory(frame, args)))
 		return ;
 	frame->current_args = head;
 	get_attributes(frame);
