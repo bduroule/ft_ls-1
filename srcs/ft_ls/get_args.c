@@ -33,13 +33,11 @@ static void			parse_options(t_frame *frame, int option)
 	*argv_options = NULL;
 }
 
-static void			parse_args(t_frame *frame, int option)
+static void			parse_args(t_frame *frame, char **argv)
 {
-	char			**argv;
 	t_args			*args;
 	t_args			*last_args;
 
-	argv = frame->argv + option;
 	if (*argv)
 		argv++;
 	if (!*argv)
@@ -85,5 +83,5 @@ static int			calculate_option_strings(t_frame *frame)
 void				get_args(t_frame *frame)
 {
 	parse_options(frame, calculate_option_strings(frame));
-	parse_args(frame, calculate_option_strings(frame));
+	parse_args(frame, frame->argv + calculate_option_strings(frame));
 }
