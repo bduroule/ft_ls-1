@@ -53,7 +53,7 @@ static void			parse_args(t_frame *frame, int option)
 	}
 	while (*argv)
 	{
-		if(!(args = create_args()))
+		if (!(args = create_args()))
 			error_exit(frame, "Malloc Failed");
 		path(frame, args, ".", *argv);
 		if (!frame->args)
