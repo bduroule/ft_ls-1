@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/13 01:26:16 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/30 12:05:23 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/30 12:15:10 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -179,6 +179,17 @@ typedef struct		s_frame
 
 	bool			(*sort_function)(struct s_frame *frame);
 }					t_frame;
+
+typedef struct		s_read_dir
+{
+	t_frame			*frame;
+	t_args			*args;
+	t_args			*tmp;
+	t_args			*head;
+	t_args			*last_args;
+	DIR				*directory;
+	struct dirent	*file;
+}					t_read_dir;
 
 void				parse(t_frame *frame);
 void				get_args(t_frame *frame);

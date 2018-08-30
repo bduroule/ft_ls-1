@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/20 12:47:00 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/30 12:09:23 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/30 12:21:31 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,40 +15,39 @@
 
 static t_args		*get_directory_contents(t_frame *frame, t_args *args)
 {
-	t_args			*tmp;
-	t_args			*head;
-	t_args			*last_args;
-	DIR				*directory;
-	struct dirent	*file;
+	t_read_dir		read_dir;
 
-	head = NULL;
-	if (!(directory = opendir(args->data.path)))
+	read_dir.frame = frame;
+	read_dir.args = args;
+
+	read_dir.head = NULL;
+	if (!(read_dir.directory = opendir(args->data.path)))
 	{
 		ft_printf("ft_ls: %s: Permission denied\n", args->data.str);
 		return (NULL);
 	}
-	while ((file = readdir(directory)))
+	while ((read_dir.file = readdir(read_dir.directory)))
 	{
-		if ((frame->option.A && (ft_strcmp(file->d_name, ".")
-						&& ft_strcmp(file->d_name, "..")))
-				|| (frame->option.a && file->d_name[0] == '.')
-				|| (file->d_name[0] != '.'))
+		if ((frame->option.A && (ft_strcmp(read_dir.file->d_name, ".")
+						&& ft_strcmp(read_dir.file->d_name, "..")))
+				|| (frame->option.a && read_dir.file->d_name[0] == '.')
+				|| (read_dir.file->d_name[0] != '.'))
 		{
-			if (!(tmp = create_args()))
+			if (!(read_dir.tmp = create_args()))
 			{
-				free_args(frame, &head);
+				free_args(frame, &read_dir.head);
 				return (NULL);
 			}
-			path(frame, tmp, args->data.path, file->d_name);
-			if (!head)
-				head = tmp;
+			path(frame, read_dir.tmp, args->data.path, read_dir.file->d_name);
+			if (!read_dir.head)
+				read_dir.head = read_dir.tmp;
 			else
-				last_args->next = tmp;
-			last_args = tmp;
+				read_dir.last_args->next = read_dir.tmp;
+			read_dir.last_args = read_dir.tmp;
 		}
 	}
-	closedir(directory);
-	return (head);
+	closedir(read_dir.directory);
+	return (read_dir.head);
 }
 
 static void			check_headers(t_frame *frame, t_args *head)
