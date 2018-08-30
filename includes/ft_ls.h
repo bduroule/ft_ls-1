@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/13 01:26:16 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/29 01:26:03 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/30 12:05:23 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 # define NUM_FILES	"--------------\nFiles: %d\n"
 # define CHRSIZELEN	8
 
-# define COLOUR		1
-# define COLUMN		1
+# define COLOUR		false
+# define COLUMN		false
 
 # define LEN_INO	1
 # define LEN_LINKS	2

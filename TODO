@@ -2,10 +2,10 @@
 [X]Remove -g from all makefiles
 [ ]80 characters?
 
-[ ]LEAKS / MALLOCS
+[X]LEAKS / MALLOCS
 [X]Segfault in /dev/fd
 
-[ ]STUFF
-[ ]Deal with symlinks (exapnd with / and when specfically targetted.)
-[ ]Deal with types (b does not work)
+[X]STUFF
+[X]Deal with symlinks (exapnd with / and when specfically targetted.)
+[X]Deal with types (b does not work)
 [X]Get 'the mysterious numbers in character special files
