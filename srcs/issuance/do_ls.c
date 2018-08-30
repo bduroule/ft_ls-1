@@ -6,14 +6,14 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/20 12:47:00 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/29 01:04:38 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/30 12:09:23 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 #include <sys/stat.h>
 
-static t_args		*read_directory(t_frame *frame, t_args *args)
+static t_args		*get_directory_contents(t_frame *frame, t_args *args)
 {
 	t_args			*tmp;
 	t_args			*head;
@@ -71,7 +71,7 @@ void				do_ls(t_frame *frame, t_args *args)
 
 	check_headers(frame, args);
 	print_path(frame, args, true);
-	if (!(head = read_directory(frame, args)))
+	if (!(head = get_directory_contents(frame, args)))
 		return ;
 	frame->current_args = head;
 	get_attributes(frame);
