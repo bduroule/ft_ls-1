@@ -6,12 +6,34 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/20 12:47:00 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/30 12:21:31 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/30 15:52:53 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 #include <sys/stat.h>
+
+static bool			read_directory(t_read_dir *read_dir)
+{
+	if ((read_dir->frame->option.A && (ft_strcmp(read_dir->file->d_name, ".")
+					&& ft_strcmp(read_dir->file->d_name, "..")))
+			|| (read_dir->frame->option.a && read_dir->file->d_name[0] == '.')
+			|| (read_dir->file->d_name[0] != '.'))
+	{
+		if (!(read_dir->tmp = create_args()))
+		{
+			free_args(read_dir->frame, &read_dir->head);
+			return false;
+		}
+		path(read_dir->frame, read_dir->tmp, read_dir->args->data.path, read_dir->file->d_name);
+		if (!read_dir->head)
+			read_dir->head = read_dir->tmp;
+		else
+			read_dir->last_args->next = read_dir->tmp;
+		read_dir->last_args = read_dir->tmp;
+	}
+	return (true);
+}
 
 static t_args		*get_directory_contents(t_frame *frame, t_args *args)
 {
@@ -21,30 +43,15 @@ static t_args		*get_directory_contents(t_frame *frame, t_args *args)
 	read_dir.args = args;
 
 	read_dir.head = NULL;
-	if (!(read_dir.directory = opendir(args->data.path)))
+	if (!(read_dir.directory = opendir(read_dir.args->data.path)))
 	{
-		ft_printf("ft_ls: %s: Permission denied\n", args->data.str);
+		ft_printf("ft_ls: %s: Permission denied\n", read_dir.args->data.str);
 		return (NULL);
 	}
 	while ((read_dir.file = readdir(read_dir.directory)))
 	{
-		if ((frame->option.A && (ft_strcmp(read_dir.file->d_name, ".")
-						&& ft_strcmp(read_dir.file->d_name, "..")))
-				|| (frame->option.a && read_dir.file->d_name[0] == '.')
-				|| (read_dir.file->d_name[0] != '.'))
-		{
-			if (!(read_dir.tmp = create_args()))
-			{
-				free_args(frame, &read_dir.head);
-				return (NULL);
-			}
-			path(frame, read_dir.tmp, args->data.path, read_dir.file->d_name);
-			if (!read_dir.head)
-				read_dir.head = read_dir.tmp;
-			else
-				read_dir.last_args->next = read_dir.tmp;
-			read_dir.last_args = read_dir.tmp;
-		}
+		if (!read_directory(&read_dir))
+			return (NULL);		
 	}
 	closedir(read_dir.directory);
 	return (read_dir.head);
@@ -83,7 +90,7 @@ void				do_ls(t_frame *frame, t_args *args)
 		while (tmp)
 		{
 			if (tmp->data.dir && ft_strcmp(tmp->data.str, ".")
-						&& ft_strcmp(tmp->data.str, ".."))
+					&& ft_strcmp(tmp->data.str, ".."))
 				do_ls(frame, tmp);
 			tmp = tmp->next;
 		}
