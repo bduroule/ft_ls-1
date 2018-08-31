@@ -20,11 +20,11 @@ Allowed functions for the mandatory part are `write`, `opendir`, `readdir`, `clo
 ### Using the project
 Some macros may be modified in the header file [ft_ls.h](./includes/ft_ls.h).  
 - `COLOUR`, Forces on `-G` meaning that colours are always on.
-- `COLUMN`, Forces on `'x` menanig that columns are always displayed.  
+- `COLUMN`, Forces on `'x` meannig that columns are always displayed.  
 The default settings are:
 ```c
-# define COLOUR	  1
-# define COLUMN	  1
+# define COLOUR	  true
+# define COLUMN	  true
 ```
 
 To compile, run `make`. This will compile **ft_ls** which can be used with the following usage:  
@@ -41,7 +41,7 @@ To compile, run `make`. This will compile **ft_ls** which can be used with the f
 `-r` Reverse sort. **[MANDATORY]**  
 `-t` Sort by time of last modification. **[MANDATORY]**  
 `-u` Sort by time of last access.  
-`-x` Displays columns horizonaly sorted.  
+`-x` Displays columns horizontally sorted.  
 `-A` List all entries except for `.` and `..`.  
 `-F` Display after pathname: `/`directory, `*`executable, `@`sym link, `=`socket, `%`whiteout, `|`FIFO.  
 `-G` Coloured output.  
@@ -52,6 +52,28 @@ To compile, run `make`. This will compile **ft_ls** which can be used with the f
 `-U` Sort by time of file creation.  
 `-1` Force output to be one entry per line.  
   
+##### Example of ft_ls:
+```console
+$> ./ft_ls -l /
+total 1999
+drwxrwxr-x+ 69 root  admin    2208 Aug 31 02:02 Applications
+drwxr-xr-x+ 64 root  wheel    2048 Mar 20 08:00 Library
+drwxr-xr-x   2 root  wheel      64 Dec 29  2017 Network
+drwxr-xr-x@  4 root  wheel     128 Dec  1  2017 System
+drwxr-xr-x   6 root  admin     192 Dec 29  2017 Users
+drwxr-xr-x@  5 root  wheel     160 Aug 31 07:54 Volumes
+drwxr-xr-x@ 38 root  wheel    1216 Dec  1  2017 bin
+drwxrwxr-t   2 root  admin      64 Dec 29  2017 cores
+dr-xr-xr-x   3 root  wheel    5298 Jul 27 21:49 dev
+lrwxr-xr-x@  1 root  wheel      11 Dec 29  2017 etc -> private/etc
+dr-xr-xr-x   2 root  wheel       1 Aug 30 23:22 home
+dr-xr-xr-x   2 root  wheel       1 Aug 30 23:22 net
+drwxr-xr-x   6 root  wheel     192 Dec 29  2017 private
+drwxr-xr-x@ 63 root  wheel    2016 Dec 29  2017 sbin
+lrwxr-xr-x@  1 root  wheel      11 Dec 29  2017 tmp -> private/tmp
+drwxr-xr-x@ 10 root  wheel     320 Apr 29 02:51 usr
+lrwxr-xr-x@  1 root  wheel      11 Dec 29  2017 var -> private/var
+```
 ##### Bonus
 * Displays all illegal options. `ls` only displays 1.
 * Replicated every error message
