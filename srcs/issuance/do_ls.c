@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/20 12:47:00 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/31 11:37:51 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/31 15:32:03 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 static bool			read_directory(t_read_dir *read_dir)
 {
-	if ((read_dir->frame->option.A && (ft_strcmp(read_dir->file->d_name, ".")
+	if ((read_dir->frame->option.up_a && (ft_strcmp(read_dir->file->d_name, ".")
 					&& ft_strcmp(read_dir->file->d_name, "..")))
 			|| (read_dir->frame->option.a && read_dir->file->d_name[0] == '.')
 			|| (read_dir->file->d_name[0] != '.'))
@@ -64,7 +64,7 @@ static void			check_headers(t_frame *frame, t_args *head)
 	args = head;
 	while (args && !frame->headers)
 	{
-		if (frame->option.R && args->data.dir && !frame->option.d)
+		if (frame->option.up_r && args->data.dir && !frame->option.d)
 			frame->headers = 1;
 		args = args->next;
 	}
@@ -84,7 +84,7 @@ void				do_ls(t_frame *frame, t_args *args)
 	sort(frame);
 	head = frame->current_args;
 	loop_valid_dir(frame, head);
-	if (frame->option.R)
+	if (frame->option.up_r)
 	{
 		tmp = head;
 		while (tmp)

@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/13 01:26:16 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/31 15:23:14 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/31 15:25:45 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,14 +91,14 @@ typedef struct		s_options
 	unsigned char	t		: 1;
 	unsigned char	u		: 1;
 	unsigned char	x		: 1;
-	unsigned char	A		: 1;
-	unsigned char	F		: 1;
-	unsigned char	G		: 1;
-	unsigned char	N		: 1;
-	unsigned char	R		: 1;
-	unsigned char	S		: 1;
-	unsigned char	T		: 1;
-	unsigned char	U		: 1;
+	unsigned char	up_a	: 1;
+	unsigned char	up_f	: 1;
+	unsigned char	up_g	: 1;
+	unsigned char	up_n	: 1;
+	unsigned char	up_r	: 1;
+	unsigned char	up_s	: 1;
+	unsigned char	up_t	: 1;
+	unsigned char	up_u	: 1;
 	unsigned char	one		: 1;
 	unsigned char	fill	: 2;
 }					t_options;

@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/14 00:54:18 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/27 20:36:25 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/31 16:25:53 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,14 +89,14 @@ static void			fetch_options(t_frame *frame, unsigned long option_data)
 	frame->option.t = (option_data & (one << ('t' - 97))) ? 1 : 0;
 	frame->option.u = (option_data & (one << ('u' - 97))) ? 1 : 0;
 	frame->option.x = (option_data & (one << ('x' - 97))) ? 1 : 0;
-	frame->option.A = (option_data & (one << ('A' - 39))) ? 1 : 0;
-	frame->option.F = (option_data & (one << ('F' - 39))) ? 1 : 0;
-	frame->option.G = (option_data & (one << ('G' - 39))) ? 1 : 0;
-	frame->option.N = (option_data & (one << ('N' - 39))) ? 1 : 0;
-	frame->option.R = (option_data & (one << ('R' - 39))) ? 1 : 0;
-	frame->option.S = (option_data & (one << ('S' - 39))) ? 1 : 0;
-	frame->option.T = (option_data & (one << ('T' - 39))) ? 1 : 0;
-	frame->option.U = (option_data & (one << ('U' - 39))) ? 1 : 0;
+	frame->option.up_a = (option_data & (one << ('A' - 39))) ? 1 : 0;
+	frame->option.up_f = (option_data & (one << ('F' - 39))) ? 1 : 0;
+	frame->option.up_g = (option_data & (one << ('G' - 39))) ? 1 : 0;
+	frame->option.up_n = (option_data & (one << ('N' - 39))) ? 1 : 0;
+	frame->option.up_r = (option_data & (one << ('R' - 39))) ? 1 : 0;
+	frame->option.up_s = (option_data & (one << ('S' - 39))) ? 1 : 0;
+	frame->option.up_t = (option_data & (one << ('T' - 39))) ? 1 : 0;
+	frame->option.up_u = (option_data & (one << ('U' - 39))) ? 1 : 0;
 	frame->option.one = (option_data & (one << ('1' + 4))) ? 1 : 0;
 }
 

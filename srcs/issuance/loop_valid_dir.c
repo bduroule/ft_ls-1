@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/22 20:03:57 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/27 20:23:30 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/31 15:32:59 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,6 @@ void				loop_valid_dir(t_frame *frame, t_args *head)
 	do_loop(frame, args, &position_on_row);
 	if (position_on_row && frame->option.x)
 		ft_putchar('\n');
-	if (frame->option.N)
+	if (frame->option.up_n)
 		ft_printf(NUM_FILES, frame->items_to_display);
 }

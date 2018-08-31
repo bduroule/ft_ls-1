@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/07 12:16:42 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/27 19:12:13 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/31 16:20:30 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void			print_end_char(t_frame *frame, t_args *args)
 {
-	if (frame->option.F)
+	if (frame->option.up_f)
 	{
 		if (args->data.ifo)
 			ft_putchar('|');
@@ -62,7 +62,7 @@ void				file_name(t_frame *frame, t_args *args)
 
 	data = &args->data;
 	len = data->len_of_str;
-	if (frame->option.G)
+	if (frame->option.up_g)
 		print_colour(args);
 	else
 		ft_printf("%s", data->str);
