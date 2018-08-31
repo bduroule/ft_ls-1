@@ -6,12 +6,17 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/13 01:26:16 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/31 09:20:08 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/31 15:23:14 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_LS_H
 # define FT_LS_H
+
+# include "libft.h"
+# include <dirent.h>
+# include <stdbool.h>
+# include <time.h>
 
 # define COLOUR		false
 # define COLUMN		false
@@ -71,11 +76,6 @@
 # define PER_6		PER_R PER_W PER_N
 # define PER_7		PER_R PER_W PER_X
 
-# include			"libft.h"
-# include			<dirent.h>
-# include			<stdbool.h>
-# include			<time.h>
-
 typedef struct		s_options
 {
 	unsigned char	a		: 1;
@@ -100,7 +100,7 @@ typedef struct		s_options
 	unsigned char	T		: 1;
 	unsigned char	U		: 1;
 	unsigned char	one		: 1;
-	unsigned char	fill 	: 2;
+	unsigned char	fill	: 2;
 }					t_options;
 
 typedef struct		s_data
@@ -235,7 +235,8 @@ void				show_time(t_frame *frame, t_args *args);
 void				file_name(t_frame *frame, t_args *args);
 void				print_path(t_frame *frame, t_args *args, bool do_print);
 void				print_spaces(int diff);
-int					get_diff(t_frame *frame, char *str, long long num, int flag);
+int					get_diff(t_frame *frame, char *str, long long num,
+		int flag);
 
 void				error_exit(t_frame *frame, char *error_str);
 void				free_frame(t_frame *frame);

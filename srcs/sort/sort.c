@@ -6,7 +6,7 @@
 /*   By: dhojt <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/18 19:26:22 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/18 19:26:27 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/31 14:57:53 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 static int			swap(t_frame *frame)
 {
 	t_data			tmp;
+
 	if (frame->sort_function(frame))
 	{
 		tmp = frame->track->data;
