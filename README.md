@@ -100,6 +100,7 @@ lrwxr-xr-x@  1 root  wheel      11 Dec 29  2017 var -> private/var
 ```  
 ##### Bonus
 * Displays all illegal options. `ls` only displays 1.
+* Replicated every error message
 * Handles `--`
 * `-N`
 * acl
