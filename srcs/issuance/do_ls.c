@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/20 12:47:00 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/30 15:52:53 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/30 15:54:18 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ static t_args		*get_directory_contents(t_frame *frame, t_args *args)
 
 	read_dir.frame = frame;
 	read_dir.args = args;
-
 	read_dir.head = NULL;
 	if (!(read_dir.directory = opendir(read_dir.args->data.path)))
 	{
