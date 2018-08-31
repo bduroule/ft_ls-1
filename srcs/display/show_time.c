@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/05 13:38:31 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/31 16:20:06 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/31 16:32:34 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static time_t		get_file_time(t_frame *frame, t_args *args)
 	if (frame->option.u)
 		return (args->data.u_time);
 	if (frame->option.up_u)
-		return (args->data.U_time);
+		return (args->data.up_u_time);
 	else
 		return (args->data.t_time);
 }

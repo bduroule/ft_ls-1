@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/20 12:25:28 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/29 01:04:20 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/31 16:32:15 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ void				read_f(t_frame *frame, t_args *args, struct stat *f)
 	args->data.c_time = f->st_ctimespec.tv_sec;
 	args->data.t_time = f->st_mtimespec.tv_sec;
 	args->data.u_time = f->st_atimespec.tv_sec;
-	args->data.U_time = f->st_birthtimespec.tv_sec;
+	args->data.up_u_time = f->st_birthtimespec.tv_sec;
 	get_type(args);
 }
 

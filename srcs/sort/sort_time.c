@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/05 21:10:39 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/31 15:27:00 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/31 16:31:34 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ bool				sort_time(t_frame *frame)
 	}
 	if (frame->option.up_u)
 	{
-		if (frame->track->data.U_time < frame->track->next->data.U_time)
+		if (frame->track->data.up_u_time < frame->track->next->data.up_u_time)
 			return (true);
 		return (false);
 	}

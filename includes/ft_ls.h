@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/13 01:26:16 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/31 15:25:45 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/31 16:31:13 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,7 +124,7 @@ typedef struct		s_data
 	time_t			c_time;
 	time_t			t_time;
 	time_t			u_time;
-	time_t			U_time;
+	time_t			up_u_time;
 	char			sym_path[RL_BUFSIZE + 1];
 
 	unsigned char	ifo		: 1;
