@@ -1,6 +1,4 @@
 # ft_ls
-### [UNDER DEVELOPMENT]
-Completion by mid August 2018
 ***
 ### Score [TBA]
 ##### Mandatory
