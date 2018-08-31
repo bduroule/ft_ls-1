@@ -6,21 +6,21 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/13 01:26:16 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/30 12:15:10 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/31 09:20:08 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_LS_H
 # define FT_LS_H
 
+# define COLOUR		false
+# define COLUMN		false
+
 # define OPTIONS	"-AFGNRSTUacdfgiloprtux1"
 # define SIX_MONTHS	15768000
 # define RL_BUFSIZE	1024
 # define NUM_FILES	"--------------\nFiles: %d\n"
 # define CHRSIZELEN	8
-
-# define COLOUR		false
-# define COLUMN		false
 
 # define LEN_INO	1
 # define LEN_LINKS	2
