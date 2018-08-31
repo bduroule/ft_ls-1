@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/20 12:47:00 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/30 15:54:18 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/31 11:37:51 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,10 @@ static bool			read_directory(t_read_dir *read_dir)
 		if (!(read_dir->tmp = create_args()))
 		{
 			free_args(read_dir->frame, &read_dir->head);
-			return false;
+			return (false);
 		}
-		path(read_dir->frame, read_dir->tmp, read_dir->args->data.path, read_dir->file->d_name);
+		path(read_dir->frame, read_dir->tmp, read_dir->args->data.path,
+				read_dir->file->d_name);
 		if (!read_dir->head)
 			read_dir->head = read_dir->tmp;
 		else
@@ -50,7 +51,7 @@ static t_args		*get_directory_contents(t_frame *frame, t_args *args)
 	while ((read_dir.file = readdir(read_dir.directory)))
 	{
 		if (!read_directory(&read_dir))
-			return (NULL);		
+			return (NULL);
 	}
 	closedir(read_dir.directory);
 	return (read_dir.head);

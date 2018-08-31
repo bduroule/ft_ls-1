@@ -6,7 +6,7 @@
 /*   By: dhojt <dhojt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/22 17:24:47 by dhojt             #+#    #+#             */
-/*   Updated: 2018/08/23 14:39:33 by dhojt            ###   ########.fr       */
+/*   Updated: 2018/08/31 12:26:19 by dhojt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,21 @@ static void			get_column_widths(t_frame *frame, t_args *args)
 	}
 }
 
+static void			display_file(t_frame *frame, t_args *args,
+		int *position_on_row)
+{
+	print_path(frame, args, false);
+	display(frame, args);
+	*position_on_row += 1;
+	if (*position_on_row >= frame->number_of_columns)
+	{
+		ft_putchar('\n');
+		*position_on_row = 0;
+	}
+	else if (!frame->option.x)
+		ft_putchar('\n');
+}
+
 void				loop_files(t_frame *frame)
 {
 	t_args			*args;
@@ -57,18 +72,7 @@ void				loop_files(t_frame *frame)
 	while (args)
 	{
 		if ((!args->data.dir || frame->option.d) && !args->data.no_file)
-		{
-			print_path(frame, args, false);
-			display(frame, args);
-			position_on_row++;
-			if (position_on_row >= frame->number_of_columns)
-			{
-				ft_putchar('\n');
-				position_on_row = 0;
-			}
-			else if (!frame->option.x)
-				ft_putchar('\n');
-		}
+			display_file(frame, args, &position_on_row);
 		args = args->next;
 	}
 	if (position_on_row && frame->option.x)
