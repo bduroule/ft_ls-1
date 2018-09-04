@@ -1,10 +1,12 @@
 # ft_ls
 ***
-### Score [TBA]
+### Score 119
 ##### Mandatory
-[TBA]/100
+100/100
 ##### Bonus
-[TBA]/25
+19/19
+##### Outstanding Project
+5/5
 ***
 ### Challenge  
 To recode the unix list command `ls`.  
